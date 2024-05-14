@@ -40,7 +40,6 @@ document.getElementById("is_raining_or_sunny").textContent =
 document.getElementById("not_raining").textContent = not_raining;
 
 //4. Variable Interactions
-//4. Variable Interactions
 const name = "Kelvin";
 const age = 32;
 const message = `My name is ${name} and I am ${age} years old.`;
@@ -57,22 +56,46 @@ document.getElementById("completeSentence").textContent = completeSentence;
 
 /** Control Flow **/
 //1. Maximum of Two Numbers
-let first_num = prompt("Enter first number: ");
-let second_num = prompt("Enter second number: ");
-if (first_num > second_num) {
-  console.log(first_num);
-} else {
-  console.log(second_num);
+function pickMaxNum() {
+  let first_num = parseFloat(document.getElementById("first_num_input").value);
+  let second_num = parseFloat(
+    document.getElementById("second_num_input").value
+  );
+
+  if (isNaN(first_num) || isNaN(second_num)) {
+    document.getElementById("max_num").textContent =
+      "Please enter valid number.";
+    return;
+  }
+  let max_num = Math.max(first_num, second_num);
+
+  document.getElementById("max_num").textContent = max_num;
 }
+document.getElementById("max_num_btn").addEventListener("click", pickMaxNum);
 
 //2. Factorial Calculation
-//let pos_integer = parseInt(prompt("Enter positive integer: "));
-let factorial = 1;
+function calFactorial() {
+  let pos_integer = parseInt(document.getElementById("factorial_number").value);
 
-for (let i = pos_integer; i > 0; i--) {
-  factorial *= i;
+  if (isNaN(pos_integer)) {
+    document.getElementById("invalid_num").textContent =
+      "Please enter valid number.";
+    return;
+  }
+
+  let factorial = 1;
+
+  for (let i = pos_integer; i > 0; i--) {
+    factorial *= i;
+  }
+
+  document.getElementById("input_number").textContent = pos_integer;
+  document.getElementById("factorial_result").textContent = factorial;
 }
-console.log(`The factorial of ${pos_integer} is ${factorial}`);
+
+document
+  .getElementById("factorial_number_btn")
+  .addEventListener("click", calFactorial);
 
 //3. Prime Number Checking
 let pos_int = parseInt(prompt("Enter positive integer: "));
