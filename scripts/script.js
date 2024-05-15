@@ -98,7 +98,8 @@ document
   .addEventListener("click", calFactorial);
 
 //3. Prime Number Checking
-let pos_int = parseInt(prompt("Enter positive integer: "));
+
+let pos_int = parseInt(document.getElementById("Enter positive integer: "));
 if (pos_int <= 1 || pos_int % 2 == 0 || pos_int % 3 == 0) {
   console.log(`${pos_int} is not a prime number.`);
 } else {

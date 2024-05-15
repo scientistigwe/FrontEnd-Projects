@@ -22,387 +22,445 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
-<section id="foundations-of-javascript">
-    <div class="container-fluid">
-        <h1>Foundations of JavaScript</h1>
-        <h2><i>A. Variables & Data Types</i></h2>
-        <!-- 1. Variable Declaration and Arithmetic Operations -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            1. Variable Declaration and Arithmetic Operations
-                        </h5>
-                        <p class="card-text">
-                            Declare two variables num1 and num2 of integer type and assign them values
-                            10 and 5
-                            respectively.
-                            Perform the following operations:
-                            Add num1 and num2 and store the result in a variable sum_result.
-                            Subtract num2 from num1 and store the result in a variable sub_result.
-                            Multiply num1 and num2 and store the result in a variable mul_result.
-                            Divide num1 by num2 and store the result in a variable div_result.
-                            Display the values of sum_result, sub_result, mul_result, and div_result.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Output (See <a
-                                href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                target="_blank">script.js</a> for details)
-                        </h5>
-                        <div class="card-text">
-                            <h6>Sum Result: <span id="sum_result"></span></h6>
-                            <h6>Subtraction Result: <span id="sub_result"></span></h6>
-                            <h6>Multiplication Result: <span id="mul_result"></span></h6>
-                            <h6>Division Result: <span id="div_result"></span></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!-- 2. String Manipulation -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class=" card-body">
-                        <h5 class="card-title">
-                            Output (See <a
-                                href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                target="_blank">script.js</a> for details)
-                        </h5>
-                        <div class="card-text">
-                            <h6>Concatenation Result: <span id="concat_result"></span></h6>
-                            <h6>Uppercase String: <span id="upper_str"></span></h6>
-                            <h6>String Length: <span id="str_length"></span></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            2. String Manipulation
-                        </h5>
-                        <p class="card-text">
-                            Declare a string variable str1 and assign it the value "Hello".
-                            Declare another string variable str2 and assign it the value "World".
-                            Concatenate str1 and str2 and store the result in a variable concat_result.
-                            Convert str1 to uppercase and store the result in a variable upper_str.
-                            Find the length of str2 and store the result in a variable str_length.
-                            Display the values of concat_result, upper_str, and str_length.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!-- 3. Boolean Operations -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            3. Boolean Operations
-                        </h5>
-                        <p class="card-text">
-                            Declare a boolean variable is_raining and assign it the value true.
-                            Declare another boolean variable is_sunny and assign it the value false.
-                            Check if it's raining AND sunny and store the result in a variable is_raining_and_sunny.
-                            Check if it's raining OR sunny and store the result in a variable is_raining_or_sunny.
-                            Negate the value of is_raining and store the result in a variable not_raining.
-                            Display the values of is_raining_and_sunny, is_raining_or_sunny, and not_raining.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Output (See <a
-                                href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                target="_blank">script.js</a> for details)
-                        </h5>
-                        <div class="card-text">
-                            <h6>Is raining and sunny?: <span id="is_raining_and_sunny"></span></h6>
-                            <h6>Is raining or sunny?: <span id="is_raining_or_sunny"></span></h6>
-                            <h6>Not raining: <span id="not_raining"></span></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!-- 4. Variable Interactions -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class=" card-body">
-                        <h5 class="card-title">
-                            Output (See <a
-                                href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                target="_blank">script.js</a> for details)
-                        </h5>
-                        <div class="card-text">
-                            <h6>Message: <span id="message"></span></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            4. Variable Interactions
-                        </h5>
-                        <p class="card-text">
-                            Declare a string variable name and assign it a name of your choice.
-                            Declare an integer variable age and assign it your age.
-                            Concatenate name and age to create a message like "My name is [name] and I am [age] years
-                            old." and store it in a variable message.
-                            Display the value of message.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!-- 5. Mixed Operations -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            5. Mixed Operations
-                        </h5>
-                        <p class="card-text">
-                            Declare a float variable price and assign it a value of 19.99.
-                            Declare an integer variable quantity and assign it a value of 5.
-                            Multiply price and quantity to calculate the total cost and store it in a variable
-                            total_cost.
-                            Convert total_cost to a string and concatenate it with a message like "The total cost is $"
-                            to create a complete sentence.
-                            Display the complete sentence.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Output (See <a
-                                href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                target="_blank">script.js</a> for details)
-                        </h5>
-                        <div class="card-text">
-                            <h6>Complete Sentence: <span id="completeSentence"></span></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </div>
 
-        <h2><i>B. Control Flow</i></h2>
-        <!-- 1. Maximum of Two Numbers -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            1. Maximum of Two Numbers
-                        </h5>
-                        <p class="card-text">
-                            Write a program that prompts the user to enter two numbers.
-                            Implement conditional statements to determine which number is greater.
-                            Display the maximum of the two numbers as output.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Output (See <a
-                                href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                target="_blank">script.js</a> for details)
-                        </h5>
-                        <div class="card-text">
-                            <div>
-                                <label for="first_num">Enter first number here:</label>
-                                <input type="number" id="first_num_input">
-                            </div>
-                            <div> <label for="second_num">Enter first number here:</label>
-                                <input type="number" id="second_num_input">
-                            </div>
-                            <button class="btn btn-secondary" id="max_num_btn">Pick max number</button>
-                            <br><br>
-                            <h6>Max number: <span id="max_num"></span></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!-- 2. Factorial Calculation -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Output (See <a
-                                href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                target="_blank">script.js</a> for details)
-                        </h5>
-                        <div class="card-text">
-                            <div>
-                                <label for="factorial_number">Enter number:</label> <!-- Fixed typo in "label" -->
-                                <input type="number" id="factorial_number">
-                            </div>
-                            <button class="btn btn-outline-secondary" id="factorial_number_btn">Calculate
-                                factorial</button>
-                            <br><br>
-                            <span id="invalid_num"></span>
-                            <h6>Factorial of <span id="input_number"></span> is <span id="factorial_result"></span></h6>
-                            <!-- Changed IDs here -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body>
+    <header>
 
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            2. Factorial Calculation
-                        </h5>
-                        <p class="card-text">
-                            Write a program that prompts the user to enter a positive integer.
-                            Calculate the factorial of the entered integer using a loop.
-                            Display the factorial value as output.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <hr>
-            <!-- 3. Prime Number Checking -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                3. Prime Number Checking
-                            </h5>
-                            <p class="card-text">
-                                Write a program that prompts the user to enter a positive integer.
-                                Check if the entered number is a prime number.
-                                Display a message indicating whether the number is prime or not.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Output (See <a
-                                    href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                    target="_blank">script.js</a> for details)
-                            </h5>
-                            <div class="card-text">
-                                <h6>Is raining and sunny?: <span id="is_raining_and_sunny"></span></h6>
-                                <h6>Is raining or sunny?: <span id="is_raining_or_sunny"></span></h6>
-                                <h6>Not raining: <span id="not_raining"></span></h6>
+    </header>
+    <main>
+        <section id="foundations-of-javascript">
+            <div class="container-fluid">
+                <h1>Foundations of JavaScript</h1>
+                <h2><i>A. Variables & Data Types</i></h2>
+                <!-- 1. Variable Declaration and Arithmetic Operations -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    1. Variable Declaration and Arithmetic Operations
+                                </h5>
+                                <p class="card-text">
+                                    Declare two variables num1 and num2 of integer type and assign them values
+                                    10 and 5
+                                    respectively.
+                                    Perform the following operations:
+                                    Add num1 and num2 and store the result in a variable sum_result.
+                                    Subtract num2 from num1 and store the result in a variable sub_result.
+                                    Multiply num1 and num2 and store the result in a variable mul_result.
+                                    Divide num1 by num2 and store the result in a variable div_result.
+                                    Display the values of sum_result, sub_result, mul_result, and div_result.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <hr>
-            <!-- 4. Variable Interactions -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class=" card-body">
-                            <h5 class="card-title">
-                                Output (See <a
-                                    href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                    target="_blank">script.js</a> for details)
-                            </h5>
-                            <div class="card-text">
-                                <h6>Message: <span id="message"></span></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                4. Variable Interactions
-                            </h5>
-                            <p class="card-text">
-                                Declare a string variable name and assign it a name of your choice.
-                                Declare an integer variable age and assign it your age.
-                                Concatenate name and age to create a message like "My name is [name] and I am [age]
-                                years
-                                old." and store it in a variable message.
-                                Display the value of message.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <!-- 5. Mixed Operations -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                5. Mixed Operations
-                            </h5>
-                            <p class="card-text">
-                                Declare a float variable price and assign it a value of 19.99.
-                                Declare an integer variable quantity and assign it a value of 5.
-                                Multiply price and quantity to calculate the total cost and store it in a variable
-                                total_cost.
-                                Convert total_cost to a string and concatenate it with a message like "The total cost is
-                                $"
-                                to create a complete sentence.
-                                Display the complete sentence.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Output (See <a
-                                    href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                    target="_blank">script.js</a> for details)
-                            </h5>
-                            <div class="card-text">
-                                <h6>Complete Sentence: <span id="completeSentence"></span></h6>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Sum Result: <span id="sum_result"></span></h6>
+                                    <h6>Subtraction Result: <span id="sub_result"></span></h6>
+                                    <h6>Multiplication Result: <span id="mul_result"></span></h6>
+                                    <h6>Division Result: <span id="div_result"></span></h6>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
+                <!-- 2. String Manipulation -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class=" card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Concatenation Result: <span id="concat_result"></span></h6>
+                                    <h6>Uppercase String: <span id="upper_str"></span></h6>
+                                    <h6>String Length: <span id="str_length"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    2. String Manipulation
+                                </h5>
+                                <p class="card-text">
+                                    Declare a string variable str1 and assign it the value "Hello".
+                                    Declare another string variable str2 and assign it the value "World".
+                                    Concatenate str1 and str2 and store the result in a variable concat_result.
+                                    Convert str1 to uppercase and store the result in a variable upper_str.
+                                    Find the length of str2 and store the result in a variable str_length.
+                                    Display the values of concat_result, upper_str, and str_length.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 3. Boolean Operations -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    3. Boolean Operations
+                                </h5>
+                                <p class="card-text">
+                                    Declare a boolean variable is_raining and assign it the value true.
+                                    Declare another boolean variable is_sunny and assign it the value false.
+                                    Check if it's raining AND sunny and store the result in a variable
+                                    is_raining_and_sunny.
+                                    Check if it's raining OR sunny and store the result in a variable
+                                    is_raining_or_sunny.
+                                    Negate the value of is_raining and store the result in a variable not_raining.
+                                    Display the values of is_raining_and_sunny, is_raining_or_sunny, and not_raining.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Is raining and sunny?: <span id="is_raining_and_sunny"></span></h6>
+                                    <h6>Is raining or sunny?: <span id="is_raining_or_sunny"></span></h6>
+                                    <h6>Not raining: <span id="not_raining"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 4. Variable Interactions -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class=" card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Message: <span id="message"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    4. Variable Interactions
+                                </h5>
+                                <p class="card-text">
+                                    Declare a string variable name and assign it a name of your choice.
+                                    Declare an integer variable age and assign it your age.
+                                    Concatenate name and age to create a message like "My name is [name] and I am [age]
+                                    years
+                                    old." and store it in a variable message.
+                                    Display the value of message.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 5. Mixed Operations -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    5. Mixed Operations
+                                </h5>
+                                <p class="card-text">
+                                    Declare a float variable price and assign it a value of 19.99.
+                                    Declare an integer variable quantity and assign it a value of 5.
+                                    Multiply price and quantity to calculate the total cost and store it in a variable
+                                    total_cost.
+                                    Convert total_cost to a string and concatenate it with a message like "The total
+                                    cost is $"
+                                    to create a complete sentence.
+                                    Display the complete sentence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Complete Sentence: <span id="completeSentence"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+                <h2><i>B. Control Flow</i></h2>
+                <!-- 1. Maximum of Two Numbers -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    1. Maximum of Two Numbers
+                                </h5>
+                                <p class="card-text">
+                                    Write a program that prompts the user to enter two numbers.
+                                    Implement conditional statements to determine which number is greater.
+                                    Display the maximum of the two numbers as output.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <div>
+                                        <label for="first_num">Enter first number here:</label>
+                                        <input type="number" id="first_num_input">
+                                    </div>
+                                    <div> <label for="second_num">Enter first number here:</label>
+                                        <input type="number" id="second_num_input">
+                                    </div>
+                                    <button class="btn btn-secondary" id="max_num_btn">Pick max number</button>
+                                    <br><br>
+                                    <h6>Max number: <span id="max_num"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 2. Factorial Calculation -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <div>
+                                        <label for="factorial_number">Enter number:</label>
+                                        <!-- Fixed typo in "label" -->
+                                        <input type="number" id="factorial_number">
+                                    </div>
+                                    <button class="btn btn-outline-secondary" id="factorial_number_btn">Calculate
+                                        factorial</button>
+                                    <br><br>
+                                    <span id="invalid_num"></span>
+                                    <h6>Factorial of <span id="input_number"></span> is <span
+                                            id="factorial_result"></span></h6>
+                                    <!-- Changed IDs here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    2. Factorial Calculation
+                                </h5>
+                                <p class="card-text">
+                                    Write a program that prompts the user to enter a positive integer.
+                                    Calculate the factorial of the entered integer using a loop.
+                                    Display the factorial value as output.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 3. Prime Number Checking -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    3. Prime Number Checking
+                                </h5>
+                                <p class="card-text">
+                                    Write a program that prompts the user to enter a positive integer.
+                                    Check if the entered number is a prime number.
+                                    Display a message indicating whether the number is prime or not.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <div>
+                                        <label for="prime_number">Enter number to check if prime</label>
+                                        <input type="number" id="prime_number">
+                                    </div>
+                                    <span id="invalid_prime_number"></span>
+                                    <button class=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- 4. Variable Interactions -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class=" card-body">
+                                    <h5 class="card-title">
+                                        Output (See <a
+                                            href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                            target="_blank">script.js</a> for details)
+                                    </h5>
+                                    <div class="card-text">
+                                        <h6>Message: <span id="message"></span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        4. Variable Interactions
+                                    </h5>
+                                    <p class="card-text">
+                                        Declare a string variable name and assign it a name of your choice.
+                                        Declare an integer variable age and assign it your age.
+                                        Concatenate name and age to create a message like "My name is [name] and I am
+                                        [age]
+                                        years
+                                        old." and store it in a variable message.
+                                        Display the value of message.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- 5. Mixed Operations -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        5. Mixed Operations
+                                    </h5>
+                                    <p class="card-text">
+                                        Declare a float variable price and assign it a value of 19.99.
+                                        Declare an integer variable quantity and assign it a value of 5.
+                                        Multiply price and quantity to calculate the total cost and store it in a
+                                        variable
+                                        total_cost.
+                                        Convert total_cost to a string and concatenate it with a message like "The total
+                                        cost is
+                                        $"
+                                        to create a complete sentence.
+                                        Display the complete sentence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Output (See <a
+                                            href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                            target="_blank">script.js</a> for details)
+                                    </h5>
+                                    <div class="card-text">
+                                        <h6>Complete Sentence: <span id="completeSentence"></span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
             </div>
-
-</section>
-
-<body>
+        </section>
 
 
+
+        <section id="Intermediate-js-concepts">
+            <div class="container-fluid">
+                <h1>Intermediate JS Concepts</h1>
+                <h3>A. Higher-Order Functions</h3>
+                <div class="row">
+                    <div class="col-md 6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">1. Function as an Argument Task</h4>
+                                <p class="card-text">Write a higher-order function that accepts another function as an
+                                    argument.
+                                    Define a function, such as applyOperation, that takes two numbers and a callback
+                                    function as parameters.
+                                    Use the callback function to perform a specific operation on the two numbers, such
+                                    as addition, subtraction, multiplication, or division.
+                                    Test the higher-order function by passing different callback functions to perform
+                                    various arithmetic operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md 6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details) </h4>
+                                <p class="card-text">
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
     <!-- Bootstrap JS Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
