@@ -1,0 +1,70 @@
+/** General **/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: rgba(249, 246, 248, 0.12);
+}
+
+/* Header */
+
+/*Section 1: Foundations of JavaScript */
+#foundations-of-javascript{
+    max-width: 70vw;
+    margin: auto;
+}
+
+.category{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: blueviolet;
+    text-transform: uppercase;
+}
+
+.subcategory{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: rgb(15, 160, 205);
+}
+
+.card{
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(105, 104, 103, 0.3);
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+hr{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.container-fluid .row .card-text{
+    text-align: center;
+    line-height: 1.8em;
+    font-size: 1.2em;
+    color: black;
+    font-weight: 400;
+}
+
+.container-fluid .row .card-title{
+    text-align: center;
+text-decoration: underline;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: rgb(25, 99, 114);
+}
+
+.card-text h6{
+    color: rgb(49, 6, 149);
+}
+
+
