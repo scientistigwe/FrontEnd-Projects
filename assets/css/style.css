@@ -67,4 +67,8 @@ text-decoration: underline;
     color: rgb(49, 6, 149);
 }
 
+button, label{
+    margin: 7px;
+}
+
 

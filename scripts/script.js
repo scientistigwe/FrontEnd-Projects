@@ -98,23 +98,32 @@ document
   .addEventListener("click", calFactorial);
 
 //3. Prime Number Checking
+function IsPrime() {
+  let pos_int = parseInt(document.getElementById("prime_number").value);
 
-let pos_int = parseInt(document.getElementById("Enter positive integer: "));
-if (pos_int <= 1 || pos_int % 2 == 0 || pos_int % 3 == 0) {
-  console.log(`${pos_int} is not a prime number.`);
-} else {
-  i = 5;
-  while (i * i <= pos_int) {
-    if (pos_int % i == 0 || pos_int % (i + 2) == 0) {
-      console.log(`${pos_int} is not a prime number.`);
+  //Validity Check
+  if (isNaN(pos_int) || pos_int < 2) {
+    document.getElementById("invalid_prime_number").textContent =
+      "Please enter a valid number greater than 1";
+    return;
+  }
+  let isPrime = true;
+
+  for (i = 2; i <= Math.sqrt(pos_int); i++) {
+    if (pos_int % i == 0) {
+      isPrime = false;
       break;
     }
-    i += 6;
   }
-  console.log(`${pos_int} is a prime number.`);
+  document.getElementById("entered_number").textContent = pos_int;
+  document.getElementById("is_prime").textContent = isPrime
+    ? "is a prime number."
+    : "is not a prime number.";
 }
+document.getElementById("is_prime_btn").addEventListener("click", IsPrime);
 
 //4. Array Iteration
+function arrFunction() {}
 const arr = Array(
   12,
   [11, 10, 2],

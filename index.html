@@ -256,7 +256,7 @@
                                         <input type="number" id="second_num_input">
                                     </div>
                                     <button class="btn btn-secondary" id="max_num_btn">Pick max number</button>
-                                    <br><br>
+                                    <br>
                                     <h6>Max number: <span id="max_num"></span></h6>
                                 </div>
                             </div>
@@ -280,7 +280,7 @@
                                         <!-- Fixed typo in "label" -->
                                         <input type="number" id="factorial_number">
                                     </div>
-                                    <button class="btn btn-outline-secondary" id="factorial_number_btn">Calculate
+                                    <button class="btn btn-secondary" id="factorial_number_btn">Calculate
                                         factorial</button>
                                     <br><br>
                                     <span id="invalid_num"></span>
@@ -318,8 +318,8 @@
                                 </h5>
                                 <p class="card-text">
                                     Write a program that prompts the user to enter a positive integer.
-                                    Check if the entered number is a prime number.
-                                    Display a message indicating whether the number is prime or not.
+                                    Check if the entered number is a prime number. Display a message indicating whether
+                                    the number is prime or not.
                                 </p>
                             </div>
                         </div>
@@ -338,14 +338,16 @@
                                         <input type="number" id="prime_number">
                                     </div>
                                     <span id="invalid_prime_number"></span>
-                                    <button class=""></button>
+                                    <button class="btn btn-secondary" id="is_prime_btn">Check if prime</button>
+                                    <div id="invalid_prime_number"></div>
+                                    <p><span id="entered_number"></span> <span id="is_prime"></span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <!-- 4. Variable Interactions -->
+                <!-- 4. Array Iteration -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
@@ -356,7 +358,13 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6>Message: <span id="message"></span></h6>
+                                    <label for="arrayIteration">Enter elements of different data types, separated by
+                                        comma</label>
+                                    <input type="text" id="arrayIteration" <h6><span id="inputArray"></span></h6>
+                                    <div>
+                                        <button class="btn btn-secondary" id="arrayElementsBtn">Array Elements</button>
+                                    </div>
+                                    <h6><span id="array_elements"></span></h6>
                                 </div>
                             </div>
                         </div>
@@ -365,41 +373,32 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    4. Variable Interactions
+                                    4. Array Iteration
                                 </h5>
                                 <p class="card-text">
-                                    Declare a string variable name and assign it a name of your choice.
-                                    Declare an integer variable age and assign it your age.
-                                    Concatenate name and age to create a message like "My name is [name] and I am
-                                    [age]
-                                    years
-                                    old." and store it in a variable message.
-                                    Display the value of message.
+                                    Initialize an array of different data types with predefined values.
+                                    Use a loop to iterate through each element of the array.
+                                    Display each element of the array as output.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <!-- 5. Mixed Operations -->
+                <!-- 5. While Loop Example -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    5. Mixed Operations
+                                    5. While Loop Example
                                 </h5>
                                 <p class="card-text">
-                                    Declare a float variable price and assign it a value of 19.99.
-                                    Declare an integer variable quantity and assign it a value of 5.
-                                    Multiply price and quantity to calculate the total cost and store it in a
-                                    variable
-                                    total_cost.
-                                    Convert total_cost to a string and concatenate it with a message like "The total
-                                    cost is
-                                    $"
-                                    to create a complete sentence.
-                                    Display the complete sentence.</p>
+                                    Write a program that continuously prompts the user to enter a number.
+                                    Use a while loop to repeat the prompting process until the user enters a specific
+                                    value (e.g., "exit").
+                                    Display each input value entered by the user.
+                                </p>
                             </div>
                         </div>
                     </div>
