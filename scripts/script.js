@@ -123,13 +123,19 @@ function IsPrime() {
 document.getElementById("is_prime_btn").addEventListener("click", IsPrime);
 
 //4. Array Iteration
-function arrFunction() {}
-const arr = Array(
+
+let arrayElements = Array(
   12,
   [11, 10, 2],
   [{ name: "Jack", age: 129 }, ["verified", "unverified"], "121"]
 );
 
-for (i in arr) {
-  console.log(i);
+document.getElementById("arrayInput").textContent =
+  "Array: [" + arrayElements + "]";
+
+let output = "";
+for (let i = 0; i < arrayElements.length; i++) {
+  output += arrayElements[i] + ", ";
 }
+document.getElementById("array_elements").textContent =
+  "Array Elements: " + output.slice(0, -2);
