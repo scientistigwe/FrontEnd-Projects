@@ -141,27 +141,24 @@ document.getElementById("array_elements").textContent =
 
 //5. While loop Example
 function displayValue() {
-  while (true) {
-    let value = document.getElementById("user_value").value;
+  let value = document.getElementById("user_value").value.trim();
 
-    // Exit condition
-    if (value.toLowerCase() === "exit") {
-      document.getElementById("invalid_user_value").textContent = "Exiting...";
-      return; // Stop further execution
-    }
+  // Exit condition
+  if (value.toLowerCase() === "exit") {
+    document.getElementById("invalid_user_value").textContent = "Exiting...";
+    return; // Stop further execution
+  }
 
-    // Validation check
-    if (!isNaN(value)) {
-      document.getElementById("entered_value").textContent =
-        "You entered: " + value;
-      document.getElementById("invalid_user_value").textContent = "";
-      document.getElementById("entered_value").textContent = "";
-      document.getElementById("entered_value").textContent =
-        "Please enter another value to continue or enter 'exit'";
-    } else {
-      document.getElementById("invalid_user_value").textContent =
-        "Please enter a valid number";
-    }
+  // Validation check
+  if (value.length === 0) {
+    document.getElementById("invalid_user_value").textContent =
+      "Please enter a valid value";
+  } else {
+    document.getElementById("entered_value").textContent =
+      "You entered: " + value;
+    document.getElementById("invalid_user_value").textContent = "";
+    document.getElementById("invalid_user_value").textContent =
+      "Please enter another value to continue or enter 'exit'";
   }
 }
 
