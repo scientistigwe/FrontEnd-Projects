@@ -25,7 +25,10 @@
 
 <body>
     <header>
-
+        <nav class="navbar container-fluid">
+            <a href="./index.html"><img src="./assets/images/logo.png" width="150" height="100%">Full Stack Development
+                Challenge</a>
+        </nav>
     </header>
     <main>
         <section id="foundations-of-javascript">
@@ -406,7 +409,10 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6>Complete Sentence: <span id="completeSentence"></span></h6>
+                                    <input type="text" id="user_value" placeholder="Enter any value or 'exit'">
+                                    <button id="user_value_btn">Submit</button>
+                                    <p id="entered_value"></p>
+                                    <p id="invalid_user_value" style="color:red;"></p>
                                 </div>
                             </div>
                         </div>

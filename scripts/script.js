@@ -123,7 +123,6 @@ function IsPrime() {
 document.getElementById("is_prime_btn").addEventListener("click", IsPrime);
 
 //4. Array Iteration
-
 let arrayElements = Array(
   12,
   [11, 10, 2],
@@ -139,3 +138,33 @@ for (let i = 0; i < arrayElements.length; i++) {
 }
 document.getElementById("array_elements").textContent =
   "Array Elements: " + output.slice(0, -2);
+
+//5. While loop Example
+function displayValue() {
+  while (true) {
+    let value = document.getElementById("user_value").value;
+
+    // Exit condition
+    if (value.toLowerCase() === "exit") {
+      document.getElementById("invalid_user_value").textContent = "Exiting...";
+      return; // Stop further execution
+    }
+
+    // Validation check
+    if (!isNaN(value)) {
+      document.getElementById("entered_value").textContent =
+        "You entered: " + value;
+      document.getElementById("invalid_user_value").textContent = "";
+      document.getElementById("entered_value").textContent = "";
+      document.getElementById("entered_value").textContent =
+        "Please enter another value to continue or enter 'exit'";
+    } else {
+      document.getElementById("invalid_user_value").textContent =
+        "Please enter a valid number";
+    }
+  }
+}
+
+document
+  .getElementById("user_value_btn")
+  .addEventListener("click", displayValue);
