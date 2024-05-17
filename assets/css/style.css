@@ -11,15 +11,35 @@ html, body{
 }
 
 /* Header */
+.about-nav{
+    display: flex;
+    margin: auto;
+}
+
+.first-nav-container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+.second-nav-container{
+    margin-top: -70px;
+}
+
+.second-nav-container button{
+    margin-top: -50px;
+    position: absolute;
+    right: 10px;
+}
 
 /*Section 1: Foundations of JavaScript */
 #foundations-of-javascript{
-    max-width: 70vw;
+    max-width: 80vw;
     margin: auto;
 }
 
 .category{
-    margin-top: 60px;
     margin-bottom: 30px;
     text-align: center;
     color: blueviolet;
@@ -27,7 +47,7 @@ html, body{
 }
 
 .subcategory{
-    margin-top: 60px;
+    margin-top: 20px;
     margin-bottom: 30px;
     text-align: center;
     color: rgb(15, 160, 205);
@@ -74,4 +94,20 @@ button, label{
     margin: 7px;
 }
 
+@media screen and (min-width: 768px) {
+.backend{
+margin-right: 32vw;
+}
+}
 
+@media screen and (min-width: 992px) {
+    .backend{
+    margin-right: 27vw;
+    }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .backend{
+        margin-right: 20vw;
+        }
+        }
