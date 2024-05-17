@@ -267,9 +267,16 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6>Concatenation Result: <span id="concat_result"></span></h6>
-                                    <h6>Uppercase String: <span id="upper_str"></span></h6>
-                                    <h6>String Length: <span id="str_length"></span></h6>
+                                    <h6 id="elIntroMessage"></h6>
+                                    <label for="eventListenerColorBtn">This is Event Listener Color Button:</label>
+                                    <button class="btn btn-secondary" id="eventListenerColorBtn">Event Listener Color
+                                        Button</button>
+                                    <label for="eventListenerTextBtn">This is Event Listener Text Button:</label>
+                                    <button class="btn btn-secondary" id="eventListenerTextBtn">Event Listener Text
+                                        Button</button>
+                                    <label for="eventListenerToggleBtn">This is Event Listener Toggler Button:</label>
+                                    <button class="btn btn-secondary" id="eventListenerToggleBtn">Event Listener Toggler
+                                        Button</button>
                                 </div>
                             </div>
                         </div>
@@ -281,11 +288,20 @@
                                     2. Event Listener Higher-Order Function
                                 </h5>
                                 <p class="card-text">
-                                    Question: Implement a higher-order function in Kotlin that allows for easy handling
-                                    of button click events across multiple views. The function should accept a lambda
-                                    expression that defines what happens when a button is clicked. Demonstrate how this
-                                    higher-order function simplifies adding click listeners to buttons in an Android
-                                    application.
+                                    Question: Create a JavaScript function, handleButtonClick, that simplifies adding
+                                    click event listeners to buttons on a webpage. This function should accept two
+                                    parameters: a button element and a callback function. When invoked,
+                                    handleButtonClick should set up an event listener on the provided button element,
+                                    executing the callback function when the button is clicked.
+
+                                    Provide an example demonstrating how this function can be used to handle click
+                                    events for multiple buttons on a webpage, each triggering a different action. For
+                                    example:
+
+                                    Clicking "Button 1" should change the background color of the webpage.
+                                    Clicking "Button 2" should display an alert message with a custom text.
+                                    Clicking "Button 3" should toggle the visibility of a specific element on the
+                                    webpage.
                                 </p>
                             </div>
                         </div>
@@ -301,14 +317,16 @@
                                     3. Set Operations with Higher-Order Functions
                                 </h5>
                                 <p class="card-text">
-                                    Question: Define higher-order functions in Scheme that operate on sets represented
-                                    as lists. Implement takewhile and dropwhile functions that manipulate lists based on
-                                    a predicate. Provide examples demonstrating how these functions can be used to
-                                    filter elements from a list according to a condition.
-                                    Check if it's raining OR sunny and store the result in a variable
-                                    is_raining_or_sunny.
-                                    Negate the value of is_raining and store the result in a variable not_raining.
-                                    Display the values of is_raining_and_sunny, is_raining_or_sunny, and not_raining.
+                                    Define higher-order functions in JavaScript that operate on arrays. Implement
+                                    takeWhile and dropWhile functions that manipulate arrays based on a predicate.
+                                    Provide examples demonstrating how these functions can be used to filter elements
+                                    from an array according to a condition.
+
+                                    Additionally, perform the following tasks:
+
+                                    Check if it's raining OR sunny and store the result in a variable isRainingOrSunny.
+                                    Negate the value of isRainingOrSunny and store the result in a variable notRaining.
+                                    Display the values of isRainingOrSunny, notRaining, and isRainingAndSunny.
                                 </p>
                             </div>
                         </div>

@@ -39,3 +39,59 @@ document.getElementById("hofResultBtn").addEventListener("click", function () {
   let num2 = parseFloat(document.getElementById("secondNum").value);
   applyOperation(num1, num2, callbackFunc);
 });
+
+//2. Function as an argument (Event Listener)
+function handleButtonClick(button, callback) {
+  document.getElementById("elIntroMessage").textContent =
+    "Hey, I am a Higher Order Function and I will execute an Event Listener Callback Function in each button if you double click it:";
+
+  button.addEventListener("click", function () {
+    callback(button);
+  });
+}
+
+function eventListenerCallbackFunc(button) {
+  let actionType;
+  switch (button.id) {
+    case "eventListenerColorBtn":
+      actionType = "colorBtn";
+      break;
+    case "eventListenerTextBtn":
+      actionType = "textBtn";
+      break;
+    case "eventListenerToggleBtn":
+      actionType = "toggleBtn";
+      break;
+  }
+
+  if (actionType === "colorBtn") {
+    document.getElementById("eventListenerColorBtn").style.backgroundColor =
+      "purple";
+  } else if (actionType === "textBtn") {
+    document.getElementById("eventListenerTextBtn").textContent =
+      "I am your new placeholder - all thanks to Event Listener";
+  } else if (actionType === "toggleBtn") {
+    document.getElementById("eventListenerToggleBtn").style.display = "none";
+  }
+}
+
+//Link event listener to color button
+document
+  .getElementById("eventListenerColorBtn")
+  .addEventListener("click", function () {
+    handleButtonClick(this, eventListenerCallbackFunc);
+  });
+
+//Link event listener to text button
+document
+  .getElementById("eventListenerTextBtn")
+  .addEventListener("click", function () {
+    handleButtonClick(this, eventListenerCallbackFunc);
+  });
+
+//Link event listener to toggle button
+document
+  .getElementById("eventListenerToggleBtn")
+  .addEventListener("click", function () {
+    handleButtonClick(this, eventListenerCallbackFunc);
+  });
