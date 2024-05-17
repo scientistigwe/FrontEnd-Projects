@@ -50,7 +50,7 @@ document.getElementById("message").textContent = message;
 const price = 19.99;
 const quantity = 5;
 const total_cost = price * quantity;
-const completeSentence = `The total cost is $'${total_cost}`;
+const completeSentence = `The total cost is $ ${total_cost}`;
 
 document.getElementById("completeSentence").textContent = completeSentence;
 
