@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,22 +20,197 @@
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
         integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
     <!-- Custom CSS link -->
-    <link rel="stylesheet" href="../Full-Stack-Dev.-Challenge/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 
 <body>
+    <!-- Header Section -->
     <header>
-        <nav class="navbar container-fluid">
-            <a href="./index.html"><img src="../Full-Stack-Dev.-Challenge/assets/images/logo.png" width="150"
-                    height="100%">Full Stack Development
-                Challenge</a>
+        <!-- First Navigation Bar -->
+        <!-- Menu items -->
+        <div class="navbar navbar-expand-md row first-nav-container">
+            <ul class="navbar-nav">
+                <li class="col nav-item">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#cvModal"
+                        data-bs-whatever="scientistigwe@gmail.com"><img src="../assets/icons/about.svg"
+                            alt="About this Challenge" width="20" height="20"> About</button>
+                    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="cvModalLabel">Request CV</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Thank you for requesting my CV. Please provide the following information to
+                                        help
+                                        me fulfill your request.</p>
+                                    <form>
+                                        <div class="mb-3" required>
+                                            <div class="input-group multiple-inputs">
+                                                <span class="input-group-text">Names</span>
+                                                <input type="text" aria-label="First name" class="form-control"
+                                                    placeholder="First Name">
+                                                <input type="text" aria-label="Last name" class="form-control"
+                                                    placeholder="Last Name">
+                                            </div>
+                                            <br>
+                                            <div class="input-group multiple-inputs" required>
+                                                <span class="input-group-text">Email</span>
+                                                <input type="email" aria-label="Email" class="form-control"
+                                                    placeholder="Email Address">
+                                            </div>
+                                            <br>
+                                            <select class="form-select" required>
+                                                <option selected>Select reason for requesting this file</option>
+                                                <option value="1">Job Offer</option>
+                                                <option value="2">Template</option>
+                                                <option value="3">Others</option>
+                                            </select>
+                                            <br>
+                                            <div class="input-group multiple-inputs" required>
+                                                <span class="input-group-text">Job Spec. url</span>
+                                                <input type="text" aria-label="URL" class="form-control"
+                                                    placeholder="Enter Job Specification URL or N/A if not applicable">
+                                            </div>
+                                            <br>
+                                            <div class="mb-3">
+                                                <textarea class="form-control" id="message-text"
+                                                    placeholder="Enter any additional message regarding this request."></textarea>
+                                            </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Send Request</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="col nav-item">
+                    <a class="nav-link" href="https://github.com/scientistigwe" target="_blank">
+                        <span class="menu-item-text"><img src="../assets/icons/github.png" alt="Github logo" width="20"
+                                height="20"> Github
+                        </span>
+                    </a>
+                </li>
+                <li class="col nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/igwe-chibueze-c-47453289/" target="_blank">
+                        <span class="menu-item-text"><img src="../assets/icons/linkedin.png" alt="Linkedin logo"
+                                width="20" height="20"> Linkedin
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <!-- Second Navigation Bar -->
+        <nav class="navbar navbar-expand-md">
+            <div class="first-nav-container">
+                <nav class="navbar container-fluid">
+                    <a href="./index.html"><img src="../assets/images/logo.png" width="250" height="100%"></a>
+                </nav>
+
+            </div>
+            <!-- NavBar Icon -->
+            <div class="first-nav-container">
+                <button class="navbar-toggler logo" type="button" data-bs-toggle="collapse" data-bs-target="#menu-items"
+                    aria-controls="menu-items" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Menu items -->
+                <div class="collapse navbar-collapse" id="menu-items">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="../templates/intermediate-js-concepts.html5"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false"><span
+                                    class="menu-item-text"><img src="../assets/icons/frontend.png" alt="FrontEnd"
+                                        width="20" height="20">
+                                    FrontEnd</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../index.html">
+                                        <span class="menu-item-text"><img src="../assets/icons/fundamental.png"
+                                                alt="foundations of javascript" width="20" height="20"> Foundations of
+                                            JS
+                                        </span>
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item" href="../templates/intermediate-js-concepts.html"><span
+                                            class="menu-item-text"><img src="../assets/icons/intermediate.png"
+                                                alt="intermediate-js-concepts" width="20" height="20"> Intermediate JS
+                                            Concepts</span></a>
+                                </li>
+                                <li><a class="dropdown-item" href="../templates/advanced-js.html"><span
+                                            class="menu-item-text"><img src="../assets/icons/advanced.png"
+                                                alt="advanced-js.html" width="20" height="20">
+                                            Advanced JS</span></a>
+                                </li>
+                                <li><a class="dropdown-item" href="../templates/js-frameworks-libraries.html"><span
+                                            class="menu-item-text"><img src="../assets/icons/framework.png"
+                                                alt="JS Frameworks & Libraries" width="20" height="20"> JS Frameworks
+                                            and Libraries</span></a>
+                                </li>
+                                <li><a class="dropdown-item" href="../templates/fe-tools-techniques.html"><span
+                                            class="menu-item-text"><img src="../assets/icons/tools.png"
+                                                alt="tools & techniques" width="20" height="20">
+                                            FrontEnd Tools & Techniques</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="../templates/be-auth-auth.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><span class="menu-item-text"><img
+                                        src="../assets/icons/backend.png" alt="BackEnd" width="20" height="20">
+                                    BackEnd</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../templates/be-auth-auth.html"><span
+                                            class="menu-item-text"><img src="../assets/icons/Authentication.png" alt="Authentication &
+                                                Authorization page" width="20" height="20"> Authentication &
+                                            Authorization</span></a>
+                                </li>
+                                <li><a class="dropdown-item" href="../templates/be-api-security-testing.html"><span
+                                            class="menu-item-text"><img src="../assets/icons/api_icon_129131.png"
+                                                alt="API Security and Testing page" width="20" height="20">
+                                            API Security and Testing</span></a>
+                                </li>
+                                <li><a class="dropdown-item" href="../templates/be-ssr-caching.html"><span
+                                            class="menu-item-text"><img src="../assets/icons/backend.png"
+                                                alt="Server-Side Rendering (SSR) and Caching page" width="20"
+                                                height="20">
+                                            Server-Side Rendering (SSR) and Caching</span></a>
+                                </li>
+                                <li><a class="dropdown-item" href="../templates/be-realtime-comm-websocket.html"><span
+                                            class="menu-item-text"><img src="../assets/icons/api_icon_129131.png"
+                                                alt="Real-Time Communication and WebSockets page" width="20"
+                                                height="20">
+                                            Real-Time Communication and WebSockets</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            </div>
         </nav>
+
     </header>
+
+    <!-- Main Section -->
+
     <main>
         <section id="foundations-of-javascript">
             <div class="container-fluid">
-                <h1 class="category">Foundations of JavaScript</h1>
+                <h1 class="category">Advanced Javascript topics</h1>
                 <hr>
                 <h2 class="subcategory">A. Variables & Data Types</h2>
                 <hr>
