@@ -24,11 +24,258 @@
 </head>
 
 <body>
+    <!-- Header Section -->
     <header>
-        <nav class="navbar container-fluid">
-            <a href="./index.html"><img src="./assets/images/logo.png" width="150" height="100%">Full Stack Development
-                Challenge</a>
+        <!-- First Navigation Bar -->
+        <!-- Menu items -->
+        <div class="navbar navbar-expand-md row first-nav-container">
+            <ul class="navbar-nav">
+                <li class="col nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="menu-item-text"><img src="./assets/icons/about-me.svg" alt="About me" width="20"
+                                height="20"> About
+                            me</span>
+                    </a>
+                </li>
+                <li class="col nav-item">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#cvModal"
+                        data-bs-whatever="scientistigwe@gmail.com"><img src="./assets/icons/download.png"
+                            alt="Link to Download CV" width="20" height="20"> CV</button>
+                    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="cvModalLabel">Request CV</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Thank you for requesting my CV. Please provide the following information to
+                                        help
+                                        me fulfill your request.</p>
+                                    <form>
+                                        <div class="mb-3" required>
+                                            <div class="input-group multiple-inputs">
+                                                <span class="input-group-text">Names</span>
+                                                <input type="text" aria-label="First name" class="form-control"
+                                                    placeholder="First Name">
+                                                <input type="text" aria-label="Last name" class="form-control"
+                                                    placeholder="Last Name">
+                                            </div>
+                                            <br>
+                                            <div class="input-group multiple-inputs" required>
+                                                <span class="input-group-text">Email</span>
+                                                <input type="email" aria-label="Email" class="form-control"
+                                                    placeholder="Email Address">
+                                            </div>
+                                            <br>
+                                            <select class="form-select" required>
+                                                <option selected>Select reason for requesting this file</option>
+                                                <option value="1">Job Offer</option>
+                                                <option value="2">Template</option>
+                                                <option value="3">Others</option>
+                                            </select>
+                                            <br>
+                                            <div class="input-group multiple-inputs" required>
+                                                <span class="input-group-text">Job Spec. url</span>
+                                                <input type="text" aria-label="URL" class="form-control"
+                                                    placeholder="Enter Job Specification URL or N/A if not applicable">
+                                            </div>
+                                            <br>
+                                            <div class="mb-3">
+                                                <textarea class="form-control" id="message-text"
+                                                    placeholder="Enter any additional message regarding this request."></textarea>
+                                            </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Send Request</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="col nav-item">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#contactModal"
+                        data-bs-whatever="scientistigwe@gmail.com"><img src="./assets/icons/contact-me.png"
+                            alt="Contact me" width="20" height="20">
+                        Contact me</button>
+                    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="contactModalLabel">Contact me</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <h5>Your Information:</h5>
+                                            <div class="input-group multiple-inputs">
+                                                <span class="input-group-text">Your Details</span>
+                                                <input type="text" aria-label="First name" class="form-control"
+                                                    placeholder="First Name">
+                                                <input type="text" aria-label="Last name" class="form-control"
+                                                    placeholder="Last Name">
+                                            </div>
+                                            <br>
+                                            <h5>Email Address:</h5>
+                                            <div class="input-group multiple-inputs">
+                                                <span class="input-group-text">@</span>
+                                                <input type="email" aria-label="Email" class="form-control"
+                                                    placeholder="Email Address">
+                                            </div>
+                                            <br>
+                                            <h5>Subject:</h5>
+                                            <input type="text" class="form-control" placeholder="Enter Subject">
+                                            <br>
+                                            <div class="mb-3">
+                                                <label for="message-text" class="col-form-label">Message:</label>
+                                                <textarea class="form-control" id="message-text"
+                                                    placeholder="Enter your message here."></textarea>
+                                            </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="col nav-item">
+                    <a class="nav-link" href="https://github.com/scientistigwe" target="_blank">
+                        <span class="menu-item-text"><img src="./assets/icons/github.png" alt="Github logo" width="20"
+                                height="20"> Github
+                        </span>
+                    </a>
+                </li>
+                <li class="col nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/igwe-chibueze-c-47453289/" target="_blank">
+                        <span class="menu-item-text"><img src="./assets/icons/linkedin.png" alt="Linkedin logo"
+                                width="20" height="20"> Linkedin
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <!-- Second Navigation Bar -->
+        <nav class="navbar navbar-expand-md">
+            <div class="first-nav-container">
+                <nav class="navbar container-fluid">
+                    <a href="./index.html"><img src="./assets/images/logo.png" width="250" height="100%"></a>
+                </nav>
+
+            </div>
+            <!-- NavBar Icon -->
+            <div class="first-nav-container">
+                <button class="navbar-toggler logo" type="button" data-bs-toggle="collapse" data-bs-target="#menu-items"
+                    aria-controls="menu-items" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Menu items -->
+                <div class="collapse navbar-collapse" id="menu-items">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="./templates/travel.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><span class="menu-item-text"><img
+                                        src="./assets/icons/sparetime.png" alt="FrontEnd" width="20" height="20">
+                                    FrontEnd</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./index.html">
+                                        <span class="menu-item-text"><img src="./assets/icons/travel.png"
+                                                alt="foundations of javascript" width="20" height="20"> Foundations of
+                                            JS
+                                        </span>
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="../Full-Stack-Dev.-Challenge/templates/intermediate-js-concepts.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/travel.png"
+                                                alt="intermediate-js-concepts" width="20" height="20"> Intermediate JS
+                                            Concepts</span></a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="../Full-Stack-Dev.-Challenge/templates/advanced-js.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/game.png"
+                                                alt="advanced-js.html" width="20" height="20">
+                                            Advanced JS</span></a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="../Full-Stack-Dev.-Challenge/templates/js-frameworks-libraries.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/travel.png"
+                                                alt="JS Frameworks & Libraries" width="20" height="20"> JS Frameworks
+                                            and Libraries</span></a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="../Full-Stack-Dev.-Challenge/templates//fe-tools-techniques.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/game.png"
+                                                alt="tools & techniques" width="20" height="20">
+                                            FrontEnd Tools & Techniques</span></a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="../Full-Stack-Dev.-Challenge/templates/intermediate-js-concepts.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/travel.png"
+                                                alt="intermediate-js-concepts" width="20" height="20"> Intermediate JS
+                                            Concepts</span></a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="../Full-Stack-Dev.-Challenge/templates/advanced-js.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/game.png"
+                                                alt="advanced-js.html" width="20" height="20">
+                                            Advanced JS</span></a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="../Full-Stack-Dev.-Challenge/templates/intermediate-js-concepts.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/travel.png"
+                                                alt="intermediate-js-concepts" width="20" height="20"> Intermediate JS
+                                            Concepts</span></a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="../Full-Stack-Dev.-Challenge/templates/advanced-js.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/game.png"
+                                                alt="advanced-js.html" width="20" height="20">
+                                            Advanced JS</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="./templates/travel.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><span class="menu-item-text"><img
+                                        src="./assets/icons/sparetime.png" alt="BackEnd" width="20" height="20">
+                                    BackEnd</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./templates/travel.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/travel.png"
+                                                alt="Travel page" width="20" height="20"> Travel</span></a>
+                                </li>
+                                <li><a class="dropdown-item" href="./templates/games.html"><span
+                                            class="menu-item-text"><img src="./assets/icons/game.png" alt="Games page"
+                                                width="20" height="20">
+                                            Games</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            </div>
         </nav>
+
+    </header>
     </header>
     <main>
         <section id="foundations-of-javascript">
@@ -383,7 +630,7 @@
                     </div>
                 </div>
                 <hr>
-                <!-- 5. While Loop Example -->
+                <!-- 5. IF-ELSE Example -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
@@ -419,46 +666,186 @@
                     </div>
                 </div>
                 <hr>
-            </div>
-
-            </div>
-        </section>
-
-
-
-        <section id="Intermediate-js-concepts">
-            <div class="container-fluid">
-                <h1>Intermediate JS Concepts</h1>
-                <h3>A. Higher-Order Functions</h3>
+                <h2 class="subcategory">C. Functions</h2>
+                <hr>
+                <!-- 1. Function Definition and Usage -->
                 <div class="row">
-                    <div class="col-md 6">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">1. Function as an Argument Task</h4>
-                                <p class="card-text">Write a higher-order function that accepts another function as an
-                                    argument.
-                                    Define a function, such as applyOperation, that takes two numbers and a callback
-                                    function as parameters.
-                                    Use the callback function to perform a specific operation on the two numbers, such
-                                    as addition, subtraction, multiplication, or division.
-                                    Test the higher-order function by passing different callback functions to perform
-                                    various arithmetic operations.</p>
+                                <h5 class="card-title">
+                                    1. Function Definition and Usage
+                                </h5>
+                                <p class="card-text">
+                                    Define a function named calculateArea that takes two parameters length and width
+                                    representing the dimensions of a rectangle.
+                                    Within the function, calculate the area of the rectangle using the formula area =
+                                    length * width.
+                                    Return the calculated area.
+                                    Call the function with arguments 5 and 8, and display the returned value. </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md 6">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Output (See <a
+                                <h5 class="card-title">
+                                    Output (See <a
                                         href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                        target="_blank">script.js</a> for details) </h4>
-                                <p class="card-text">
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                </div>
+                                <h6><span id="areaOfRectangle"></span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <hr>
+                <!-- 2. Scope Understanding -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <p> <span id="globalVar" style="color:rgb(154, 12, 189);"></span>
+                                    </p>
+                                    <h6><span id="localVar" style="color: blue;"></span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    2. Scope Understanding
+                                </h5>
+                                <p class="card-text">
+                                    Declare a variable globalVar outside of any function scope and assign it a value.
+                                    Define a function testScope that declares a variable localVar inside its scope and
+                                    assigns it a different value.
+                                    Attempt to access both globalVar and localVar from within the function.
+                                    Display the values of both variables to understand their scopes.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <hr>
+                <!-- 3. Parameter Usage -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    3. Parameter Usage
+                                </h5>
+                                <p class="card-text">
+                                    Define a function calculateInterest that takes three parameters: principal, rate,
+                                    and time.
+                                    Within the function, calculate the simple interest using the formula interest =
+                                    (principal * rate * time) / 100.
+                                    Return the calculated interest.
+                                    Call the function with arguments 1000, 5, and 2, and display the returned value.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <p><span id="calculateInterest" style="color: brown;"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 4. Return Values -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class=" card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <div><span id="findMax" style="color: chocolate;"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    4. Return Values
+                                </h5>
+                                <p class="card-text">
+                                    Define a function findMax that takes an array of integers as a parameter.
+                                    Within the function, find and return the maximum value in the array.
+                                    Call the function with an array of integers [10, 25, 8, 30, 15], and display the
+                                    returned maximum value.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 5. Function Composition -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    5. Function Composition
+                                </h5>
+                                <p class="card-text">
+                                    Define two functions: add and multiply.
+                                    The add function should take two parameters and return their sum.
+                                    The multiply function should take two parameters and return their product.
+                                    Call both functions with appropriate arguments and display the results of their
+                                    compositions (e.g., add(2, 3) * multiply(4, 5)).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <input type="text" id="user_value" placeholder="Enter any value or 'exit'">
+                                    <button id="user_value_btn">Submit</button>
+                                    <p id="entered_value"></p>
+                                    <p id="invalid_user_value" style="color:red;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
             </div>
         </section>
     </main>

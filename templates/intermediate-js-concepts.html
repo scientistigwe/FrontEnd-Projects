@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Chibueze C. Igwe">
+    <meta name="description"
+        content="This is a compilation of tasks around frontend and backend software development. It ranges from basic to advanced components like JavaScript, Python, SQL, frameworks etc.">
+    <meta name="keywords" content="Land Acquisition, Property, RealEstate, Commercial Land">
+    <title>Full Stack Dev. Challenge</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="40x40" href="../Full-Stack-Dev.-Challenge/assets/images/logo.png">
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
+        integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+    <!-- Custom CSS link -->
+    <link rel="stylesheet" href="../Full-Stack-Dev.-Challenge/assets/css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar container-fluid">
+            <a href="./index.html"><img src="../Full-Stack-Dev.-Challenge/assets/images/logo.png" width="150"
+                    height="100%">Full Stack Development
+                Challenge</a>
+        </nav>
+    </header>
+    <main>
+        <section id="foundations-of-javascript">
+            <div class="container-fluid">
+                <h1 class="category">Intermediate JS Concepts</h1>
+                <hr>
+                <h2 class="subcategory">A. Higher-Order Functions</h2>
+                <hr>
+                <!-- 1. Function as an Argument Task -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    1. Function as an Argument Task
+                                </h5>
+                                <p class="card-text">
+                                    Write a higher-order function that accepts another function as an argument.
+                                    Define a function, such as applyOperation, that takes two numbers and a callback
+                                    function as parameters.
+                                    Use the callback function to perform a specific operation on the two numbers, such
+                                    as addition, subtraction, multiplication, or division.
+                                    Test the higher-order function by passing different callback functions to perform
+                                    various arithmetic operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Sum Result: <span id="sum_result"></span></h6>
+                                    <h6>Subtraction Result: <span id="sub_result"></span></h6>
+                                    <h6>Multiplication Result: <span id="mul_result"></span></h6>
+                                    <h6>Division Result: <span id="div_result"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 2. String Manipulation -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class=" card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Concatenation Result: <span id="concat_result"></span></h6>
+                                    <h6>Uppercase String: <span id="upper_str"></span></h6>
+                                    <h6>String Length: <span id="str_length"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    2. String Manipulation
+                                </h5>
+                                <p class="card-text">
+                                    Declare a string variable str1 and assign it the value "Hello".
+                                    Declare another string variable str2 and assign it the value "World".
+                                    Concatenate str1 and str2 and store the result in a variable concat_result.
+                                    Convert str1 to uppercase and store the result in a variable upper_str.
+                                    Find the length of str2 and store the result in a variable str_length.
+                                    Display the values of concat_result, upper_str, and str_length.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 3. Boolean Operations -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    3. Boolean Operations
+                                </h5>
+                                <p class="card-text">
+                                    Declare a boolean variable is_raining and assign it the value true.
+                                    Declare another boolean variable is_sunny and assign it the value false.
+                                    Check if it's raining AND sunny and store the result in a variable
+                                    is_raining_and_sunny.
+                                    Check if it's raining OR sunny and store the result in a variable
+                                    is_raining_or_sunny.
+                                    Negate the value of is_raining and store the result in a variable not_raining.
+                                    Display the values of is_raining_and_sunny, is_raining_or_sunny, and not_raining.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Is raining and sunny?: <span id="is_raining_and_sunny"></span></h6>
+                                    <h6>Is raining or sunny?: <span id="is_raining_or_sunny"></span></h6>
+                                    <h6>Not raining: <span id="not_raining"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 4. Variable Interactions -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class=" card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Message: <span id="message"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    4. Variable Interactions
+                                </h5>
+                                <p class="card-text">
+                                    Declare a string variable name and assign it a name of your choice.
+                                    Declare an integer variable age and assign it your age.
+                                    Concatenate name and age to create a message like "My name is [name] and I am [age]
+                                    years
+                                    old." and store it in a variable message.
+                                    Display the value of message.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 5. Mixed Operations -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    5. Mixed Operations
+                                </h5>
+                                <p class="card-text">
+                                    Declare a float variable price and assign it a value of 19.99.
+                                    Declare an integer variable quantity and assign it a value of 5.
+                                    Multiply price and quantity to calculate the total cost and store it in a variable
+                                    total_cost.
+                                    Convert total_cost to a string and concatenate it with a message like "The total
+                                    cost is $"
+                                    to create a complete sentence.
+                                    Display the complete sentence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                    <h6>Complete Sentence: <span id="completeSentence"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- Bootstrap JS Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome JS Link -->
+    <script src="https://kit.fontawesome.com/01058b62ac.js" crossorigin="anonymous"></script>
+
+    <!-- Custom JS Link -->
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

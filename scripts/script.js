@@ -165,3 +165,42 @@ function displayValue() {
 document
   .getElementById("user_value_btn")
   .addEventListener("click", displayValue);
+
+/**  Part C: Functions:  **/
+//Function definition and Usage
+(function calculateArea(length, width) {
+  let area = length * width;
+  document.getElementById("areaOfRectangle").textContent =
+    "Area of the rectangle is: " + area;
+})(5, 8);
+
+//2. Scope Understanding
+let globalVar =
+  "I am a global variable but I was accessed inside a local variable.";
+(function testScope() {
+  let localVar =
+    "I am a local variable and I can only be accessed inside my function.";
+
+  document.getElementById("globalVar").textContent = globalVar;
+  document.getElementById("localVar").textContent = localVar;
+})();
+
+//3. Parameter Usage
+(function calculateInterest(principal, rate, time) {
+  let simpleInterest = (principal * rate * time) / 100;
+  document.getElementById("calculateInterest").textContent =
+    "Simple Interest: " + simpleInterest;
+})(1000, 5, 2);
+
+//4. Return Values
+(function findMax(arr) {
+  let maxElement = arr[0];
+
+  arr.forEach((element) => {
+    if (maxElement < element) {
+      maxElement = element;
+    }
+  });
+  document.getElementById("findMax").textContent =
+    "Max Element in the array of elements [" + arr + "] is : " + maxElement;
+})([10, 25, 8, 30, 15]);
