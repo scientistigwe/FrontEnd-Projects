@@ -204,3 +204,31 @@ let globalVar =
   document.getElementById("findMax").textContent =
     "Max Element in the array of elements [" + arr + "] is : " + maxElement;
 })([10, 25, 8, 30, 15]);
+
+//5. Function Composition
+function addFunc(num1, num2) {
+  let addNumber = num1 + num2;
+  document.getElementById("addMultiplyResult").textContent =
+    "Addition of " + num1 + " & " + num2 + " is " + addNumber;
+}
+
+function multplierFunc(num1, num2) {
+  let multiplierNumber = num1 * num2;
+  document.getElementById("addMultiplyResult").textContent =
+    "Product of " + num1 + " & " + num2 + " is " + multiplierNumber;
+}
+
+document.getElementById("addAndMultBtn").addEventListener("click", function () {
+  let num1 = parseFloat(document.getElementById("userInputNumber1").value);
+  let num2 = parseFloat(document.getElementById("userInputNumber2").value);
+  let actionType = parseFloat(document.getElementById("actionType").value);
+
+  if (actionType === 1) {
+    addFunc(num1, num2);
+  } else if (actionType === 2) {
+    multplierFunc(num1, num2);
+  } else {
+    document.getElementById("invalidAddMultiplyResult").textContent =
+      "Please enter valid action type";
+  }
+});
