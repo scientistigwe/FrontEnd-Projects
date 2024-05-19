@@ -17,7 +17,7 @@ document.getElementById("div_result").textContent = div_result;
 const str1 = "Hello";
 const str2 = "World";
 
-const concat_result = str1 + " " + str2;
+const concat_result = `${str1}  ${str2}`;
 const upper_str = str1.toUpperCase();
 const str_length = str2.length;
 
@@ -69,7 +69,9 @@ function pickMaxNum() {
   }
   let max_num = Math.max(first_num, second_num);
 
-  document.getElementById("max_num").textContent = max_num;
+  document.getElementById(
+    "max_num"
+  ).textContent = `The max number between ${first_num} and ${second_num} is ${max_num}`;
 }
 document.getElementById("max_num_btn").addEventListener("click", pickMaxNum);
 
@@ -89,8 +91,9 @@ function calFactorial() {
     factorial *= i;
   }
 
-  document.getElementById("input_number").textContent = pos_integer;
-  document.getElementById("factorial_result").textContent = factorial;
+  document.getElementById(
+    "input_number"
+  ).textContent = `The factorial of ${pos_integer} is ${factorial}`;
 }
 
 document
@@ -139,7 +142,7 @@ for (let i = 0; i < arrayElements.length; i++) {
 document.getElementById("array_elements").textContent =
   "Array Elements: " + output.slice(0, -2);
 
-//5. While loop Example
+//5. IF-ELSE loop Example
 function displayValue() {
   let value = document.getElementById("user_value").value.trim();
 
@@ -201,15 +204,17 @@ let globalVar =
       maxElement = element;
     }
   });
-  document.getElementById("findMax").textContent =
-    "Max Element in the array of elements [" + arr + "] is : " + maxElement;
+  document.getElementById(
+    "findMax"
+  ).textContent = `Max Element in ${arr} is ${maxElement}`;
 })([10, 25, 8, 30, 15]);
 
 //5. Function Composition
 function addFunc(num1, num2) {
   let addNumber = num1 + num2;
-  document.getElementById("addMultiplyResult").textContent =
-    "Addition of " + num1 + " & " + num2 + " is " + addNumber;
+  document.getElementById(
+    "addMultiplyResult"
+  ).textContent = `Addition of ${num1} and ${num2} is ${addNumber}`;
 }
 
 function multplierFunc(num1, num2) {
@@ -231,4 +236,27 @@ document.getElementById("addAndMultBtn").addEventListener("click", function () {
     document.getElementById("invalidAddMultiplyResult").textContent =
       "Please enter valid action type";
   }
+});
+
+/** Arrays and Objects **/
+document.addEventListener("DOMContentLoaded", () => {
+  let myArray = Array(); // Initialize an empty array
+  document.getElementById(
+    "initializedArray"
+  ).textContent = `Initialized Array is: [${myArray}]`;
+
+  myArray.push(10, 20, 30); // Add elements to the array
+  document.getElementById(
+    "myArray"
+  ).textContent = `Array after adding elements: [${myArray}]`;
+
+  myArray[1] = 25; // Update the second element in the array
+  document.getElementById(
+    "secondElementAlteredArray"
+  ).textContent = `Array after updating second element: [${myArray}]`;
+
+  myArray.pop(); // Remove the last element from the array
+  document.getElementById(
+    "lastElementRemovedArray"
+  ).textContent = `Array after removing last element: [${myArray}]`;
 });

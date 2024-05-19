@@ -29,10 +29,10 @@
     <header>
         <!-- First Navigation Bar -->
         <!-- Menu items -->
-        <div class="navbar navbar-expand-md row first-nav-container">
+        <div class="navbar navbar-expand-md row">
             <ul class="navbar-nav">
                 <li class="col nav-item">
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#cvModal"
+                    <button type="button" class="btn about-nav" data-bs-toggle="modal" data-bs-target="#cvModal"
                         data-bs-whatever="scientistigwe@gmail.com"><img src="../assets/icons/about.svg"
                             alt="About this Challenge" width="20" height="20"> About</button>
                     <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel"
@@ -40,68 +40,31 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="cvModalLabel">Request CV</h1>
+                                    <h1 class="modal-title fs-5" id="cvModalLabel">About this Project</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Thank you for requesting my CV. Please provide the following information to
-                                        help
-                                        me fulfill your request.</p>
-                                    <form>
-                                        <div class="mb-3" required>
-                                            <div class="input-group multiple-inputs">
-                                                <span class="input-group-text">Names</span>
-                                                <input type="text" aria-label="First name" class="form-control"
-                                                    placeholder="First Name">
-                                                <input type="text" aria-label="Last name" class="form-control"
-                                                    placeholder="Last Name">
-                                            </div>
-                                            <br>
-                                            <div class="input-group multiple-inputs" required>
-                                                <span class="input-group-text">Email</span>
-                                                <input type="email" aria-label="Email" class="form-control"
-                                                    placeholder="Email Address">
-                                            </div>
-                                            <br>
-                                            <select class="form-select" required>
-                                                <option selected>Select reason for requesting this file</option>
-                                                <option value="1">Job Offer</option>
-                                                <option value="2">Template</option>
-                                                <option value="3">Others</option>
-                                            </select>
-                                            <br>
-                                            <div class="input-group multiple-inputs" required>
-                                                <span class="input-group-text">Job Spec. url</span>
-                                                <input type="text" aria-label="URL" class="form-control"
-                                                    placeholder="Enter Job Specification URL or N/A if not applicable">
-                                            </div>
-                                            <br>
-                                            <div class="mb-3">
-                                                <textarea class="form-control" id="message-text"
-                                                    placeholder="Enter any additional message regarding this request."></textarea>
-                                            </div>
-                                    </form>
+                                    <p>Thank you for visiting this page. This is......
+                                    </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Send Request</button>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                 </li>
-
-                <li class="col nav-item">
+                <li class="col nav-item first-nav-container">
                     <a class="nav-link" href="https://github.com/scientistigwe" target="_blank">
                         <span class="menu-item-text"><img src="../assets/icons/github.png" alt="Github logo" width="20"
                                 height="20"> Github
                         </span>
                     </a>
                 </li>
-                <li class="col nav-item">
+                <li class="col nav-item first-nav-container">
                     <a class="nav-link" href="https://www.linkedin.com/in/igwe-chibueze-c-47453289/" target="_blank">
                         <span class="menu-item-text"><img src="../assets/icons/linkedin.png" alt="Linkedin logo"
                                 width="20" height="20"> Linkedin
@@ -112,27 +75,24 @@
         </div>
         <hr>
         <!-- Second Navigation Bar -->
-        <nav class="navbar navbar-expand-md">
-            <div class="first-nav-container">
-                <nav class="navbar container-fluid">
-                    <a href="../index.html"><img src="../assets/images/logo.png" width="250" height="100%"></a>
-                </nav>
-
+        <nav class="navbar navbar-expand-md second-nav-container">
+            <div class="navbar container-fluid">
+                <a href="../index.html"><img src="../assets/images/logo.png" width="250" height="100%"></a>
             </div>
             <!-- NavBar Icon -->
-            <div class="first-nav-container">
-                <button class="navbar-toggler logo" type="button" data-bs-toggle="collapse" data-bs-target="#menu-items"
-                    aria-controls="menu-items" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Menu items -->
-                <div class="collapse navbar-collapse" id="menu-items">
-                    <ul class="navbar-nav me-auto">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-items"
+                aria-controls="menu-items" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu items -->
+            <div class="collapse navbar-collapse" id="menu-items">
+                <div class="frontend-backend">
+                    <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="../templates/intermediate-js-concepts.html5"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false"><span
-                                    class="menu-item-text"><img src="../assets/icons/frontend.png" alt="FrontEnd"
-                                        width="20" height="20">
+                                    class="menu-item-text frontend"><img src="../assets/icons/frontend.png"
+                                        alt="FrontEnd" width="20" height="20">
                                     FrontEnd</span>
                             </a>
                             <ul class="dropdown-menu">
@@ -165,7 +125,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown backend">
                             <a class="nav-link dropdown-toggle" href="../templates/be-auth-auth.html" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false"><span class="menu-item-text"><img
                                         src="../assets/icons/backend.png" alt="BackEnd" width="20" height="20">
@@ -199,14 +159,11 @@
                     </ul>
                 </div>
             </div>
-            </div>
-            </div>
         </nav>
 
     </header>
 
     <!-- Main Section -->
-
     <main>
         <section id="foundations-of-javascript">
             <div class="container-fluid">
@@ -214,28 +171,26 @@
                 <hr>
                 <h2 class="subcategory">A. Variables & Data Types</h2>
                 <hr>
-                <!-- 1. Variable Declaration and Arithmetic Operations -->
+                <!-- 1. Simple Component Creation -->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    1. Variable Declaration and Arithmetic Operations
+                                    1. Simple Component Creation
                                 </h5>
                                 <p class="card-text">
-                                    Declare two variables num1 and num2 of integer type and assign them values
-                                    10 and 5
-                                    respectively.
-                                    Perform the following operations:
-                                    Add num1 and num2 and store the result in a variable sum_result.
-                                    Subtract num2 from num1 and store the result in a variable sub_result.
-                                    Multiply num1 and num2 and store the result in a variable mul_result.
-                                    Divide num1 by num2 and store the result in a variable div_result.
-                                    Display the values of sum_result, sub_result, mul_result, and div_result.</p>
+                                    Simple Component Creation:
+                                    Create a functional React component that displays a "Hello, World!" message. Convert
+                                    this component into a class component and render both components in the main App
+                                    component.
+
+                                    Hint: Use function HelloWorld() { ... } for the functional component and class
+                                    HelloWorld extends React.Component { ... } for the class component.
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -244,17 +199,15 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6>Sum Result: <span id="sum_result"></span></h6>
-                                    <h6>Subtraction Result: <span id="sub_result"></span></h6>
-                                    <h6>Multiplication Result: <span id="mul_result"></span></h6>
-                                    <h6>Division Result: <span id="div_result"></span></h6>
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <!-- 2. String Manipulation -->
+                <!-- 2. State Management in a Component -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
@@ -265,9 +218,7 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6>Concatenation Result: <span id="concat_result"></span></h6>
-                                    <h6>Uppercase String: <span id="upper_str"></span></h6>
-                                    <h6>String Length: <span id="str_length"></span></h6>
+
                                 </div>
                             </div>
                         </div>
@@ -276,38 +227,35 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    2. String Manipulation
+                                    2. State Management in a Component
                                 </h5>
                                 <p class="card-text">
-                                    Declare a string variable str1 and assign it the value "Hello".
-                                    Declare another string variable str2 and assign it the value "World".
-                                    Concatenate str1 and str2 and store the result in a variable concat_result.
-                                    Convert str1 to uppercase and store the result in a variable upper_str.
-                                    Find the length of str2 and store the result in a variable str_length.
-                                    Display the values of concat_result, upper_str, and str_length.
+                                    Build a simple counter application using React. Create a component that displays a
+                                    counter value and two buttons to increment and decrement the counter. Use the
+                                    useState hook to manage the counter state.
+
+                                    Hint: Use const [count, setCount] = useState(0); to manage state in a functional
+                                    component."
+
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <!-- 3. Boolean Operations -->
+                <!-- 3. Event Handling -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    3. Boolean Operations
+                                    3. Event Handling
                                 </h5>
                                 <p class="card-text">
-                                    Declare a boolean variable is_raining and assign it the value true.
-                                    Declare another boolean variable is_sunny and assign it the value false.
-                                    Check if it's raining AND sunny and store the result in a variable
-                                    is_raining_and_sunny.
-                                    Check if it's raining OR sunny and store the result in a variable
-                                    is_raining_or_sunny.
-                                    Negate the value of is_raining and store the result in a variable not_raining.
-                                    Display the values of is_raining_and_sunny, is_raining_or_sunny, and not_raining.
+                                    Create a React component with an input field and a button. Implement an event
+                                    handler that updates the component's state with the current value of the input field
+                                    when the button is clicked. Display the updated value below the input field.
+                                    Hint: Use onChange event for the input field and onClick event for the button.
                                 </p>
                             </div>
                         </div>
@@ -321,16 +269,14 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6>Is raining and sunny?: <span id="is_raining_and_sunny"></span></h6>
-                                    <h6>Is raining or sunny?: <span id="is_raining_or_sunny"></span></h6>
-                                    <h6>Not raining: <span id="not_raining"></span></h6>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <!-- 4. Variable Interactions -->
+                <!-- 4. Lifecycle Methods -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
@@ -350,38 +296,39 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    4. Variable Interactions
+                                    4. Lifecycle Methods
                                 </h5>
                                 <p class="card-text">
-                                    Declare a string variable name and assign it a name of your choice.
-                                    Declare an integer variable age and assign it your age.
-                                    Concatenate name and age to create a message like "My name is [name] and I am [age]
-                                    years
-                                    old." and store it in a variable message.
-                                    Display the value of message.
+                                    Implement a class component that uses lifecycle methods to log messages to the
+                                    console when the component mounts and unmounts. Display a button to toggle the
+                                    visibility of this component to trigger mounting and unmounting.
+
+                                    Hint: Use componentDidMount and componentWillUnmount lifecycle methods in the class
+                                    component.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <!-- 5. Mixed Operations -->
+                <!-- 5. Component Communication (Props) -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    5. Mixed Operations
+                                    5. Component Communication (Props)
                                 </h5>
                                 <p class="card-text">
-                                    Declare a float variable price and assign it a value of 19.99.
-                                    Declare an integer variable quantity and assign it a value of 5.
-                                    Multiply price and quantity to calculate the total cost and store it in a variable
-                                    total_cost.
-                                    Convert total_cost to a string and concatenate it with a message like "The total
-                                    cost is $"
-                                    to create a complete sentence.
-                                    Display the complete sentence.</p>
+                                    :
+                                    Create a parent component that passes data to a child component via props. The child
+                                    component should display the data received from the parent. Implement a button in
+                                    the parent component that changes the data being passed to the child component.
+
+                                    Hint: Use props to pass data:
+                                    <ChildComponent data={this.state.data} /> and access it in the child component with
+                                    props.data.
+                                </p>
                             </div>
                         </div>
                     </div>

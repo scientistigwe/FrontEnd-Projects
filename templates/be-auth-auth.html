@@ -29,10 +29,10 @@
     <header>
         <!-- First Navigation Bar -->
         <!-- Menu items -->
-        <div class="navbar navbar-expand-md row first-nav-container">
+        <div class="navbar navbar-expand-md row ">
             <ul class="navbar-nav">
                 <li class="col nav-item">
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#cvModal"
+                    <button type="button" class="btn about-nav" data-bs-toggle="modal" data-bs-target="#cvModal"
                         data-bs-whatever="scientistigwe@gmail.com"><img src="../assets/icons/about.svg"
                             alt="About this Challenge" width="20" height="20"> About</button>
                     <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel"
@@ -40,68 +40,31 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="cvModalLabel">Request CV</h1>
+                                    <h1 class="modal-title fs-5" id="cvModalLabel">About this Project</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Thank you for requesting my CV. Please provide the following information to
-                                        help
-                                        me fulfill your request.</p>
-                                    <form>
-                                        <div class="mb-3" required>
-                                            <div class="input-group multiple-inputs">
-                                                <span class="input-group-text">Names</span>
-                                                <input type="text" aria-label="First name" class="form-control"
-                                                    placeholder="First Name">
-                                                <input type="text" aria-label="Last name" class="form-control"
-                                                    placeholder="Last Name">
-                                            </div>
-                                            <br>
-                                            <div class="input-group multiple-inputs" required>
-                                                <span class="input-group-text">Email</span>
-                                                <input type="email" aria-label="Email" class="form-control"
-                                                    placeholder="Email Address">
-                                            </div>
-                                            <br>
-                                            <select class="form-select" required>
-                                                <option selected>Select reason for requesting this file</option>
-                                                <option value="1">Job Offer</option>
-                                                <option value="2">Template</option>
-                                                <option value="3">Others</option>
-                                            </select>
-                                            <br>
-                                            <div class="input-group multiple-inputs" required>
-                                                <span class="input-group-text">Job Spec. url</span>
-                                                <input type="text" aria-label="URL" class="form-control"
-                                                    placeholder="Enter Job Specification URL or N/A if not applicable">
-                                            </div>
-                                            <br>
-                                            <div class="mb-3">
-                                                <textarea class="form-control" id="message-text"
-                                                    placeholder="Enter any additional message regarding this request."></textarea>
-                                            </div>
-                                    </form>
+                                    <p>Thank you for visiting this page. This is......
+                                    </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Send Request</button>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                 </li>
-
-                <li class="col nav-item">
+                <li class="col nav-item first-nav-container">
                     <a class="nav-link" href="https://github.com/scientistigwe" target="_blank">
                         <span class="menu-item-text"><img src="../assets/icons/github.png" alt="Github logo" width="20"
                                 height="20"> Github
                         </span>
                     </a>
                 </li>
-                <li class="col nav-item">
+                <li class="col nav-item first-nav-container">
                     <a class="nav-link" href="https://www.linkedin.com/in/igwe-chibueze-c-47453289/" target="_blank">
                         <span class="menu-item-text"><img src="../assets/icons/linkedin.png" alt="Linkedin logo"
                                 width="20" height="20"> Linkedin
@@ -112,27 +75,24 @@
         </div>
         <hr>
         <!-- Second Navigation Bar -->
-        <nav class="navbar navbar-expand-md">
-            <div class="first-nav-container">
-                <nav class="navbar container-fluid">
-                    <a href="../index.html"><img src="../assets/images/logo.png" width="250" height="100%"></a>
-                </nav>
-
+        <nav class="navbar navbar-expand-md second-nav-container">
+            <div class="navbar container-fluid">
+                <a href="../index.html"><img src="../assets/images/logo.png" width="250" height="100%"></a>
             </div>
             <!-- NavBar Icon -->
-            <div class="first-nav-container">
-                <button class="navbar-toggler logo" type="button" data-bs-toggle="collapse" data-bs-target="#menu-items"
-                    aria-controls="menu-items" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Menu items -->
-                <div class="collapse navbar-collapse" id="menu-items">
-                    <ul class="navbar-nav me-auto">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-items"
+                aria-controls="menu-items" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu items -->
+            <div class="collapse navbar-collapse" id="menu-items">
+                <div class="frontend-backend">
+                    <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="../templates/intermediate-js-concepts.html5"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false"><span
-                                    class="menu-item-text"><img src="../assets/icons/frontend.png" alt="FrontEnd"
-                                        width="20" height="20">
+                                    class="menu-item-text frontend"><img src="../assets/icons/frontend.png"
+                                        alt="FrontEnd" width="20" height="20">
                                     FrontEnd</span>
                             </a>
                             <ul class="dropdown-menu">
@@ -165,7 +125,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown backend">
                             <a class="nav-link dropdown-toggle" href="../templates/be-auth-auth.html" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false"><span class="menu-item-text"><img
                                         src="../assets/icons/backend.png" alt="BackEnd" width="20" height="20">
@@ -198,8 +158,6 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-            </div>
             </div>
         </nav>
 

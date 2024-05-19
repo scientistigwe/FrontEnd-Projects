@@ -52,6 +52,7 @@ function handleButtonClick(button, callback) {
 
 function eventListenerCallbackFunc(button) {
   let actionType;
+
   switch (button.id) {
     case "eventListenerColorBtn":
       actionType = "colorBtn";
