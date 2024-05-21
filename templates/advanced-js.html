@@ -201,6 +201,7 @@
                                 <div class="card-text">
                                     <h6></h6><span id="myWorkerSent" style="color: green;"></span></h6>
                                     <h6><span id="myWorkerReceived"></span></h6>
+                                    <h6><span id="errorMessage"></span></h6>
                                 </div>
                             </div>
                         </div>
@@ -218,9 +219,12 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6><span id="concat_result"></span></h6>
-                                    <h6><span id="upper_str"></span></h6>
-                                    <h6><span id="str_length"></span></h6>
+                                    <h6><label for="csvFile">Enter CSV file that has atleast quantity & unit price
+                                            columns:</label></h6>
+                                    <input type="file" id="csvFile">
+                                    <h6><span id="sendCSV"></span></h6>
+                                    <h6><span id="csvResult"></span></h6>
+                                    <h6><span id="processCsvErrorMessage"></span></h6>
                                 </div>
                             </div>
                         </div>
@@ -234,7 +238,7 @@
                                 <p class="card-text">
                                     Entrust the web worker with a demanding computational task as follows:
                                     1. Data Loading: Load a sample dataset from a CSV file in the main script. The
-                                    dataset comprises two columns: "quantity" and "price".
+                                    dataset <strong>MOST</strong> have "quantity" and "unit price" columns.
                                     2. Data Cleansing (Web Worker): Cleanse the columns by removing duplicates.
                                     3. Total Revenue Calculation (Web Worker): Determine the total revenue for each
                                     entry
