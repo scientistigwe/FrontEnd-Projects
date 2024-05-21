@@ -172,27 +172,31 @@
                 <hr>
                 <h2 class="subcategory">A. Web Workers</h2>
                 <hr>
-                <!-- 1. Basic Setup -->
+                <!-- 1. Basic Setup & Message Passing -->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    1. Basic Setup
+                                    1. Basic Setup & Message Passing
                                 </h5>
                                 <p class="card-text">
-                                    Create a new web worker. Write a JavaScript file for the worker and
-                                    instantiate it in the main script using new Worker('worker.js').</p>
+                                    Create a new web worker. Write a JavaScript file
+                                    for the worker and instantiate it in the main script using new Worker('worker.js').
+                                    Implement communication between the main thread and the web worker. Use postMessage
+                                    and onmessage to send and receive messages.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     Output (See <a
-                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                        target="_blank">script.js</a> for details)
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/advanced-js.js"
+                                        target="_blank">main-script.js</a> and <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js">worker.js</a>
+                                    script for solution)
                                 </h5>
                                 <div class="card-text">
                                     <h6></h6><span id="myWorkerSent" style="color: green;"></span></h6>
@@ -203,9 +207,9 @@
                     </div>
                 </div>
                 <hr>
-                <!-- 2. String Manipulation -->
+                <!-- 2. Data Processing Task -->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card">
                             <div class=" card-body">
                                 <h5 class="card-title">
@@ -214,26 +218,32 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6>Concatenation Result: <span id="concat_result"></span></h6>
-                                    <h6>Uppercase String: <span id="upper_str"></span></h6>
-                                    <h6>String Length: <span id="str_length"></span></h6>
+                                    <h6><span id="concat_result"></span></h6>
+                                    <h6><span id="upper_str"></span></h6>
+                                    <h6><span id="str_length"></span></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    2. String Manipulation
+                                    2. Data Processing Task
                                 </h5>
                                 <p class="card-text">
-                                    Declare a string variable str1 and assign it the value "Hello".
-                                    Declare another string variable str2 and assign it the value "World".
-                                    Concatenate str1 and str2 and store the result in a variable concat_result.
-                                    Convert str1 to uppercase and store the result in a variable upper_str.
-                                    Find the length of str2 and store the result in a variable str_length.
-                                    Display the values of concat_result, upper_str, and str_length.
+                                    Entrust the web worker with a demanding computational task as follows:
+                                    1. Data Loading: Load a sample dataset from a CSV file in the main script. The
+                                    dataset comprises two columns: "quantity" and "price".
+                                    2. Data Cleansing (Web Worker): Cleanse the columns by removing duplicates.
+                                    3. Total Revenue Calculation (Web Worker): Determine the total revenue for each
+                                    entry
+                                    by multiplying the "quantity" and "price" columns.
+                                    4. Price Statistics Computation (Web Worker): Compute the average, maximum, and
+                                    minimum values of the "price" column.
+                                    5. Results Transmission: Transmit the meticulously processed dataset, total revenue,
+                                    and price statistics
+                                    back to the main thread for further analysis or visualization.
                                 </p>
                             </div>
                         </div>

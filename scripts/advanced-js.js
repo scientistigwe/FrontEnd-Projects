@@ -1,7 +1,7 @@
 /**
  * A. Web Worker
  */
-//1. Basic setup
+//1. Basic setup & Message Passing
 
 if (window.Worker) {
   const myWorker = new Worker("worker.js"); //Instantiate new worker
@@ -22,3 +22,6 @@ if (window.Worker) {
     "errorMessage"
   ).textContent = `Window does not support worker`;
 }
+
+//2. Data Processing Task
+//Note: To access a csv file in your directory: 1. initialize node.js (npm init -y); 2. install csv-parser (npm install csv-parser)
