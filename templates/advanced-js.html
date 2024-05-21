@@ -170,26 +170,19 @@
             <div class="container-fluid">
                 <h1 class="category">Advanced Javascript topics</h1>
                 <hr>
-                <h2 class="subcategory">A. Variables & Data Types</h2>
+                <h2 class="subcategory">A. Web Workers</h2>
                 <hr>
-                <!-- 1. Variable Declaration and Arithmetic Operations -->
+                <!-- 1. Basic Setup -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    1. Variable Declaration and Arithmetic Operations
+                                    1. Basic Setup
                                 </h5>
                                 <p class="card-text">
-                                    Declare two variables num1 and num2 of integer type and assign them values
-                                    10 and 5
-                                    respectively.
-                                    Perform the following operations:
-                                    Add num1 and num2 and store the result in a variable sum_result.
-                                    Subtract num2 from num1 and store the result in a variable sub_result.
-                                    Multiply num1 and num2 and store the result in a variable mul_result.
-                                    Divide num1 by num2 and store the result in a variable div_result.
-                                    Display the values of sum_result, sub_result, mul_result, and div_result.</p>
+                                    Create a new web worker. Write a JavaScript file for the worker and
+                                    instantiate it in the main script using new Worker('worker.js').</p>
                             </div>
                         </div>
                     </div>
@@ -202,10 +195,8 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6>Sum Result: <span id="sum_result"></span></h6>
-                                    <h6>Subtraction Result: <span id="sub_result"></span></h6>
-                                    <h6>Multiplication Result: <span id="mul_result"></span></h6>
-                                    <h6>Division Result: <span id="div_result"></span></h6>
+                                    <h6></h6><span id="myWorkerSent" style="color: green;"></span></h6>
+                                    <h6><span id="myWorkerReceived"></span></h6>
                                 </div>
                             </div>
                         </div>
@@ -372,7 +363,7 @@
     <script src="https://kit.fontawesome.com/01058b62ac.js" crossorigin="anonymous"></script>
 
     <!-- Custom JS Link -->
-    <script src="./scripts/script.js"></script>
+    <script src="../scripts/advanced-js.js"></script>
 </body>
 
 </html>
