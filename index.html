@@ -33,7 +33,7 @@
                 <li class="col nav-item">
                     <button type="button" class="btn about-nav" data-bs-toggle="modal" data-bs-target="#cvModal"
                         data-bs-whatever="scientistigwe@gmail.com"><img src="./assets/icons/about.svg"
-                            alt="About this Challenge" width="20" height="20"> About</button>
+                            alt="About this Challenge" width="20" id="about-id"> About</button>
                     <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -87,43 +87,194 @@
             <div class="collapse navbar-collapse" id="menu-items">
                 <div class="frontend-backend">
                     <ul class="navbar-nav">
+                        <!-- FrontEnd Section -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="./templates/intermediate-js-concepts.html5"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false"><span
-                                    class="menu-item-text frontend"><img src="./assets/icons/frontend.png"
-                                        alt="FrontEnd" width="20" height="20">
-                                    FrontEnd</span>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="menu-item-text frontend">
+                                    <img src="./assets/icons/frontend.png" alt="FrontEnd" width="20" height="20">
+                                    FrontEnd
+                                </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./index.html">
-                                        <span class="menu-item-text"><img src="./assets/icons/fundamental.png"
-                                                alt="foundations of javascript" width="20" height="20"> Foundations of
-                                            JS
+                                <!-- JavaScript Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="./assets/icons/js-icon.png" alt="JavaScript" width="20"
+                                                height="20">
+                                            JavaScript
                                         </span>
                                     </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="./index.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/fundamental.png"
+                                                        alt="foundations of javascript" width="20" height="20">
+                                                    Foundations of JS
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="./templates/JavaScript/intermediate-js-concepts.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/intermediate.png"
+                                                        alt="intermediate-js-concepts" width="20" height="20">
+                                                    Intermediate JS Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./templates/JavaScript/advanced-js.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/advanced.png" alt="advanced-js.html"
+                                                        width="20" height="20">
+                                                    Advanced JS
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="./templates/JavaScript/js-frameworks-libraries.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/framework.png"
+                                                        alt="JS Frameworks & Libraries" width="20" height="20">
+                                                    JS Frameworks and Libraries
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="./templates/JavaScript/fe-tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    FrontEnd Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li><a class="dropdown-item" href="./templates/intermediate-js-concepts.html"><span
-                                            class="menu-item-text"><img src="./assets/icons/intermediate.png"
-                                                alt="intermediate-js-concepts" width="20" height="20"> Intermediate JS
-                                            Concepts</span></a>
+                                <!-- HTML Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="./assets/icons/html.png" alt="HTML5" width="20" height="20">
+                                            HTML5
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/foundations.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/fundamental.png"
+                                                        alt="foundations of python" width="20" height="20">
+                                                    Foundations of HTML5
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/intermediate.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/intermediate.png" alt="intermediate-python"
+                                                        width="20" height="20">
+                                                    Intermediate HTML5 Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/advanced.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/advanced.png" alt="advanced-python"
+                                                        width="20" height="20">
+                                                    Advanced HTML5
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/frameworks-libraries.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/framework.png"
+                                                        alt="Python Frameworks & Libraries" width="20" height="20">
+                                                    HTML5 Frameworks and Libraries
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    HTML5 Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li><a class="dropdown-item" href="./templates/advanced-js.html"><span
-                                            class="menu-item-text"><img src="./assets/icons/advanced.png"
-                                                alt="advanced-js.html" width="20" height="20">
-                                            Advanced JS</span></a>
-                                </li>
-                                <li><a class="dropdown-item" href="./templates/js-frameworks-libraries.html"><span
-                                            class="menu-item-text"><img src="./assets/icons/framework.png"
-                                                alt="JS Frameworks & Libraries" width="20" height="20"> JS Frameworks
-                                            and Libraries</span></a>
-                                </li>
-                                <li><a class="dropdown-item" href="./templates/fe-tools-techniques.html"><span
-                                            class="menu-item-text"><img src="./assets/icons/tools.png"
-                                                alt="tools & techniques" width="20" height="20">
-                                            FrontEnd Tools & Techniques</span></a>
+                                <!-- CSS Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="./assets/icons/css..png" alt="CSS" width="20" height="20">
+                                            CSS
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/foundations.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/fundamental.png" alt="foundations of CSS"
+                                                        width="20" height="20">
+                                                    Foundations of CSS
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/intermediate.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/intermediate.png" alt="intermediate-CSS"
+                                                        width="20" height="20">
+                                                    Intermediate CSS Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/advanced.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/advanced.png" alt="advanced-CSS" width="20"
+                                                        height="20">
+                                                    Advanced CSS
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/frameworks-libraries.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/framework.png"
+                                                        alt="Python Frameworks & Libraries" width="20" height="20">
+                                                    CSS Frameworks and Libraries
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    CSS Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
+                        <!-- BackEnd Section -->
                         <li class="nav-item dropdown backend">
                             <a class="nav-link dropdown-toggle" href="./templates/be-auth-auth.html" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false"><span class="menu-item-text"><img
@@ -131,27 +282,148 @@
                                     BackEnd</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./templates/be-auth-auth.html"><span
-                                            class="menu-item-text"><img src="./assets/icons/Authentication.png" alt="Authentication &
-                                                Authorization page" width="20" height="20"> Authentication &
-                                            Authorization</span></a>
-                                </li>
-                                <li><a class="dropdown-item" href="./templates/be-api-security-testing.html"><span
-                                            class="menu-item-text"><img src="./assets/icons/api_icon_129131.png"
-                                                alt="API Security and Testing page" width="20" height="20">
-                                            API Security and Testing</span></a>
-                                </li>
-                                <li><a class="dropdown-item" href="./templates/be-ssr-caching.html"><span
-                                            class="menu-item-text"><img src="./assets/icons/backend.png"
-                                                alt="Server-Side Rendering (SSR) and Caching page" width="20"
+                                <!-- JavaScript Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="./assets/icons/js-icon.png" alt="JavaScript" width="20"
                                                 height="20">
-                                            Server-Side Rendering (SSR) and Caching</span></a>
+                                            JavaScript
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="./templates/be-auth-auth.html"><span
+                                                    class="menu-item-text"><img src="./assets/icons/Authentication.png"
+                                                        alt="Authentication &
+                                                        Authorization page" width="20" height="20"> Authentication &
+                                                    Authorization</span></a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="./templates/be-api-security-testing.html"><span
+                                                    class="menu-item-text"><img src="./assets/icons/api_icon_129131.png"
+                                                        alt="API Security and Testing page" width="20" height="20">
+                                                    API Security and Testing</span></a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="./templates/be-ssr-caching.html"><span
+                                                    class="menu-item-text"><img src="./assets/icons/backend.png"
+                                                        alt="Server-Side Rendering (SSR) and Caching page" width="20"
+                                                        height="20">
+                                                    Server-Side Rendering (SSR) and Caching</span></a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="./templates/be-realtime-comm-websocket.html"><span
+                                                    class="menu-item-text"><img src="./assets/icons/api_icon_129131.png"
+                                                        alt="Real-Time Communication and WebSockets page" width="20"
+                                                        height="20">
+                                                    Real-Time Communication and WebSockets</span></a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li><a class="dropdown-item" href="./templates/be-realtime-comm-websocket.html"><span
-                                            class="menu-item-text"><img src="./assets/icons/api_icon_129131.png"
-                                                alt="Real-Time Communication and WebSockets page" width="20"
-                                                height="20">
-                                            Real-Time Communication and WebSockets</span></a>
+                                <!-- Python Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="./assets/icons/python.png" alt="Python" width="20" height="20">
+                                            Python
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/foundations.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/fundamental.png"
+                                                        alt="foundations of python" width="20" height="20">
+                                                    Foundations of Python
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/intermediate.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/intermediate.png" alt="intermediate-python"
+                                                        width="20" height="20">
+                                                    Intermediate Python Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/advanced.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/advanced.png" alt="advanced-python"
+                                                        width="20" height="20">
+                                                    Advanced Python
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/frameworks-libraries.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/framework.png"
+                                                        alt="Python Frameworks & Libraries" width="20" height="20">
+                                                    Python Frameworks and Libraries
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    Python Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- SQL Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="./assets/icons/postgresql.png" alt="SQL" width="20" height="20">
+                                            SQL
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/foundations.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/fundamental.png" alt="foundations of sql"
+                                                        width="20" height="20">
+                                                    Foundations of SQL
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/intermediate.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/intermediate.png" alt="intermediate-sql"
+                                                        width="20" height="20">
+                                                    Intermediate SQL Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/advanced.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/advanced.png" alt="advanced-sql" width="20"
+                                                        height="20">
+                                                    Advanced SQL
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    SQL Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
@@ -159,7 +431,6 @@
                 </div>
             </div>
         </nav>
-
     </header>
     <!-- Main Section -->
     <main>
@@ -1252,11 +1523,237 @@
                     </div>
                 </div>
                 <hr>
+
+                <h2 class="subcategory">G. Hoisting & Closures</h2>
+                <hr>
+
+                <h2 class="subcategory">H. Events & Event Handling</h2>
+                <hr>
+
+                <h2 class="subcategory">I. Scope & Context</h2>
+                <hr>
+
+                <h2 class="subcategory">J. Debugging Techniques</h2>
+                <hr>
+
+                <h2 class="subcategory">K. Regular Expressions</h2>
+                <hr>
+
+                <h2 class="subcategory">L. Prototypes & Inheritance</h2>
+                <hr>
+
+                <h2 class="subcategory">M. Asynchronous Programming</h2>
+                <hr>
+
+                <h2 class="subcategory">N. Promises & Async/Await</h2>
+                <hr>
+
+                <h2 class="subcategory">O. Error Handling</h2>
+                <hr>
+
+                <h2 class="subcategory">P. Fetch API & AJAX</h2>
+                <hr>
+                <!-- 1. Basic Fetch API Task -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    1. Basic Fetch API Task
+                                </h5>
+                                <p class="card-text">
+                                    Write JavaScript code to fetch data from a public API, such as JSONPlaceholder.
+                                    Use the Fetch API to make a GET request to retrieve data from the API endpoint.
+                                    Handle the response using .then() to parse the JSON data and log it to the console.
+                                    Test the code and ensure that the data is fetched successfully from the external
+                                    API.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 2. Fetch API with Error Handling Challenge -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    2. Fetch API with Error Handling Challenge
+                                </h5>
+                                <p class="card-text">
+                                    Extend the previous task to include error handling using the .catch() method.
+                                    Simulate an error condition by providing an invalid API endpoint or triggering a
+                                    network error.
+                                    Implement error handling in the .catch() block to log an error message if the
+                                    request fails.
+                                    Test the error handling mechanism by intentionally causing errors and verifying that
+                                    they are properly handled.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 3. AJAX Request Task -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    3. AJAX Request Task
+                                </h5>
+                                <p class="card-text">
+                                    Write JavaScript code to fetch data from an external API using AJAX (Asynchronous
+                                    JavaScript and XML).
+                                    Use the XMLHttpRequest object to make a GET request to the API endpoint.
+                                    Define a callback function to handle the response and parse the JSON data.
+                                    Display the retrieved data on the web page or log it to the console.
+                                    Test the AJAX request and ensure that the data is fetched and processed correctly.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 4. Handling POST Requests with Fetch API Challenge -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class=" card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    4. Handling POST Requests with Fetch API Challenge
+                                </h5>
+                                <p class="card-text">
+                                    Write JavaScript code to send data to an external API using the Fetch API with a
+                                    POST request.
+                                    Construct a POST request with JSON data and send it to the API endpoint.
+                                    Handle the response using .then() to process the response data or check for success
+                                    status.
+                                    Test the POST request functionality by sending data to the API and verifying that it
+                                    is processed correctly.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 5. Cross-Origin Requests (CORS) Exercise -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    5. Cross-Origin Requests (CORS) Exercise
+                                </h5>
+                                <p class="card-text">
+                                    Explore making cross-origin requests to fetch data from a different domain using the
+                                    Fetch API or AJAX.
+                                    Use a public API that supports cross-origin requests or set up a local server to
+                                    handle CORS requests.
+                                    Write JavaScript code to make a GET request to the external API and handle the
+                                    response.
+                                    Test the cross-origin request functionality and ensure that data can be fetched from
+                                    the external domain.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Output (See <a
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                        target="_blank">script.js</a> for details)
+                                </h5>
+                                <div class="card-text">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h2 class="subcategory">Q. Local Storage</h2>
+                <hr>
+
+                <h2 class="subcategory">R. Session Storage</h2>
+                <hr>
+
+                <h2 class="subcategory">S. Cookies</h2>
+                <hr>
+
+                <h2 class="subcategory">T. DOM Manipulation</h2>
+                <hr>
             </div>
         </section>
     </main>
     <footer>
-
+        <p>&copy; 2024 Full Stack Dev Challenge. All copyright.....</p>
+        <div><span>Facebook</span> <span>Github</span> <span>Linkedin</span></div>
     </footer>
     <!-- Bootstrap JS Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

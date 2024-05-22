@@ -19,7 +19,7 @@
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
         integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
     <!-- Custom CSS link -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
 </head>
 
@@ -32,8 +32,8 @@
             <ul class="navbar-nav">
                 <li class="col nav-item">
                     <button type="button" class="btn about-nav" data-bs-toggle="modal" data-bs-target="#cvModal"
-                        data-bs-whatever="scientistigwe@gmail.com"><img src="../assets/icons/about.svg"
-                            alt="About this Challenge" width="20" height="20"> About</button>
+                        data-bs-whatever="scientistigwe@gmail.com"><img src="../../assets/icons/about.svg"
+                            alt="About this Challenge" width="20" id="about-id"> About</button>
                     <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -58,14 +58,14 @@
                 </li>
                 <li class="col nav-item first-nav-container">
                     <a class="nav-link" href="https://github.com/scientistigwe" target="_blank">
-                        <span class="menu-item-text"><img src="../assets/icons/github.png" alt="Github logo" width="20"
-                                height="20"> Github
+                        <span class="menu-item-text"><img src="../../assets/icons/github.png" alt="Github logo"
+                                width="20" height="20"> Github
                         </span>
                     </a>
                 </li>
                 <li class="col nav-item first-nav-container">
                     <a class="nav-link" href="https://www.linkedin.com/in/igwe-chibueze-c-47453289/" target="_blank">
-                        <span class="menu-item-text"><img src="../assets/icons/linkedin.png" alt="Linkedin logo"
+                        <span class="menu-item-text"><img src="../../assets/icons/linkedin.png" alt="Linkedin logo"
                                 width="20" height="20"> Linkedin
                         </span>
                     </a>
@@ -76,7 +76,7 @@
         <!-- Second Navigation Bar -->
         <nav class="navbar navbar-expand-md second-nav-container">
             <div class="navbar container-fluid">
-                <a href="../index.html"><img src="../assets/images/logo.png" width="250" height="100%"></a>
+                <a href="../index.html"><img src="../../assets/images/logo.png" width="250" height="100%"></a>
             </div>
             <!-- NavBar Icon -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-items"
@@ -87,71 +87,343 @@
             <div class="collapse navbar-collapse" id="menu-items">
                 <div class="frontend-backend">
                     <ul class="navbar-nav">
+                        <!-- FrontEnd Section -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="../templates/intermediate-js-concepts.html5"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false"><span
-                                    class="menu-item-text frontend"><img src="../assets/icons/frontend.png"
-                                        alt="FrontEnd" width="20" height="20">
-                                    FrontEnd</span>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="menu-item-text frontend">
+                                    <img src="../../assets/icons/frontend.png" alt="FrontEnd" width="20" height="20">
+                                    FrontEnd
+                                </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../index.html">
-                                        <span class="menu-item-text"><img src="../assets/icons/fundamental.png"
-                                                alt="foundations of javascript" width="20" height="20"> Foundations of
-                                            JS
+                                <!-- JavaScript Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="../../assets/icons/js-icon.png" alt="JavaScript" width="20"
+                                                height="20">
+                                            JavaScript
                                         </span>
                                     </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="../../index.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/fundamental.png"
+                                                        alt="foundations of javascript" width="20" height="20">
+                                                    Foundations of JS
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="../../templates/JavaScript/intermediate-js-concepts.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/intermediate.png"
+                                                        alt="intermediate-js-concepts" width="20" height="20">
+                                                    Intermediate JS Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="../../templates/JavaScript/advanced-js.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/advanced.png" alt="advanced-js.html"
+                                                        width="20" height="20">
+                                                    Advanced JS
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="../../templates/JavaScript/js-frameworks-libraries.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/framework.png"
+                                                        alt="JS Frameworks & Libraries" width="20" height="20">
+                                                    JS Frameworks and Libraries
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="../../templates/JavaScript/fe-tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    FrontEnd Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li><a class="dropdown-item" href="../templates/intermediate-js-concepts.html"><span
-                                            class="menu-item-text"><img src="../assets/icons/intermediate.png"
-                                                alt="intermediate-js-concepts" width="20" height="20"> Intermediate JS
-                                            Concepts</span></a>
+                                <!-- HTML Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="../../assets/icons/html.png" alt="HTML5" width="20" height="20">
+                                            HTML5
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="../../Python/foundations.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/fundamental.png"
+                                                        alt="foundations of python" width="20" height="20">
+                                                    Foundations of HTML5
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="../../Python/intermediate.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/intermediate.png"
+                                                        alt="intermediate-python" width="20" height="20">
+                                                    Intermediate HTML5 Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="../../Python/advanced.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/advanced.png" alt="advanced-python"
+                                                        width="20" height="20">
+                                                    Advanced HTML5
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="../../Python/frameworks-libraries.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/framework.png"
+                                                        alt="Python Frameworks & Libraries" width="20" height="20">
+                                                    HTML5 Frameworks and Libraries
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="../../Python/tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    HTML5 Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li><a class="dropdown-item" href="../templates/advanced-js.html"><span
-                                            class="menu-item-text"><img src="../assets/icons/advanced.png"
-                                                alt="advanced-js.html" width="20" height="20">
-                                            Advanced JS</span></a>
-                                </li>
-                                <li><a class="dropdown-item" href="../templates/js-frameworks-libraries.html"><span
-                                            class="menu-item-text"><img src="../assets/icons/framework.png"
-                                                alt="JS Frameworks & Libraries" width="20" height="20"> JS Frameworks
-                                            and Libraries</span></a>
-                                </li>
-                                <li><a class="dropdown-item" href="../templates/fe-tools-techniques.html"><span
-                                            class="menu-item-text"><img src="../assets/icons/tools.png"
-                                                alt="tools & techniques" width="20" height="20">
-                                            FrontEnd Tools & Techniques</span></a>
+                                <!-- CSS Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="../../assets/icons/css..png" alt="CSS" width="20" height="20">
+                                            CSS
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="../../SQL/foundations.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/fundamental.png"
+                                                        alt="foundations of CSS" width="20" height="20">
+                                                    Foundations of CSS
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="../../SQL/intermediate.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/intermediate.png"
+                                                        alt="intermediate-CSS" width="20" height="20">
+                                                    Intermediate CSS Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="../../SQL/advanced.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/advanced.png" alt="advanced-CSS"
+                                                        width="20" height="20">
+                                                    Advanced CSS
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="../../Python/frameworks-libraries.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/framework.png"
+                                                        alt="Python Frameworks & Libraries" width="20" height="20">
+                                                    CSS Frameworks and Libraries
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="../../SQL/tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="../../assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    CSS Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
+                        <!-- BackEnd Section -->
                         <li class="nav-item dropdown backend">
-                            <a class="nav-link dropdown-toggle" href="../templates/be-auth-auth.html" role="button"
+                            <a class="nav-link dropdown-toggle" href="../../templates/be-auth-auth.html" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false"><span class="menu-item-text"><img
-                                        src="../assets/icons/backend.png" alt="BackEnd" width="20" height="20">
+                                        src="../../assets/icons/backend.png" alt="BackEnd" width="20" height="20">
                                     BackEnd</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../templates/be-auth-auth.html"><span
-                                            class="menu-item-text"><img src="../assets/icons/Authentication.png" alt="Authentication &
-                                                Authorization page" width="20" height="20"> Authentication &
-                                            Authorization</span></a>
-                                </li>
-                                <li><a class="dropdown-item" href="../templates/be-api-security-testing.html"><span
-                                            class="menu-item-text"><img src="../assets/icons/api_icon_129131.png"
-                                                alt="API Security and Testing page" width="20" height="20">
-                                            API Security and Testing</span></a>
-                                </li>
-                                <li><a class="dropdown-item" href="../templates/be-ssr-caching.html"><span
-                                            class="menu-item-text"><img src="../assets/icons/backend.png"
-                                                alt="Server-Side Rendering (SSR) and Caching page" width="20"
+                                <!-- JavaScript Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="../../assets/icons/js-icon.png" alt="JavaScript" width="20"
                                                 height="20">
-                                            Server-Side Rendering (SSR) and Caching</span></a>
+                                            JavaScript
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="./templates/be-auth-auth.html"><span
+                                                    class="menu-item-text"><img src="./assets/icons/Authentication.png"
+                                                        alt="Authentication &
+                                                        Authorization page" width="20" height="20"> Authentication &
+                                                    Authorization</span></a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="./templates/be-api-security-testing.html"><span
+                                                    class="menu-item-text"><img src="./assets/icons/api_icon_129131.png"
+                                                        alt="API Security and Testing page" width="20" height="20">
+                                                    API Security and Testing</span></a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="./templates/be-ssr-caching.html"><span
+                                                    class="menu-item-text"><img src="./assets/icons/backend.png"
+                                                        alt="Server-Side Rendering (SSR) and Caching page" width="20"
+                                                        height="20">
+                                                    Server-Side Rendering (SSR) and Caching</span></a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="./templates/be-realtime-comm-websocket.html"><span
+                                                    class="menu-item-text"><img src="./assets/icons/api_icon_129131.png"
+                                                        alt="Real-Time Communication and WebSockets page" width="20"
+                                                        height="20">
+                                                    Real-Time Communication and WebSockets</span></a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li><a class="dropdown-item" href="../templates/be-realtime-comm-websocket.html"><span
-                                            class="menu-item-text"><img src="../assets/icons/api_icon_129131.png"
-                                                alt="Real-Time Communication and WebSockets page" width="20"
-                                                height="20">
-                                            Real-Time Communication and WebSockets</span></a>
+                                <!-- Python Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="./assets/icons/python.png" alt="Python" width="20" height="20">
+                                            Python
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/foundations.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/fundamental.png"
+                                                        alt="foundations of python" width="20" height="20">
+                                                    Foundations of Python
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/intermediate.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/intermediate.png" alt="intermediate-python"
+                                                        width="20" height="20">
+                                                    Intermediate Python Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/advanced.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/advanced.png" alt="advanced-python"
+                                                        width="20" height="20">
+                                                    Advanced Python
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/frameworks-libraries.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/framework.png"
+                                                        alt="Python Frameworks & Libraries" width="20" height="20">
+                                                    Python Frameworks and Libraries
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./Python/tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    Python Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- SQL Sub-menu -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-item-text">
+                                            <img src="./assets/icons/postgresql.png" alt="SQL" width="20" height="20">
+                                            SQL
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/foundations.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/fundamental.png" alt="foundations of sql"
+                                                        width="20" height="20">
+                                                    Foundations of SQL
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/intermediate.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/intermediate.png" alt="intermediate-sql"
+                                                        width="20" height="20">
+                                                    Intermediate SQL Concepts
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/advanced.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/advanced.png" alt="advanced-sql" width="20"
+                                                        height="20">
+                                                    Advanced SQL
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./SQL/tools-techniques.html">
+                                                <span class="menu-item-text">
+                                                    <img src="./assets/icons/tools.png" alt="tools & techniques"
+                                                        width="20" height="20">
+                                                    SQL Tools & Techniques
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
@@ -159,7 +431,6 @@
                 </div>
             </div>
         </nav>
-
     </header>
 
     <!-- Main Section -->

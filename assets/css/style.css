@@ -10,7 +10,15 @@ html, body{
     background-color: rgba(249, 246, 248, 0.12);
 }
 
+#about-id{
+    font-size: 1.5em;
+}
 /* Header */
+
+
+header span, header li{
+    font-size: 1.1em;
+}
 .about-nav{
     display: flex;
     margin: auto;
@@ -32,6 +40,67 @@ html, body{
     position: absolute;
     right: 10px;
 }
+
+/* Submenu Class*/
+/* Base styles for the dropdown submenu */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+/* Add a left margin to make the submenu items more distinct */
+.dropdown-submenu > .dropdown-item::after {
+    content: "\f0da"; /* FontAwesome right arrow */
+    float: right;
+    border: none;
+    font-family: 'FontAwesome';
+}
+
+/* Ensure the submenu is displayed on hover */
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Optional: Style the submenu to look good */
+.dropdown-menu {
+    background-color: #fff; /* Change as needed */
+    border: 1px solid rgba(0, 0, 0, 0.15); /* Change as needed */
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: #0b64e9;
+    text-decoration: none;
+    background-color: #f8f9fa; /* Change as needed */
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 0.25rem 1.5rem;
+}
+
+/* Optional: Adding custom styles for submenu items */
+.dropdown-menu > .dropdown-submenu > .dropdown-item {
+    padding: 0.25rem 2.5rem 0.25rem 1.5rem;
+}
+
 
 /*Section 1: Foundations of JavaScript */
 #foundations-of-javascript{
@@ -94,20 +163,30 @@ button, label{
     margin: 7px;
 }
 
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 @media screen and (min-width: 768px) {
 .backend{
-margin-right: 32vw;
+margin-right: 70vw;
 }
 }
 
 @media screen and (min-width: 992px) {
     .backend{
-    margin-right: 27vw;
+    margin-right: 40vw;
     }
     }
 
     @media screen and (min-width: 1440px) {
         .backend{
-        margin-right: 20vw;
+        margin-right: 40vw;
         }
         }
