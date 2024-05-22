@@ -166,9 +166,9 @@
     <!-- Main Section -->
 
     <main>
-        <section id="foundations-of-javascript">
+        <section id="advanced-javascript">
             <div class="container-fluid">
-                <h1 class="category">Advanced Javascript topics</h1>
+                <h1 class="category">Advanced Javascript</h1>
                 <hr>
                 <h2 class="subcategory">A. Web Workers</h2>
                 <hr>
@@ -195,7 +195,7 @@
                                     Output (See <a
                                         href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/advanced-js.js"
                                         target="_blank">main-script.js</a> and <a
-                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js">worker.js</a>
+                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/worker.js">worker.js</a>
                                     script for solution)
                                 </h5>
                                 <div class="card-text">
@@ -219,11 +219,14 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6><label for="csvFile">Enter CSV file that has atleast quantity & unit price
+                                    <h6><label for="csvFile">Enter CSV file that have atleast quantity & unit price
                                             columns:</label></h6>
                                     <input type="file" id="csvFile">
                                     <h6><span id="sendCSV"></span></h6>
-                                    <h6><span id="csvResult"></span></h6>
+                                    <h6><span id="csvResultTotal" style="color: brown;"></span></h6>
+                                    <h6><span id="csvResultMaxQ" style="color: blue;"></span></h6>
+                                    <h6><span id="csvResultMaxP" style="color: green;"></span></h6>
+                                    <h6><span id="csvResultDupRemoved" style="color: violet;"></span></h6>
                                     <h6><span id="processCsvErrorMessage"></span></h6>
                                 </div>
                             </div>
@@ -239,15 +242,13 @@
                                     Entrust the web worker with a demanding computational task as follows:
                                     1. Data Loading: Load a sample dataset from a CSV file in the main script. The
                                     dataset <strong>MOST</strong> have "quantity" and "unit price" columns.
-                                    2. Data Cleansing (Web Worker): Cleanse the columns by removing duplicates.
-                                    3. Total Revenue Calculation (Web Worker): Determine the total revenue for each
+                                    2. Total Revenue Calculation (Web Worker): Determine the total revenue for each
                                     entry
-                                    by multiplying the "quantity" and "price" columns.
-                                    4. Price Statistics Computation (Web Worker): Compute the average, maximum, and
-                                    minimum values of the "price" column.
-                                    5. Results Transmission: Transmit the meticulously processed dataset, total revenue,
-                                    and price statistics
-                                    back to the main thread for further analysis or visualization.
+                                    by multiplying the "quantity" and "unit price" columns.
+                                    3. Price Statistics Computation (Web Worker): Compute the maximum and
+                                    minimum values of the "quantity" and "unit price" columns.
+                                    4. Results Transmission: Transmit the total revenue, quantity and price statistics
+                                    back to the main thread for visualization.
                                 </p>
                             </div>
                         </div>

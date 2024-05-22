@@ -29,18 +29,14 @@ function createAndMessage(data) {
 }
 
 function processCSV(data) {
-  console.log(`processCSV function initialized successfully`);
   const rows = data.split("\n");
-  const headers = rows[0].split(",");
+  let headers = rows[0].split(",");
   headers = headers.map((header) => header.toLowerCase());
 
-  const quantityIndex = lowercase.headers.indexOf("quantity");
-  const unitPriceIndex = lowercase.headers.indexOf("unit price");
+  const quantityIndex = headers.indexOf("quantity");
+  const unitPriceIndex = headers.indexOf("unit price");
+
   if (quantityIndex < 0 || unitPriceIndex < 0) {
-    console.log(`Second if statement passed successfully`);
-    console.log(
-      `quantityIndex: ${quantityIndex}, unitPriceIndex: ${unitPriceIndex}`
-    );
     self.postMessage({
       error:
         'Columns not found: please ensure csv contains "quantity" & "unit price" column in that format.',
@@ -49,7 +45,9 @@ function processCSV(data) {
   }
 
   const csvResult = [];
-  console.log(`csvResult Array initialized successfully`);
+  let maxQuantity = -Infinity;
+  let maxUnitPrice = -Infinity;
+
   for (let row of rows.slice(1)) {
     // Start from index 1 to skip header row
     const rowItems = row.split(",");
@@ -57,7 +55,16 @@ function processCSV(data) {
     if (rowItems.length > Math.max(quantityIndex, unitPriceIndex)) {
       const quantity = parseFloat(rowItems[quantityIndex]);
       const unitPrice = parseFloat(rowItems[unitPriceIndex]);
+
       csvResult.push({ quantity, unitPrice });
+
+      if (quantity > maxQuantity) {
+        maxQuantity = quantity;
+      }
+
+      if (unitPrice > maxUnitPrice) {
+        maxUnitPrice = unitPrice;
+      }
     }
   }
 
@@ -66,9 +73,13 @@ function processCSV(data) {
     0
   );
 
-  console.log(`Total sales ${totalSales}`);
   self.postMessage({
-    totalSales: totalSales, // Sending the total sales value as part of an object
+    totalSales: totalSales,
+    maxQuantity: maxQuantity,
+    maxUnitPrice: maxUnitPrice,
   });
-  console.log(`Total sales sent successfully`);
+
+  console.log(`Total sales sent successfully: ${totalSales}`);
+  console.log(`Max quantity sent successfully: ${maxQuantity}`);
+  console.log(`Max unit price sent successfully: ${maxUnitPrice}`);
 }
