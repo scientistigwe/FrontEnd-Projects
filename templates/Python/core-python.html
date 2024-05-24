@@ -473,7 +473,7 @@
                                 <h5 class="card-title">
                                     Output (See <a
                                         href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                        target="_blank">syntax.py</a> for details)
+                                        target="_blank" rel="noopener">syntax.py</a> for details)
                                 </h5>
                                 <div class="card-text">
 
@@ -484,7 +484,7 @@
                     </div>
                 </div>
                 <hr>
-                <!-- 2. Event Listener Higher-Order Function -->
+                <!-- 2. To-Do List Task using Linked List Custom Data Structure -->
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card">
@@ -495,16 +495,8 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6 id="elIntroMessage"></h6>
-                                    <label for="eventListenerColorBtn">Click button to change to purple</label>
-                                    <button class="btn btn-secondary" id="eventListenerColorBtn">Event Listener Color
-                                        Button</button>
-                                    <label for="eventListenerTextBtn">Click button to change intext</label>
-                                    <button class="btn btn-secondary" id="eventListenerTextBtn">Event Listener Text
-                                        Button</button>
-                                    <label for="eventListenerToggleBtn">Click to toggle button</label>
-                                    <button class="btn btn-secondary" id="eventListenerToggleBtn">Event Listener Toggler
-                                        Button</button>
+                                    <h3>Add Task:</h3>
+                                    <span id="add_task">{{ add_task }}</span>
                                 </div>
                             </div>
                         </div>
@@ -513,23 +505,29 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    2. Event Listener Higher-Order Function
+                                    2. To-Do List Task using Linked List Custom Data Structure
                                 </h5>
                                 <p class="card-text">
-                                    Question: Create a JavaScript function, handleButtonClick, that simplifies adding
-                                    click event listeners to buttons on a webpage. This function should accept two
-                                    parameters: a button element and a callback function. When invoked,
-                                    handleButtonClick should set up an event listener on the provided button element,
-                                    executing the callback function when the button is clicked.
-
-                                    Provide an example demonstrating how this function can be used to handle click
-                                    events for multiple buttons on a webpage, each triggering a different action. For
-                                    example:
-
-                                    Clicking "Button 1" should change the background color of the webpage.
-                                    Clicking "Button 2" should display an alert message with a custom text.
-                                    Clicking "Button 3" should toggle the visibility of a specific element on the
-                                    webpage.
+                                    <strong>Create Task Class:</strong>
+                                    Create a Task and ToDoList Class using a liked list data structure. The method will
+                                    be able to
+                                    perform the following tasks: add, remove, find tasks.
+                                    <br>
+                                    <strong>Initialize and Add Tasks:</strong>
+                                    Create an instance of the ToDoList class and initialize four tasks with the
+                                    following details: "Buy groceries" (Priority: 1, Due Date: "2024-05-23"), "Write
+                                    report" (Priority: 2, Due Date: "2024-05-24"), "Pay bills" (Priority: 1, Due Date:
+                                    "2024-05-25"), and "Prepare presentation" (Priority: 3, Due Date: "2024-05-26"). Add
+                                    the first three tasks to the ToDoList and store the initial state of the list.
+                                    <br>
+                                    <strong>Modify the To-Do List:</strong>
+                                    Remove the task "Write report" from the to-do list and store the updated state. Find
+                                    the task "Pay bills" in the list and store the found task details.
+                                    <br>
+                                    <strong>Final Update:</strong>
+                                    Add the task "Prepare presentation" to the to-do list and store the final state of
+                                    the list. What are the initial, updated, and final states of the to-do list after
+                                    performing these operations? What are the details of the task "Pay bills" if found?
                                 </p>
                             </div>
                         </div>
@@ -545,16 +543,8 @@
                                     3. Set Operations with Higher-Order Functions
                                 </h5>
                                 <p class="card-text">
-                                    Define higher-order functions in JavaScript that operate on arrays. Implement
-                                    takeWhile and dropWhile functions that manipulate arrays based on a predicate.
-                                    Provide examples demonstrating how these functions can be used to filter elements
-                                    from an array according to a condition.
 
-                                    Additionally, perform the following tasks:
 
-                                    Check if it's raining OR sunny and store the result in a variable isRainingOrSunny.
-                                    Negate the value of isRainingOrSunny and store the result in a variable notRaining.
-                                    Display the values of isRainingOrSunny, notRaining, and isRainingAndSunny.
                                 </p>
                             </div>
                         </div>
@@ -586,7 +576,8 @@
                                         target="_blank">script.js</a> for details)
                                 </h5>
                                 <div class="card-text">
-                                    <h6>Message: <span id="message"></span></h6>
+
+
                                 </div>
                             </div>
                         </div>
@@ -598,12 +589,8 @@
                                     4. Ordered Lists and Comparison
                                 </h5>
                                 <p class="card-text">
-                                    Ordered Lists and Comparison
-                                    Question: Develop a higher-order function in JavaScript called orderedBy, which
-                                    takes a comparison function as input and returns a predicate function. This
-                                    predicate should check whether a given array is totally ordered according to the
-                                    comparison function. Include examples showing how orderedBy can be used with
-                                    different comparison functions to validate the ordering of arrays. </p>
+
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -618,12 +605,8 @@
                                     5. Utilizing Classic Higher-Order Functions
                                 </h5>
                                 <p class="card-text">
-                                    Question: Without using recursion or case analysis in your definitions, create
-                                    functions in JavaScript that utilize map, curry, reduce (equivalent to foldl), and
-                                    reduceRight (equivalent to foldr). These functions should operate on non-empty
-                                    arrays to find the maximum, sum, and product of integer elements within the array.
-                                    Ensure your implementations correctly handle non-empty arrays and produce scalar
-                                    results.</p>
+
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -842,8 +825,6 @@
     <!-- Font Awesome JS Link -->
     <script src="https://kit.fontawesome.com/01058b62ac.js" crossorigin="anonymous"></script>
 
-    <!-- Custom JS Link -->
-    <script src="../scripts/intermediate-js-concepts.js"></script>
 </body>
 
 </html>
