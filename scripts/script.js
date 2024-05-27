@@ -27,7 +27,6 @@ document.getElementById("str_length").textContent = str_length;
 
 //3. Boolean Operations
 const is_raining = true;
-console.log(is_raining);
 const is_sunny = false;
 let is_raining_and_sunny = is_raining && is_sunny;
 let is_raining_or_sunny = is_raining || !is_sunny;
@@ -238,7 +237,10 @@ document.getElementById("addAndMultBtn").addEventListener("click", function () {
   }
 });
 
-/** Arrays and Objects **/
+/**
+ * Part D: Arrays and Objects
+ */
+// 1. Array CRUD Operations
 document.addEventListener("DOMContentLoaded", () => {
   let myArray = Array(); // Initialize an empty array
   document.getElementById(
@@ -259,4 +261,25 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById(
     "lastElementRemovedArray"
   ).textContent = `Array after removing last element: [${myArray}]`;
+});
+
+//2. Object CRUD Operations
+const objectCrudId = document.getElementById("object-crud-operations");
+const objectCrudUpdateId = document.getElementById("object-crud-update");
+let myObject;
+
+document.addEventListener("DOMContentLoaded", function () {
+  myObject = {
+    Name: ["Kevin", "Martin", "Iris", "David"],
+    Age: [30, 25, 27, 33],
+    City: ["London", "Scotland", "Dublin", "Wales"],
+  };
+  objectCrudId.textContent = `myObject Initialized: ${JSON.stringify(
+    myObject
+  )}`;
+
+  myObject.Age[0] = 28;
+  objectCrudUpdateId.textContent = `myObject updated: ${JSON.stringify(
+    myObject
+  )}`;
 });
