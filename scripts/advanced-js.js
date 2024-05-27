@@ -5,7 +5,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   if (window.Worker) {
-    const myWorker = new Worker("../scripts/worker.js"); //Instantiate new worker
+    const myWorker = new Worker("../../scripts/worker.js"); //Instantiate new worker
 
     myWorker.onmessage = function (event) {
       document.getElementById(
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const csvData = event.target.result;
 
       if (window.Worker) {
-        const myCSVWorker = new Worker("../scripts/worker.js");
+        const myCSVWorker = new Worker("../../scripts/worker.js");
 
         myCSVWorker.postMessage({ task: "processCSV", data: csvData }); //send file to worker
         document.getElementById("sendCSV").textContent =
