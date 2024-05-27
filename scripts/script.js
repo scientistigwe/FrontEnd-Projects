@@ -266,6 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //2. Object CRUD Operations
 const objectCrudId = document.getElementById("object-crud-operations");
 const objectCrudUpdateId = document.getElementById("object-crud-update");
+const finalContent = document.getElementById("final-content");
 let myObject;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -282,4 +283,55 @@ document.addEventListener("DOMContentLoaded", function () {
   objectCrudUpdateId.textContent = `myObject updated: ${JSON.stringify(
     myObject
   )}`;
+
+  delete myObject.City;
+  finalContent.textContent = `myObject 'City Key' Removed: ${JSON.stringify(
+    myObject
+  )}`;
+});
+
+// 3. Array Iteration
+const arrayLoop = document.getElementById("array-loop");
+let fruitList = "";
+document.addEventListener("DOMContentLoaded", function () {
+  let fruitArray = { fruits: ["apple", "banana", "orange", "grape", "kiwi"] };
+  fruitArray.fruits.forEach((fruit) => {
+    fruitList += `${fruit}<br>`;
+  });
+  arrayLoop.innerHTML = fruitList;
+});
+
+//4. Object Iteration
+const objLoop = document.getElementById("object-loop");
+let person = "";
+let personList = "";
+document.addEventListener("DOMContentLoaded", function () {
+  person = {
+    name: ["Diana", "Charlie", "Sefi", "Noora", "Stuart"],
+    age: [25, 27, 32, 23, 25],
+    gender: ["female", "female", "Male", "female", "Male"],
+  };
+  for (let i = 0; i < person.name.length; i++) {
+    personList += `Name: ${person.name[i]}, Age: ${person.age[i]}, Gender: ${person.gender[i]}<br>`;
+  }
+  objLoop.innerHTML = personList;
+});
+
+// 5. Array & Object Combination
+const arrObjCombination = document.getElementById("arr-obj-combination");
+let students;
+let studentList = "";
+
+document.addEventListener("DOMContentLoaded", () => {
+  students = [
+    { name: "Frank", age: "32", grade: "89" },
+    { name: "Prince", age: "29", grade: "79" },
+    { name: "Tony", age: "42", grade: "82" },
+    { name: "Mike", age: "39", grade: "56" },
+  ];
+
+  students.forEach((student) => {
+    studentList += `Name: ${student.name}; Age: ${student.age}; Grade: ${student.grade}<br>`;
+  });
+  arrObjCombination.innerHTML = studentList;
 });
