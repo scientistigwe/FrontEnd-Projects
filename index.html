@@ -1748,19 +1748,22 @@
 
                 <h2 class="subcategory">T. DOM Manipulation</h2>
                 <hr>
-                <!-- Task 1: File Read Error: -->
+                <!-- Task 1: Modifying HTML Elements Task -->
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    Task 1: File Read Error:
+                                    Task 1: Modifying HTML Elements Task
                                 </h5>
                                 <p class="card-text">
-                                    Write a JavaScript program that attempts to open a non-existent file using the fs
-                                    module's readFileSync function. Implement a try-catch block to handle the potential
-                                    error gracefully. If an error occurs, display a meaningful error message in the
-                                    console indicating the issue encountered.
+                                    Write JavaScript code to dynamically modify existing HTML elements on a web page.
+                                    Select an HTML element using methods like getElementById(),
+                                    getElementsByClassName(), or querySelector().
+                                    Use DOM manipulation techniques to change the content, attributes, or styles of the
+                                    selected element.
+                                    Test the code and verify that the targeted HTML element is successfully modified as
+                                    intended.
                                 </p>
                             </div>
                         </div>
@@ -1782,7 +1785,7 @@
                     </div>
                 </div>
                 <hr>
-                <!-- Task 2: Parameter Validation -->
+                <!-- Task 2: Creating New Elements Challenge -->
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card">
@@ -1804,122 +1807,140 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    Task 2: Parameter Validation
+                                    Task 2: Creating New Elements Challenge
                                 </h5>
                                 <p class="card-text">
-                                    Develop a JavaScript function that takes two parameters representing numerical
-                                    values. Within the function, implement a try-catch block to handle the scenario
-                                    where one of the parameters is not a number. If such an error occurs, return a
-                                    string message indicating the error, otherwise, return the sum of the two numbers.
+                                    Extend the previous task to include creating new HTML elements dynamically.
+                                    Define a function to create a new HTML element, such as a
+                                <div> or <span>, using the document.createElement() method.
+                                        Customize the properties and attributes of the newly created element, such as
+                                        setting its content or adding CSS classes.
+                                        Append the new element to an existing parent element in the DOM using methods
+                                        like appendChild() or insertBefore().
+                                        Test the functionality by dynamically creating and adding new elements to the
+                                        web page.
 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <!-- Task 3: API Fetch Error -->
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Task 3: API Fetch Error
-                                </h5>
-                                <p class="card-text">
-                                    Create a JavaScript program that fetches data from an API
-                                    endpoint using the fetch API. Implement a try-catch block to handle potential
-                                    network errors or server-side errors. If an error occurs during the fetch operation,
-                                    display a user-friendly message on the webpage to inform the user about the issue.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Output (See <a
-                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                        target="_blank">script.js</a> for details)
-                                </h5>
-                                <div class="card-text">
-
+                                        </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <hr>
-                <!-- Task 4: Division by Zero -->
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class=" card-body">
-                                <h5 class="card-title">
-                                    Output (See <a
-                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                        target="_blank">script.js</a> for details)
-                                </h5>
-                                <div class="card-text">
+                    <hr>
+                    <!-- Task 3: Updating Attributes and Styles Task -->
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Task 3: Updating Attributes and Styles Task
+                                    </h5>
+                                    <p class="card-text">
+                                        Implement JavaScript code to update attributes and styles of HTML elements
+                                        dynamically.
+                                        Select an HTML element and use DOM manipulation techniques to change its
+                                        attributes, such as src, href, or title.
+                                        Modify the inline styles of the selected element by directly accessing the style
+                                        property or using methods like setAttribute().
+                                        Test the code and ensure that the attributes and styles of the targeted HTML
+                                        element are updated accordingly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Output (See <a
+                                            href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                            target="_blank">script.js</a> for details)
+                                    </h5>
+                                    <div class="card-text">
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Task 4: Division by Zero
-                                </h5>
-                                <p class="card-text">
-                                    Develop a JavaScript function that divides two numbers provided as parameters.
-                                    Implement a try-catch block to handle the scenario where the divisor is zero. If
-                                    division by zero occurs, throw a custom ZeroDivisionError and catch it to display a
-                                    meaningful error message in the console.
+                    <hr>
+                    <!-- Task 4: Event Handling with DOM Manipulation Challenge -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class=" card-body">
+                                    <h5 class="card-title">
+                                        Output (See <a
+                                            href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                            target="_blank">script.js</a> for details)
+                                    </h5>
+                                    <div class="card-text">
 
-                                </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <hr>
-                <!-- Task 5: Property Access Error -->
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Task 5: Property Access Error
-                                </h5>
-                                <p class="card-text">
-                                    Write a JavaScript program that attempts to access a property of an undefined
-                                    object. Implement a try-catch block to handle the potential TypeError that may
-                                    occur. If such an error occurs, display a descriptive error message in the console
-                                    indicating the issue with accessing the undefined property.
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Task 4: Event Handling with DOM Manipulation Challenge
+                                    </h5>
+                                    <p class="card-text">
+                                        Create an interactive component on a web page, such as a button or link, using
+                                        HTML and CSS.
+                                        Implement JavaScript code to handle user interactions with the component, such
+                                        as clicks or mouse hover events.
+                                        Use DOM manipulation techniques to dynamically update the content, attributes,
+                                        or styles of other HTML elements based on user actions.
+                                        Test the functionality by interacting with the component and verifying that the
+                                        DOM elements are modified as expected.
 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Output (See <a
-                                        href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                        target="_blank">script.js</a> for details)
-                                </h5>
-                                <div class="card-text">
 
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <!-- Task 5: Advanced DOM Manipulation Exercise -->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Task 5: Advanced DOM Manipulation Exercise
+                                    </h5>
+                                    <p class="card-text">
+                                        Develop a dynamic web page with complex interactions and user interface
+                                        elements.
+                                        Utilize DOM manipulation techniques to create, modify, and remove HTML elements
+                                        based on user input or application state.
+                                        Implement event listeners and event handling logic to respond to user
+                                        interactions and update the DOM dynamically.
+                                        Test the functionality thoroughly across different scenarios and edge cases to
+                                        ensure a smooth user experience.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Output (See <a
+                                            href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                                            target="_blank">script.js</a> for details)
+                                    </h5>
+                                    <div class="card-text">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
                 </div>
-                <hr>
-            </div>
         </section>
     </main>
     <footer>
