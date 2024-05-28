@@ -174,7 +174,7 @@ def main():
         todo_list.add_task(task4)
         final_state = todo_list.display_task()
 
-        print(f"<strong>Initial State:</strong> {initial_state}<br> <strong>Updated State:</strong> {updated_state}<br> <strong>Found Task Details:</strong> {found_task_details}<br> <strong>Final State:</strong> {final_state}")
+        print(f"<strong>Initial State:</strong> {initial_state}<br><br> <strong>Updated State:</strong> {updated_state}<br><br> <strong>Found Task Details:</strong> {found_task_details}<br><br> <strong>Final State:</strong> {final_state}")
     elif args.task == 'decorator':
         #Decoratortask
         dataframe = fetch_data()
