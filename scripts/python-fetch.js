@@ -3,7 +3,7 @@ function fetchToDoListPythonFile() {
   fetch("../../apps/linked_list_output.txt")
     .then((Response) => Response.text())
     .then((data) => {
-      document.getElementById("todo_list").innerHTML = data + `<br>`;
+      document.getElementById("todo_list").innerHTML = data;
     })
     .catch((error) => {
       console, log(`Error: ${error}`);

@@ -169,14 +169,12 @@ def main():
 
         todo_list.remove_task("Write report")
         updated_state = todo_list.display_task()
-
         found_task = todo_list.find_task("Pay bills")
         found_task_details = repr(found_task) if found_task else "Task not found"
-
         todo_list.add_task(task4)
         final_state = todo_list.display_task()
 
-        print(f"Initial State: {initial_state}\n Updated State: {updated_state}\n Found Task Details: {found_task_details}\n Final State: {final_state}")
+        print(f"<strong>Initial State:</strong> {initial_state}<br> <strong>Updated State:</strong> {updated_state}<br> <strong>Found Task Details:</strong> {found_task_details}<br> <strong>Final State:</strong> {final_state}")
     elif args.task == 'decorator':
         #Decoratortask
         dataframe = fetch_data()
