@@ -639,25 +639,161 @@
                     </div>
                 </div>
                 <hr>
-                <h2 class="subcategory">B. Array Methods</h2>
+                <h2 class="subcategory">B. Functions</h2>
                 <hr>
-                <!-- 1. Transforming Array Elements with .map() -->
+                <!-- 1. Workflow Automation Tool: Real-Life Data Processing Scenario -->
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    1. Transforming Array Elements with .map()
+                                    1. Workflow Automation Tool: Real-Life Data Processing Scenario
                                 </h5>
                                 <p class="card-text">
-                                    Task Description: Write a JavaScript function that takes an array of numbers as
-                                    input and returns a new array where each number has been multiplied by 2. Use the
-                                    .map() method to achieve this transformation.
-                                    Key Concepts: Focus on understanding how .map() works by applying a function to each
-                                    element of an array and creating a new array with the results.
-                                    Testing: After implementing the function, test it with an example array [1, 2, 3, 4]
-                                    to ensure it correctly doubles each element.
+                                    Scenario: Data Pipeline Automation in the Financial Domain.<br>
+                                    Imagine developing a workflow automation tool designed to manage a data pipeline for
+                                    financial data processing. This involves a series of tasks executed in a specific
+                                    order, such as fetching financial data, processing the data to calculate key
+                                    metrics, analyzing trends, visualizing data, and storing the processed data. The
+                                    tool ensures these tasks are executed sequentially, preventing any task from
+                                    starting until its predecessor has completed successfully.
                                 </p>
+                                <!-- Button trigger modal -->
+                                <p style="text-align: center;"><button type="button"
+                                        class="btn btn-primary justify-content-center" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop">
+                                        Click for detailed instructions
+                                    </button></p>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Workflow
+                                                    Automation Tool: Real-Life Data Processing Scenario</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <section>
+                                                    <h4>Scenario: Data Pipeline Automation in the Financial Domain</h4>
+                                                    <br>
+                                                    <p>
+                                                        Imagine developing a workflow automation tool designed to manage
+                                                        a data pipeline for financial data processing.
+                                                        This involves a series of tasks executed in a specific order,
+                                                        such as fetching financial data, processing the data
+                                                        to calculate key metrics, analyzing trends, visualizing data,
+                                                        and storing the processed data. The tool ensures these
+                                                        tasks are executed sequentially, preventing any task from
+                                                        starting until its predecessor has completed successfully.
+                                                    </p>
+                                                </section>
+
+                                                <section>
+                                                    <h4>Objective</h4>
+                                                    <p>
+                                                        Design a Python function decorator that enforces a specific
+                                                        execution order among functions. This decorator will be
+                                                        applied to functions representing tasks in the data pipeline,
+                                                        ensuring they are executed in the intended sequence.
+                                                    </p>
+                                                </section>
+
+                                                <section>
+                                                    <h4>Implmentation Details</h4>
+                                                    <h5>Order Management:</h5>
+                                                    <ul>
+                                                        <li>Maintain a list of function names representing the desired
+                                                            order of execution.</li>
+                                                        <li>Track the current position in the order sequence to know
+                                                            which task should execute next.</li>
+                                                    </ul>
+
+                                                    <h5>Decorator Functionality:</h5>
+                                                    <ul>
+                                                        <li>The decorator will wrap each task function.</li>
+                                                        <li>When a decorated function is called, it will check if it is
+                                                            the next function in the sequence.</li>
+                                                        <li>If it is the correct function in order, it will execute and
+                                                            update the current position.</li>
+                                                        <li>If it is not the correct function in order, it will either
+                                                            raise an error or handle the out-of-order call
+                                                            appropriately.</li>
+                                                    </ul>
+                                                </section>
+
+                                                <section>
+                                                    <h4>Real-Life Tasks in the Financial Domain:</h4>
+                                                    <ul>
+                                                        <li><strong>Fetch Data:</strong> This task fetches financial
+                                                            data from an API or database (e.g., stock prices, financial
+                                                            reports).</li>
+                                                        <li><strong>Process Data:</strong> This task processes the
+                                                            fetched data to calculate key financial metrics (e.g.,
+                                                            moving averages, performance indicators).</li>
+                                                        <li><strong>Analyze Trends:</strong> This task analyzes the
+                                                            processed data to identify trends (e.g., trend lines,
+                                                            patterns).</li>
+                                                        <li><strong>Visualize Data:</strong> This task generates visual
+                                                            representations of the data (e.g., charts, graphs).</li>
+                                                        <li><strong>Store Data:</strong> This task stores the processed
+                                                            data into a database or a file for future use.</li>
+                                                    </ul>
+                                                </section>
+
+                                                <section>
+                                                    <h4>Task Execution:</h4>
+                                                    <p>
+                                                        Functions representing these tasks will be decorated with the
+                                                        order-enforcing decorator. The execution flow will
+                                                        ensure tasks are performed sequentially as defined in the order
+                                                        list.
+                                                    </p>
+                                                </section>
+
+                                                <section>
+                                                    <h4>Expected Outcome</h4>
+                                                    <ul>
+                                                        <li>The workflow tool should ensure that data is fetched,
+                                                            processed, analyzed, visualized, and stored in the
+                                                            correct
+                                                            sequence.</li>
+                                                        <li>Attempting to execute a task out of order should result
+                                                            in
+                                                            an error or appropriate handling to maintain the correct
+                                                            sequence.</li>
+                                                        <li>The tool should provide feedback on task completion and
+                                                            any
+                                                            errors encountered during execution.</li>
+                                                    </ul>
+                                                </section>
+
+                                                <section>
+                                                    <h4>Example Requirements</h4>
+                                                    <ul>
+                                                        <li><strong>Function Decorator:</strong> Create a decorator that
+                                                            enforces task execution order.</li>
+                                                        <li><strong>Task Functions:</strong> Define functions for
+                                                            fetching data, processing data, analyzing trends,
+                                                            visualizing data, and storing data.</li>
+                                                        <li><strong>Execution Order:</strong> Ensure the tasks are
+                                                            executed in the specified order.</li>
+                                                        <li><strong>Error Handling:</strong> Implement error handling
+                                                            for out-of-order task execution.</li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Understood</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -669,7 +805,7 @@
                                         href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
                                         target="_blank">script.js</a> for details)
                                 </h5>
-                                <div class="card-text">
+                                <div class="card-text" id="decorator-task">
 
 
                                 </div>
@@ -701,14 +837,7 @@
                                     2. Filtering Array Elements with .filter()
                                 </h5>
                                 <p class="card-text">
-                                    Task Description: Write a function that takes an array of numbers and returns a new
-                                    array containing only the even numbers from the original array. Use the .filter()
-                                    method to identify and collect the even numbers.
-                                    Key Concepts: Understand the role of .filter() in extracting elements based on a
-                                    condition. Pay attention to how the callback function passed to .filter() determines
-                                    which elements are included in the new array.
-                                    Testing: Test your function with an array [1, 2, 3, 4, 5, 6] to verify that it
-                                    correctly filters out the odd numbers.
+
 
                                 </p>
                             </div>
@@ -725,14 +854,7 @@
                                     3. Accumulating Array Elements with .reduce()
                                 </h5>
                                 <p class="card-text">
-                                    Task Description: Implement a function that calculates the sum of all numbers in an
-                                    array. Use the .reduce() method to accumulate the sum as you iterate through the
-                                    array.
-                                    Key Concepts: Focus on how .reduce() works by applying a function to each element of
-                                    an array and accumulating a result. Understand the initial value parameter and how
-                                    it affects the calculation.
-                                    Testing: Test your function with an array [1, 2, 3, 4, 5] to confirm it accurately
-                                    sums up all the numbers.
+
                                 </p>
                             </div>
                         </div>
@@ -776,14 +898,7 @@
                                     4. Iterating Over Array Elements with .forEach()
                                 </h5>
                                 <p class="card-text">
-                                    Task Description: Write a function that takes an array of strings and logs each
-                                    string to the console. Use the .forEach() method to iterate over the array and
-                                    perform the logging action.
-                                    Key Concepts: Understand the purpose of .forEach() in executing a function for each
-                                    element in an array without returning a new array. Consider the benefits of using
-                                    .forEach() over traditional looping constructs.
-                                    Testing: Test your function with an array ['Hello', 'World'] to see each string
-                                    logged to the console.
+
                             </div>
                         </div>
                     </div>
@@ -798,14 +913,7 @@
                                     5. Custom Sorting with .sort()
                                 </h5>
                                 <p class="card-text">
-                                    Task Description: Given an array of objects representing people, write a function
-                                    that sorts the array in ascending order based on the age property of each object.
-                                    Use the .sort() method with a custom comparator function.
-                                    Key Concepts: Understand how .sort() can be customized by passing a compare function
-                                    to determine the sort order. Reflect on the importance of specifying a compare
-                                    function for complex data structures.
-                                    Testing: Test your function with an array of people objects to ensure they are
-                                    sorted correctly by age.
+
                                 </p>
                             </div>
                         </div>

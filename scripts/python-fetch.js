@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch data from the Flask route
   fetch("/apps/app")
@@ -12,3 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Error fetching data:", error));
 });
+*/
+
+// 3. Decorator function to automate workflow
+// Fetch python file
+function fetchPythonFile() {
+  fetch("../../apps/output.txt")
+    .then((Response) => Response.text())
+    .then((data) => {
+      document.getElementById("decorator-task").innerHTML = data + `<br>`;
+    })
+    .catch((error) => {
+      console, log(`Error: ${error}`);
+    });
+}
+fetchPythonFile();
+
+document.addEventListener("DOMContentLoaded", fetchPythonFile);
