@@ -341,3 +341,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   arrObjCombination.innerHTML = studentList;
 });
+
+/**
+ * ERROR HANDLING
+ */
+/* Task 1: File Read Error */
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM fully loaded and parsed"); // To check if the script is running
+
+  const readFile = document.getElementById("read-file");
+  const catchError = document.getElementById("catch-error");
+
+  if (!readFile || !catchError) {
+    console.error("Required DOM elements not found");
+    return;
+  }
+
+  console.log("Fetching non-existent file..."); // To check if fetch is attempted
+  readFile.innerHTML = "Fetching non-existent file..."; // To check if fetch is attempted
+
+  fetch("non-existent-file.txt")
+    .then((response) => {
+      if (!response.ok) {
+        console.error("Network response was not ok:", response.statusText); // To log the error response
+        throw new Error("Network response was not ok: " + response.statusText);
+      }
+      return response.text();
+    })
+    .then((data) => {
+      readFile.innerHTML = `Reading file: ${data}`;
+      console.log("File content:", data); // To log the file content if successful
+    })
+    .catch((error) => {
+      catchError.innerHTML = `Error occurred while reading the file: ${error.message}`;
+      console.error("Fetch error:", error.message); // To log the fetch error
+    });
+});

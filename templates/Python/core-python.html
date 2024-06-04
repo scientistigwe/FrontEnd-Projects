@@ -831,12 +831,169 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    2. Filtering Array Elements with .filter()
+                                    3. Scenario: Enhancing Performance in Financial Data Analysis
                                 </h5>
                                 <p class="card-text">
+                                <section>
+                                    <p>
+                                        Imagine developing a financial data analysis tool that frequently fetches,
+                                        processes, and analyzes large datasets from various financial data sources.
+                                        To improve the performance of this tool, you decide to implement function
+                                        caching with sophisticated cache eviction policies and memoization strategies.
+                                        This will reduce redundant data fetches and re-computation, ensuring faster and
+                                        more efficient data processing.
+                                    </p>
+                                    <!-- Button trigger modal -->
+                                    <p style="text-align: center;"><button type="button"
+                                            class="btn btn-primary justify-content-center" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop2">
+                                            Click for detailed instructions
+                                        </button></p>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Scenario:
+                                                        Enhancing Performance in Financial Data Analysis</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <section>
+                                                        <h4>Scenario: Optimizing Financial Data Analysis Tool
+                                                            Performance</h4>
+                                                        <br>
+                                                        <p>
+                                                            Imagine developing a financial data analysis tool that
+                                                            frequently fetches, processes, and analyzes large datasets
+                                                            from various financial data sources. To improve the
+                                                            performance of this tool, you decide to implement a function
+                                                            cache with sophisticated cache eviction policies and
+                                                            memoization strategies. This will reduce redundant data
+                                                            fetches and re-computation, ensuring faster and more
+                                                            efficient data processing.
+                                                        </p>
+                                                    </section>
+
+                                                    <section>
+                                                        <h4>Objective</h4>
+                                                        <p>
+                                                            Implement a function cache with sophisticated cache eviction
+                                                            policies and memoization strategies to optimize the
+                                                            performance of functions involved in financial data
+                                                            analysis. This involves caching the results of expensive
+                                                            function calls and efficiently managing the cache to ensure
+                                                            optimal use of resources.
+                                                        </p>
+                                                    </section>
+
+                                                    <section>
+                                                        <h4>Implementation Details</h4>
+                                                        <h5>Caching Strategy:</h5>
+                                                        <ul>
+                                                            <li>Select an appropriate caching strategy (e.g., LRU, LFU,
+                                                                TTL) based on the application's data access patterns and
+                                                                performance requirements.</li>
+                                                            <li>Use the `cachetools` library to implement the chosen
+                                                                caching strategy.</li>
+                                                        </ul>
+
+                                                        <h5>Eviction Policies:</h5>
+                                                        <ul>
+                                                            <li>Design eviction policies that determine when and which
+                                                                items to remove from the cache (e.g., time-based
+                                                                expiration, size-based eviction).</li>
+                                                            <li>Integrate these policies into the caching mechanism to
+                                                                maintain cache efficiency.</li>
+                                                        </ul>
+
+                                                        <h5>Memoization Strategies:</h5>
+                                                        <ul>
+                                                            <li>Identify functions that are called frequently with the
+                                                                same set of arguments and benefit from memoization.</li>
+                                                            <li>Use `functools.lru_cache` or similar tools to implement
+                                                                memoization for these functions.</li>
+                                                        </ul>
+                                                    </section>
+
+                                                    <section>
+                                                        <h4>Real-Life Tasks in the Financial Domain:</h4>
+                                                        <ul>
+                                                            <li><strong>Fetch Data:</strong> Fetch financial data from
+                                                                APIs or databases (e.g., stock prices, financial
+                                                                reports).</li>
+                                                            <li><strong>Process Data:</strong> Process the fetched data
+                                                                to calculate key financial metrics (e.g., moving
+                                                                averages, performance indicators).</li>
+                                                            <li><strong>Analyze Trends:</strong> Analyze the processed
+                                                                data to identify trends and patterns (e.g., trend lines,
+                                                                market signals).</li>
+                                                            <li><strong>Visualize Data:</strong> Generate visual
+                                                                representations of the data (e.g., charts, graphs) for
+                                                                easier interpretation and decision-making.</li>
+                                                            <li><strong>Store Data:</strong> Store the processed and
+                                                                analyzed data in a database or file system for future
+                                                                reference and further analysis.</li>
+                                                        </ul>
+                                                    </section>
+
+                                                    <section>
+                                                        <h4>Task Execution:</h4>
+                                                        <p>
+                                                            Functions representing these tasks will be decorated with
+                                                            the caching and memoization decorators. The caching
+                                                            mechanism will ensure that results of expensive computations
+                                                            are stored and reused, while the memoization strategy will
+                                                            optimize the performance of frequently called functions.
+                                                        </p>
+                                                    </section>
+
+                                                    <section>
+                                                        <h4>Expected Outcome</h4>
+                                                        <ul>
+                                                            <li>The tool should efficiently fetch, process, analyze,
+                                                                visualize, and store financial data, reducing redundant
+                                                                operations and improving overall performance.</li>
+                                                            <li>The caching mechanism should handle cache hits and
+                                                                misses effectively, ensuring optimal use of resources.
+                                                            </li>
+                                                            <li>The memoization strategy should speed up the execution
+                                                                of frequently called functions, minimizing
+                                                                re-computation.</li>
+                                                        </ul>
+                                                    </section>
+
+                                                    <section>
+                                                        <h4>Example Requirements</h4>
+                                                        <ul>
+                                                            <li><strong>Caching Strategy:</strong> Implement an LRU
+                                                                cache with a maximum size to store results of data
+                                                                fetching and processing functions.</li>
+                                                            <li><strong>Eviction Policies:</strong> Design and implement
+                                                                eviction policies to manage cache size and expiration of
+                                                                cached items.</li>
+                                                            <li><strong>Memoization:</strong> Use `functools.lru_cache`
+                                                                to memoize functions that perform trend analysis and
+                                                                other repetitive computations.</li>
+                                                            <li><strong>Error Handling:</strong> Implement error
+                                                                handling to manage cache misses and ensure graceful
+                                                                degradation of performance.</li>
+                                                        </ul>
+                                                    </section>
+                                                </div>
 
 
-                                </p>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">Understood</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
