@@ -438,28 +438,132 @@
             <div class="container-fluid">
                 <h1 class="category">Data Manipulation</h1>
                 <hr>
-                <h2 class="subcategory">A. Higher-Order Functions</h2>
+                <h2 class="subcategory">A. String Manipulation</h2>
                 <hr>
-                <!-- 1. Function as an Argument Task -->
+                <!-- 1. Keyword Trend Analysis in CNN Articles -->
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    1. Function as an Argument Task
+                                    1. Keyword Trend Analysis in CNN Articles
                                 </h5>
                                 <p class="card-text">
-                                    Write a higher-order function that accepts another function as an argument.
-                                    Define a function, such as applyOperation, that takes two numbers and a callback
-                                    function as parameters.
-                                    Use the callback function to perform a specific operation on the two numbers, such
-                                    as addition, subtraction, multiplication, or division.
-                                    Test the higher-order function by passing different callback functions to perform
-                                    various arithmetic operations.</p>
+                                    <strong>Case Scenario:</strong>
+                                    <br>
+                                    As a data scientist working for a research organization that
+                                    analyzes large
+                                    collections of CNN articles.
+                                    The organization is interested in identifying and tracking the
+                                    occurrence of specific keywords or phrases within these articles
+                                    to understand trends, common topics, and emerging news themes.
+                                    <!-- Button trigger modal -->
+                                <p style="text-align: center;"><button type="button"
+                                        class="btn btn-primary justify-content-center" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop2">
+                                        Click for detailed instructions
+                                    </button></p>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Scenario:
+                                                    Keyword Trend Analysis in CNN Articles</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <section>
+                                                    <h4>Scenario: Keyword Trend Analysis in CNN Articles</h4>
+                                                    <br>
+                                                    <p>
+                                                        As a data scientist working for a research organization that
+                                                        analyzes large
+                                                        collections of CNN articles.
+                                                        The organization is interested in identifying and tracking the
+                                                        occurrence of specific keywords or phrases within these articles
+                                                        to understand trends, common topics, and emerging news themes.
+                                                    </p>
+                                                    <p>
+                                                        For this task, you have been given a predefined set of keywords
+                                                        related to current events and emerging trends, including:
+
+                                                        "climate change"
+                                                        "pandemic"
+                                                        "election"
+                                                        "artificial intelligence"
+                                                        "economy"
+                                                        "technology"
+                                                        "healthcare"
+                                                    </p>
+                                                    <p>
+                                                        Your organization has provided a dataset of CNN articles stored
+                                                        in a directory. Each row of the CSV file is an entity of an
+                                                        article with
+                                                        columns for Title, Description, Body, Keywords, Theme, and Link.
+                                                        You need to implement a high-performance string matching
+                                                        algorithm to efficiently search through this large text corpus
+                                                        and provide detailed reports on where these keywords appear.
+                                                    </p>
+                                                </section>
+                                                <section>
+                                                    <h4>Task</h4>
+                                                    <p>
+                                                        Your task is to develop a Python script that performs the
+                                                        following steps:
+
+                                                    <ol>
+                                                        <li>Load a dataset of CNN articles.</li>
+
+                                                        <li>Construct an efficient string matching automaton using the
+                                                            Aho-Corasick algorithm with a predefined set of keywords.
+                                                        </li>
+
+                                                        <li>Search the text corpus using the automaton to find all
+                                                            occurrences of the keywords.</li>
+
+                                                        <li>Record the occurrences of each keyword, including their
+                                                            positions and the articles in which they appear.</li>
+
+                                                        <li>Generate a report that summarizes the findings,
+                                                            listing each
+                                                            keyword, its frequency, and the context around each
+                                                            occurrence.
+                                                        </li>
+                                                    </ol>
+                                                    </p>
+                                                </section>
+                                                <section>
+                                                    <h4>Expected Outcome</h4>
+                                                    <p>
+                                                        A Python script that loads articles from a directory,
+                                                        constructs an Aho-Corasick
+                                                        automaton with specified keywords, searches the articles for
+                                                        these keywords, and
+                                                        outputs a detailed report.</p>
+                                                    <p>
+                                                        The report should list each keyword, the number of times it
+                                                        was found, and the
+                                                        positions and context within the articles.
+                                                    </p>
+                                                </section>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Understood</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -467,18 +571,8 @@
                                         href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
                                         target="_blank">script.js</a> for details)
                                 </h5>
-                                <div class="card-text">
-                                    <input id="firstNum" type="number" placeholder="Enter first integer">
-                                    <input id="secondNum" type="number" placeholder="Enter second integer">
-                                    <div> <label for="task">Enter task code (1 for addition; 2 for substraction; 3 for
-                                            multplication; 4 for division)</label>
-                                        <input id="task" type="number" placeholder="Task code">
-                                    </div>
-                                    <button class="btn btn-secondary" id="hofResultBtn">Execute</button>
-                                    <div id="introMessage" style="color: blue;"></div>
-                                    <div id="invalidHofResult" style="color: rgb(238, 10, 14);"></div>
-                                    <div id="hofResult" style="color: green;"></div>
-                                </div>
+                                <canvas class="card-text" id="trend-analysis-chart" width="400" height="300">
+                                </canvas>
                             </div>
                         </div>
                     </div>
@@ -839,11 +933,16 @@
     <!-- Bootstrap JS Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Chart.js Link -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
     <!-- Font Awesome JS Link -->
     <script src="https://kit.fontawesome.com/01058b62ac.js" crossorigin="anonymous"></script>
 
     <!-- Custom JS Link -->
-    <script src="../scripts/intermediate-js-concepts.js"></script>
+    <script src="../../scripts/python-auto-js-code.js"></script>
+
 </body>
 
 </html>
