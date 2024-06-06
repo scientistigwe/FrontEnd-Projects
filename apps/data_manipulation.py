@@ -2,6 +2,7 @@ import pandas as pd
 import os
 from flashtext import KeywordProcessor
 import json
+from hdfs import InsecureClient
 
 # Load articles
 def load_articles_from_directory(directory):
@@ -89,7 +90,7 @@ def write_js_file(keywords, frequencies, file_path):
         """ % (json.dumps(keywords), json.dumps(frequencies)))
 
 # Main Function
-def main():
+def article_main():
     # Step 1: Load articles from the directory
     directory = './dataset/CNN-Articles/'
     articles = load_articles_from_directory(directory)
@@ -121,5 +122,41 @@ def main():
     js_file_path = './scripts/python-auto-js-code.js'
     write_js_file(keywords, frequencies, js_file_path)
 
+
+## FILE I/O WITH HADOOP DISTRIBUTED SYSTEM TASK
+# Configuration
+HDFS_URL = "http://localhost.50070"
+HDFS_USER = "hdfs"
+LOCAL_DATA_DIR = "c:/hadoop/data"
+HDFS_DATA_DIR = "/data"
+
+# Initialize HDFS Client
+client = InsecureClient(HDFS_URL, user=HDFS_USER)
+
+def upload_to_hdfs(local_file_path, hdfs_file_path):
+    with open(local_file_path, "rb") as local_file:
+        client.write(hdfs_file_path, local_file, overwrite=True)
+
+def ingest_store_data(store_dir):
+    for root, _, files in os.walk(store_dir ):
+        for file in files:
+            local_file_path = os.path.join(root, file)
+            hdfs_file_path = os.path.join(HDFS_DATA_DIR, os.path.relpath(local_file_path, LOCAL_DATA_DIR))
+            print(f"Uploading {local_file_path} to {hdfs_file_path}")
+            upload_to_hdfs(local_file_path, hdfs_file_path)
+
+def hadoop_main():
+    for store_dir in os.dir(LOCAL_DATA_DIR):
+        full_store_dir = os.path.join(LOCAL_DATA_DIR, store_dir)
+        if os.path.dir(full_store_dir):
+            ingest_store_data(full_store_dir)
+
+
+
 if __name__ == "__main__":
-    main()
+    #Execute article_main function
+    article_main()
+
+    #Execute hadoop_main function
+    hadoop_main()
+
