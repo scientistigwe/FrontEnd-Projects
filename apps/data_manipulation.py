@@ -3,6 +3,7 @@ import os
 from flashtext import KeywordProcessor
 import json
 from hdfs import InsecureClient
+from pyspark.sql import SparkSession
 
 # Load articles
 def load_articles_from_directory(directory):
@@ -123,40 +124,101 @@ def article_main():
     write_js_file(keywords, frequencies, js_file_path)
 
 
-## FILE I/O WITH HADOOP DISTRIBUTED SYSTEM TASK
-# Configuration
-HDFS_URL = "http://localhost.50070"
-HDFS_USER = "hdfs"
-LOCAL_DATA_DIR = "c:/hadoop/data"
-HDFS_DATA_DIR = "/data"
+"""
+FILE I/O WITH HADOOP DISTRIBUTED SYSTEM TASK
+1. DATA INGESTION INTO HADOOP
+"""
+def file_exists_in_hdfs(hdfs_file_path):
+    """
+    Check if a file exists in HDFS.
 
-# Initialize HDFS Client
-client = InsecureClient(HDFS_URL, user=HDFS_USER)
+    :param hdfs_file_path: The full path of the file in HDFS.
+    :return: True if the file exists, False otherwise.
+    """
+    try:
+        status = client.status(hdfs_file_path, strict=False)
+        return status is not None and status['type'] == 'FILE'
+    except Exception as e:
+        print(f"Error checking if file exists in HDFS: {e}")
+        return False
 
 def upload_to_hdfs(local_file_path, hdfs_file_path):
-    with open(local_file_path, "rb") as local_file:
-        client.write(hdfs_file_path, local_file, overwrite=True)
+    """
+    Upload a file to HDFS if it does not already exist.
 
-def ingest_store_data(store_dir):
-    for root, _, files in os.walk(store_dir ):
-        for file in files:
-            local_file_path = os.path.join(root, file)
-            hdfs_file_path = os.path.join(HDFS_DATA_DIR, os.path.relpath(local_file_path, LOCAL_DATA_DIR))
-            print(f"Uploading {local_file_path} to {hdfs_file_path}")
-            upload_to_hdfs(local_file_path, hdfs_file_path)
+    :param local_file_path: The local path of the file to upload.
+    :param hdfs_file_path: The destination path in HDFS.
+    """
+    if not file_exists_in_hdfs(hdfs_file_path):
+        with open(local_file_path, "rb") as local_file:
+            client.write(hdfs_file_path, local_file, overwrite=True)
+
+def ingest_store_data():
+    """
+    Ingest store data from a local directory to HDFS.
+    """
+    for file in os.listdir(LOCAL_DATA_DIR):
+        local_file_path = os.path.join(LOCAL_DATA_DIR, file)
+        # Determine the HDFS subdirectory based on the file name
+        if "sales" in file.lower():
+            hdfs_subdir = "sales"
+        elif "store" in file.lower():
+            hdfs_subdir = "store"
+        else:
+            hdfs_subdir = "others"  # Optional: handle files that do not match 'sales' or 'store'
+
+        # Maintain the directory structure in HDFS
+        hdfs_file_path = os.path.join(HDFS_DATA_DIR, hdfs_subdir, file)
+        print(f"Uploading {local_file_path} to {hdfs_file_path}")
+        upload_to_hdfs(local_file_path, hdfs_file_path)
+        print(f"file upload successful")
 
 def hadoop_main():
-    for store_dir in os.dir(LOCAL_DATA_DIR):
-        full_store_dir = os.path.join(LOCAL_DATA_DIR, store_dir)
-        if os.path.dir(full_store_dir):
-            ingest_store_data(full_store_dir)
+    """
+    Main function to process and upload files from the local dataset directory.
+    """
+    ingest_store_data()
 
+"""
+2. DATA PROCESSING WITH SPARK
+"""
+def process_data():
+    # Initialize spark session
+    spark = SparkSession.builder \
+   .appName("DataProcessing") \
+   .getOrCreate()
 
+    # Construct the full HDFS path safely
+    #hdfs_path = os.path.join(hdfs_url, hdfs_directory)
+    #print(f"Reading data from HDFS path: {hdfs_path}")
+
+    try:
+        # Read CSV files from HDFS
+        df = spark.read.format("csv").option("header", "true").load("/bigmart-store.csv")
+        # Show first few rows of the DataFrame
+        df.show()
+    except Exception as e:
+        print(f"Error during file reading from HDFS: {e}")
+    
+    # Stop the session
+    spark.stop()
 
 if __name__ == "__main__":
+    # Configuration
+    HDFS_URL = "http://localhost:50070"
+    HDFS_USER = "hdfs"
+    LOCAL_DATA_DIR = r"C:\Users\admin\Desktop\on-going-projects\Full-Stack-Dev.-Challenge\dataset\file-input-output-data"
+    HDFS_DATA_DIR = "/dataset"
+
+    # Initialize HDFS Client
+    client = InsecureClient(HDFS_URL, user=HDFS_USER)
+
     #Execute article_main function
-    article_main()
+    #article_main()
 
     #Execute hadoop_main function
     hadoop_main()
+
+    # Execute process_data function with corrected arguments
+    process_data()    
 
