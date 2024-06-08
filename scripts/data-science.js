@@ -1,7 +1,9 @@
 // Function to fetch data from the API
 async function fetchData() {
   try {
-    const response = await fetch("/api/sensordata/filter_and_aggregate_data/");
+    const response = await fetch(
+      "http://127.0.0.1:8000/api/sensors/filter_and_aggregate_data/"
+    );
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -20,6 +22,7 @@ function createCoreSensorChart(data) {
   const coData = data.device_aggregation.map((item) => item.avg_co);
   const humidityData = data.device_aggregation.map((item) => item.avg_humidity);
   const tempData = data.device_aggregation.map((item) => item.avg_temp);
+  const smokeData = data.device_aggregation.map((item) => item.avg_smoke);
   const lpgData = data.device_aggregation.map((item) => item.avg_lpg);
 
   new Chart(ctx, {
@@ -42,8 +45,15 @@ function createCoreSensorChart(data) {
           borderWidth: 1,
         },
         {
-          label: "Average Temp",
+          label: "Average Smoke",
           data: tempData,
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          borderColor: "rgba(75, 192, 192, 1)",
+          borderWidth: 1,
+        },
+        {
+          label: "Average Temp",
+          data: smokeData,
           backgroundColor: "rgba(75, 192, 192, 0.2)",
           borderColor: "rgba(75, 192, 192, 1)",
           borderWidth: 1,
@@ -76,6 +86,7 @@ function createHourlyAggregationChart(data) {
   const coData = data.hourly_aggregation.map((item) => item.avg_co);
   const humidityData = data.hourly_aggregation.map((item) => item.avg_humidity);
   const tempData = data.hourly_aggregation.map((item) => item.avg_temp);
+  const smokeData = data.hourly_aggregation.map((item) => item.avg_smoke);
   const lpgData = data.hourly_aggregation.map((item) => item.avg_lpg);
 
   new Chart(ctx, {
@@ -108,6 +119,14 @@ function createHourlyAggregationChart(data) {
           tension: 0.1,
         },
         {
+          label: "Average Smoke",
+          data: smokeData,
+          borderColor: "rgba(75, 192, 192, 1)",
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          fill: false,
+          tension: 0.1,
+        },
+        {
           label: "Average LPG",
           data: lpgData,
           borderColor: "rgba(153, 102, 255, 1)",
@@ -119,3 +138,21 @@ function createHourlyAggregationChart(data) {
     },
   });
 }
+
+// Function to fetch data from the API
+async function fetchDataAndCreateCharts() {
+  try {
+    const data = await fetchData(); // Fetch data
+    console.log(data);
+    createCoreSensorChart(data); // Create core sensor chart
+    createHourlyAggregationChart(data); // Create hourly aggregation chart
+  } catch (error) {
+    console.error("Error fetching data and creating charts:", error);
+    // You might want to handle this error in your application
+  }
+}
+
+// Invoke the function to fetch data and create charts when the page loads
+window.onload = function () {
+  fetchDataAndCreateCharts();
+};

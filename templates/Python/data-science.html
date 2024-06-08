@@ -967,6 +967,19 @@
                                                         experience but also contributes to energy conservation and
                                                         safety improvements in smart homes.
                                                     </p>
+                                                    <p>
+                                                        <strong>About Dataset</strong>
+                                                        This task will use an open-source Hourly Air Quality data from
+                                                        the Automatic Urban and Rural
+                                                        Network for the years 2015-2023 (Oct) (see <a
+                                                            href="https://www.kaggle.com/datasets/airqualityanthony/uk-defra-aurn-air-quality-data-2015-2023">Kaggle
+                                                            Repo</a>). The data covers several
+                                                        pollutants including Carbon Monoxide, Nitrogen Oxides, Nitrogen
+                                                        Dioxide, Nitric Oxide, Ozone, and Sulphur Dioxide.
+                                                        It also includes meteorological data for each hourly
+                                                        measurement, and also geospatial coordinates.
+                                                        The data includes monitoring from all AURN stations.
+                                                    </p>
                                                 </section>
                                             </div>
                                             <div class="modal-footer">
@@ -982,25 +995,32 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Output (See
-                                    <a href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                                        target="_blank">script.js</a>
-                                    for details)
-                                </h5 class="card-text">
-                                <canvas id="core-sensor-chart">
-
-                                </canvas>
-                            </div>
+                            <canvas id="min-sensor-chart"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="row-cols-auto">
-                    <div class="card">
-                        <canvas id="other-sensor-charts">
-                            chart space
-                        </canvas>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Core Sensor Data
+                                    <small>(Average CO, Humidity, Temp, LPG)</small>
+                                </h5>
+                                <canvas id="core-sensor-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Hourly Aggregation
+                                    <small>(Average CO, Humidity, Temp, LPG)</small>
+                                </h5>
+                                <canvas id="hourly-aggregation-chart"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr />
@@ -1134,6 +1154,8 @@
 
     <!-- Custom JS Link -->
     <script src="../../scripts/data-science.js"></script>
+
+
 </body>
 
 </html>

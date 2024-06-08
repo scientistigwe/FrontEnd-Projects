@@ -55,6 +55,7 @@ def data_collection_and_preparation(file_path):
         SensorData.objects.create(
             timeStamp=row['timestamp'],
             device_id=row['device'],
+            co_level=row['co'],
             temperature=row['temp'],
             humidity=row['humidity'],
             light_intensity=row['light'],
@@ -66,7 +67,7 @@ def data_collection_and_preparation(file_path):
 
 def environment_monitoring_main():
    # Path to the CSV file
-    file_path = "../../dataset/enviroment-monitoring-dataset.csv"
+    file_path = "../dataset/enviroment-monitoring-dataset.csv"
     
     # Execute Data collection and preparation function
     data_collection_and_preparation(file_path)
