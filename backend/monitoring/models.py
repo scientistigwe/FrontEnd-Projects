@@ -4,6 +4,7 @@ from django.db import models
 class SensorData(models.Model):
     timeStamp = models.DateTimeField(auto_now_add=True)
     device_id = models.TextField()
+    co_level = models.FloatField()
     temperature = models.FloatField()
     humidity = models.FloatField()
     light_intensity = models.BooleanField()

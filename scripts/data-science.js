@@ -1,7 +1,9 @@
 // Function to fetch data from the API
 async function fetchData() {
   try {
-    const response = await fetch("/api/sensordata/filter_and_aggregate_data/");
+    const response = await fetch(
+      "http://127.0.0.1:8000/api/sensors/filter_and_aggregate_data/"
+    );
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -119,3 +121,21 @@ function createHourlyAggregationChart(data) {
     },
   });
 }
+
+// Function to fetch data from the API
+async function fetchDataAndCreateCharts() {
+  try {
+    const data = await fetchData(); // Fetch data
+    console.log(data);
+    createCoreSensorChart(data); // Create core sensor chart
+    createHourlyAggregationChart(data); // Create hourly aggregation chart
+  } catch (error) {
+    console.error("Error fetching data and creating charts:", error);
+    // You might want to handle this error in your application
+  }
+}
+
+// Invoke the function to fetch data and create charts when the page loads
+window.onload = function () {
+  fetchDataAndCreateCharts();
+};
