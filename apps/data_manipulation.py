@@ -182,19 +182,33 @@ def hadoop_main():
 """
 2. DATA PROCESSING WITH SPARK
 """
+from pyspark.sql import SparkSession
+
 def process_data():
     # Initialize spark session
     spark = SparkSession.builder \
-   .appName("DataProcessing") \
-   .getOrCreate()
+                        .appName("DataProcessing") \
+                        .config("spark.hadoop.fs.defaultFS", "hdfs://localhost:9000") \
+                        .getOrCreate()
 
-    # Construct the full HDFS path safely
-    #hdfs_path = os.path.join(hdfs_url, hdfs_directory)
-    #print(f"Reading data from HDFS path: {hdfs_path}")
+    # Set logging level
+    spark.sparkContext.setLogLevel("WARN")
+
+    # HDFS path to the file
+    hdfs_path = "hdfs://localhost:9000/dataset/store/rossmann-store-2.csv"
+    print(f"Reading data from HDFS path: {hdfs_path}")
 
     try:
-        # Read CSV files from HDFS
-        df = spark.read.format("csv").option("header", "true").load("/bigmart-store.csv")
+        # List directory contents to verify the file's existence
+        files = spark.sparkContext._gateway.jvm.org.apache.hadoop.fs.FileSystem \
+                 .get(spark._jsc.hadoopConfiguration()) \
+                 .listStatus(spark._jvm.org.apache.hadoop.fs.Path("/"))
+        
+        for file in files:
+            print(file.getPath())
+
+        # Read CSV file from HDFS
+        df = spark.read.format("csv").option("header", "true").load(hdfs_path)
         # Show first few rows of the DataFrame
         df.show()
     except Exception as e:
@@ -202,6 +216,9 @@ def process_data():
     
     # Stop the session
     spark.stop()
+
+
+
 
 if __name__ == "__main__":
     # Configuration
@@ -217,7 +234,7 @@ if __name__ == "__main__":
     #article_main()
 
     #Execute hadoop_main function
-    hadoop_main()
+    #hadoop_main()
 
     # Execute process_data function with corrected arguments
     process_data()    
