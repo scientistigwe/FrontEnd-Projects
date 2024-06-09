@@ -63,48 +63,60 @@ function createPollutionSourceChart(siteData) {
   });
 }
 
-function createTemporalTrendsChart(dataForPlotting) {
+function createTemporalTrendsChart(aggregatedData, correlationData) {
   const ctx = document.getElementById("temporal-trends-chart").getContext("2d");
+  console.log("Aggregated Data:", aggregatedData);
+  console.log("Correlation Data:", correlationData);
 
-  // Check if dataForPlotting is not null or undefined
-  if (dataForPlotting && Object.keys(dataForPlotting).length > 0) {
+  // Check if aggregatedData is not null or undefined
+  if (
+    aggregatedData &&
+    Array.isArray(aggregatedData) &&
+    aggregatedData.length > 0
+  ) {
+    // Create arrays to store site names and autocorrelation values
+    const siteNames = [];
+    const autocorrValues = [];
+
     // Loop through each site's data
-    for (const site in dataForPlotting) {
-      if (dataForPlotting.hasOwnProperty(site)) {
-        const siteData = dataForPlotting[site];
-        // Ensure siteData.co_autocorr is not null or undefined
-        if (siteData && siteData.co_autocorr) {
-          const labels = Object.keys(siteData.co_autocorr); // Assuming keys are date/time
-          const dataValues = Object.values(siteData.co_autocorr);
-
-          new Chart(ctx, {
-            type: "line",
-            data: {
-              labels: labels,
-              datasets: [
-                {
-                  label: "CO Autocorrelation",
-                  data: dataValues,
-                  borderColor: "rgba(75, 192, 192, 1)",
-                  backgroundColor: "rgba(75, 192, 192, 0.2)",
-                  fill: false,
-                  tension: 0.1,
-                },
-              ],
-            },
-            options: {
-              scales: {
-                y: { beginAtZero: true },
-              },
-            },
-          });
-        } else {
-          console.error("Site data or CO autocorrelation data is missing.");
-        }
+    aggregatedData.forEach((siteData) => {
+      if (!siteData || siteData.co_agg === undefined) {
+        console.warn(
+          "Skipping site:",
+          siteData.site,
+          "because CO aggregation data is missing."
+        );
+        return; // Skip this site and move to the next one
       }
-    }
+
+      // Add site name and autocorrelation value to the arrays
+      siteNames.push(siteData.site);
+      autocorrValues.push(correlationData[siteData.site]?.co_autocorr || null);
+    });
+
+    // Create the chart using the aggregated data and correlation data
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: siteNames,
+        datasets: [
+          {
+            label: "CO Autocorrelation",
+            data: autocorrValues,
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true },
+        },
+      },
+    });
   } else {
-    console.error("No data for plotting provided.");
+    console.error("No aggregated data provided.");
   }
 }
 
@@ -195,10 +207,12 @@ async function loadSiteData(selectedSite) {
       }
 
       const data = await response.json();
-      if (data && data.site_data) {
+
+      // Check if both site_data and data_for_plotting are present
+      if (data && data.site_data && data.data_for_plotting) {
         // Store fetched data in local storage for future use
-        localStorage.setItem("siteData", JSON.stringify(data.site_data));
-        processData(data.site_data, selectedSite);
+        localStorage.setItem("siteData", JSON.stringify(data));
+        processData(data, selectedSite); // Pass entire data object
       } else {
         throw new Error("Invalid data structure");
       }
@@ -208,16 +222,37 @@ async function loadSiteData(selectedSite) {
   }
 }
 
-function processData(siteData, selectedSite) {
-  let selectedData = siteData.find((site) => site.site === selectedSite);
-  if (!selectedData) {
-    throw new Error("Data not found for the selected site");
+async function processData(siteData, selectedSite) {
+  console.log("Site Data:", siteData);
+  console.log("Selected Site:", selectedSite);
+
+  if (!siteData || !siteData.site_data || !siteData.data_for_plotting) {
+    throw new Error("Invalid site data structure");
   }
-  createAirQualityChart(selectedData);
-  createPollutionSourceChart(selectedData);
-  createTemporalTrendsChart(siteData);
-  createSpatialAnalysisChart(selectedData);
-  createEnvironmentalImpactChart(selectedData);
+
+  const aggregatedData = siteData.site_data;
+  const correlationData = siteData.data_for_plotting; // Access the entire correlation data object
+
+  const selectedAggregatedData = aggregatedData.find(
+    (site) => site.site === selectedSite
+  );
+  if (!selectedAggregatedData) {
+    throw new Error("Aggregated data not found for the selected site");
+  }
+
+  const selectedCorrelationData = correlationData[selectedSite];
+  if (!selectedCorrelationData) {
+    throw new Error("Correlation data not found for the selected site");
+  }
+
+  console.log("Aggregated Data:", selectedAggregatedData);
+  console.log("Correlation Data:", selectedCorrelationData);
+
+  createAirQualityChart(selectedAggregatedData);
+  createPollutionSourceChart(selectedAggregatedData);
+  createTemporalTrendsChart(aggregatedData, correlationData); // Pass both aggregated and correlation data
+  createSpatialAnalysisChart(selectedAggregatedData);
+  createEnvironmentalImpactChart(selectedAggregatedData);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -227,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadSiteData(siteFilter.value);
 });
 
-function handleSiteFilterChange() {
+async function handleSiteFilterChange() {
   const selectedSite = document.getElementById("site-filter").value;
   loadSiteData(selectedSite);
 }

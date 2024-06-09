@@ -31,7 +31,7 @@ class SensorDataViewSet(viewsets.ModelViewSet):
             nv25_agg=Avg('nv2_5_level'), min_nv25=Min('nv2_5_level'), max_nv25=Max('nv2_5_level'), total_nv25=Sum('nv2_5_level'),
             wind_speed_agg=Avg('wind_speed'), min_wind_speed=Min('wind_speed'), max_wind_speed=Max('wind_speed'), total_wind_speed=Sum('wind_speed'),
             wind_dir_agg=Avg('wind_direction'), air_temp_agg=Avg('air_temperature'), min_air_temp=Min('air_temperature'), max_air_temp=Max('air_temperature'),
-            count=Count('id')
+            lat_agg=Avg('latitude'), lon_agg=Avg('longitude'), count=Count('id')
         )
 
     @action(detail=False, methods=['get'])
