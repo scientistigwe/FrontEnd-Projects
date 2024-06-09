@@ -1,113 +1,66 @@
-from django.shortcuts import render
+import pandas as pd
+from statsmodels.tsa.seasonal import seasonal_decompose
+from statsmodels.tsa.stattools import grangercausalitytests
+from django.db.models import Avg, Min, Max, Sum, Count
+from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db.models import Avg, Count, Max, Min, Sum, Case, When, Value, F, FloatField
+from django.shortcuts import render
 from .models import SensorData
 from .serializers import SensorDataSerializer
-from django.db.models.functions import TruncHour, Round
-from django.db.models import Count, F, Value, FloatField
-
-# Create your views here.
-from rest_framework import viewsets
-from .models import SensorData
-from .serializers import SensorDataSerializer
+import numpy as np
 
 class SensorDataViewSet(viewsets.ModelViewSet):
     queryset = SensorData.objects.all()
     serializer_class = SensorDataSerializer
 
+    @staticmethod
+    def aggregate_site_data(queryset):
+        return queryset.values('site').annotate(
+            co_agg=Avg('co_level'), min_co=Min('co_level'), max_co=Max('co_level'), total_co=Sum('co_level'),
+            nox_agg=Avg('nox_level'), min_nox=Min('nox_level'), max_nox=Max('nox_level'), total_nox=Sum('nox_level'),
+            no2_agg=Avg('no2_level'), min_no2=Min('no2_level'), max_no2=Max('no2_level'), total_no2=Sum('no2_level'),
+            no_agg=Avg('no_level'), min_no=Min('no_level'), max_no=Max('no_level'), total_no=Sum('no_level'),
+            o3_agg=Avg('o3_level'), min_o3=Min('o3_level'), max_o3=Max('o3_level'), total_o3=Sum('o3_level'),
+            so2_agg=Avg('so2_level'), min_so2=Min('so2_level'), max_so2=Max('so2_level'), total_so2=Sum('so2_level'),
+            pm10_agg=Avg('pm10_level'), min_pm10=Min('pm10_level'), max_pm10=Max('pm10_level'), total_pm10=Sum('pm10_level'),
+            pm25_agg=Avg('pm2_5_level'), min_pm25=Min('pm2_5_level'), max_pm25=Max('pm2_5_level'), total_pm25=Sum('pm2_5_level'),
+            v10_agg=Avg('v10_level'), min_v10=Min('v10_level'), max_v10=Max('v10_level'), total_v10=Sum('v10_level'),
+            v25_agg=Avg('v2_5_level'), min_v25=Min('v2_5_level'), max_v25=Max('v2_5_level'), total_v25=Sum('v2_5_level'),
+            nv10_agg=Avg('nv10_level'), min_nv10=Min('nv10_level'), max_nv10=Max('nv10_level'), total_nv10=Sum('nv10_level'),
+            nv25_agg=Avg('nv2_5_level'), min_nv25=Min('nv2_5_level'), max_nv25=Max('nv2_5_level'), total_nv25=Sum('nv2_5_level'),
+            wind_speed_agg=Avg('wind_speed'), min_wind_speed=Min('wind_speed'), max_wind_speed=Max('wind_speed'), total_wind_speed=Sum('wind_speed'),
+            wind_dir_agg=Avg('wind_direction'), air_temp_agg=Avg('air_temperature'), min_air_temp=Min('air_temperature'), max_air_temp=Max('air_temperature'),
+            count=Count('id')
+        )
+
     @action(detail=False, methods=['get'])
     def filter_and_aggregate_data(self, request):
-        # get query parameter
-        device_id = request.GET.get('device_id')
+        site = request.GET.get('site')
+        queryset = self.queryset.filter(site=site) if site else self.queryset
+        site_data = list(self.aggregate_site_data(queryset))
 
-        # Filter queryset based on device_id
-        queryset = self.get_queryset()
-        if device_id:
-            queryset = queryset.filter(device_id=device_id)
+        # Convert queryset to list of dictionaries
+        site_data = list(site_data)
 
-        # Agregate data
-        aggregated_data = {}
+        if not site_data:
+            return Response({'error': 'No data found for the given site'}, status=404)
 
-        # Filter by device_id
-        if device_id:
-            filtered_data = queryset
-        else:
-            filtered_data = SensorData.objects.all()
+        # Prepare data for plotting
+        data_for_plotting = {}
+        for site_entry in site_data:
+            sensor_df = pd.DataFrame(list(queryset.filter(site=site_entry['site']).values())).drop(columns=['serial_no', 'site', 'site_code', 'site_type'])
 
-        # Aggregate by device id
-        device_aggregation = filtered_data.values('device_id').annotate(
-            avg_co=Avg('co_level'),
-            min_co=Min('co_level'),
-            max_co=Max('co_level'),
-            total_co=Sum('co_level'),
-            avg_humidity=Avg('humidity'),
-            min_humidity=Min('humidity'),
-            max_humidity=Max('humidity'),
-            total_humidity=Sum('humidity'),
-            avg_temp=Avg('temperature'),
-            min_temp=Min('temperature'),
-            max_temp=Max('temperature'),
-            total_temp=Sum('temperature'),
-            avg_lpg=Avg('gas_leak_detected'),
-            min_lpg=Min('gas_leak_detected'),
-            max_lpg=Max('gas_leak_detected'),
-            total_lpg=Sum('gas_leak_detected'),
-            avg_smoke=Avg('smoke_detected'),
-            min_smoke=Min('smoke_detected'),
-            max_smoke=Max('smoke_detected'),
-            total_smoke=Sum('smoke_detected')
-        )
+            # Autocorrelation analysis
+            co_autocorr = sensor_df['co_level'].autocorr()
 
-        for item in device_aggregation:
-            for key, value in item.items():
-                if isinstance(value, Round):
-                    item[key] = float(value)
+            # Add data for each site
+            data_for_plotting[site_entry['site']] = {'co_autocorr': co_autocorr}
 
-        aggregated_data['device_aggregation'] = list(device_aggregation)
+            # Calculate other statistics as needed
 
-        # Aggregation by TimeStamp (Hourly)
-        hourly_aggregation = filtered_data.annotate(
-            hour=TruncHour('timeStamp')
-        ).values("hour").annotate(
-            avg_co=Avg('co_level'),
-            avg_humidity=Avg('humidity'),
-            avg_temp=Avg('temperature'),
-            avg_lpg=Avg('gas_leak_detected'),
-            avg_smoke=Avg('smoke_detected'),
-            light_on_percentage=Count(Case(When(light_intensity=True, then=Value(1))), output_field=FloatField()) / Count(F('light_intensity'), output_field=FloatField()) * 100
-        )
+        return Response({'site_data': site_data, 'data_for_plotting': data_for_plotting})
 
-        aggregated_data['hourly_aggregation'] = list(hourly_aggregation)
-        # Aggregation by Sensor Reading
-        sensor_aggregation = {
-            'average_co': filtered_data.aggregate(avg_co=Avg('co_level'))['avg_co'],
-            'min_co': filtered_data.aggregate(min_co=Min('co_level'))['min_co'],
-            'max_co': filtered_data.aggregate(max_co=Max('co_level'))['max_co'],
-            'total_co': filtered_data.aggregate(total_co=Sum('co_level'))['total_co'],
-            'average_humidity': filtered_data.aggregate(avg_humidity=Avg('humidity'))['avg_humidity'],
-            'min_humidity': filtered_data.aggregate(min_humidity=Min('humidity'))['min_humidity'],
-            'max_humidity': filtered_data.aggregate(max_humidity=Max('humidity'))['max_humidity'],
-            'total_humidity': filtered_data.aggregate(total_humidity=Sum('humidity'))['total_humidity'],
-            'average_temp': filtered_data.aggregate(avg_temp=Avg('temperature'))['avg_temp'],
-            'min_temp': filtered_data.aggregate(min_temp=Min('temperature'))['min_temp'],
-            'max_temp': filtered_data.aggregate(max_temp=Max('temperature'))['max_temp'],
-            'total_temp': filtered_data.aggregate(total_temp=Sum('temperature'))['total_temp'],
-            'average_lpg': filtered_data.aggregate(avg_lpg=Avg('gas_leak_detected'))['avg_lpg'],
-            'min_lpg': filtered_data.aggregate(min_lpg=Min('gas_leak_detected'))['min_lpg'],
-            'max_lpg': filtered_data.aggregate(max_lpg=Max('gas_leak_detected'))['max_lpg'],
-            'total_lpg': filtered_data.aggregate(total_lpg=Sum('gas_leak_detected'))['total_lpg'],
-            'average_smoke': filtered_data.aggregate(avg_smoke=Avg('smoke_detected'))['avg_smoke'],
-            'min_smoke': filtered_data.aggregate(min_smoke=Min('smoke_detected'))['min_smoke'],
-            'max_smoke': filtered_data.aggregate(max_smoke=Max('smoke_detected'))['max_smoke'],
-            'total_smoke': filtered_data.aggregate(total_smoke=Sum('smoke_detected'))['total_smoke']
-            }
-
-        aggregated_data['sensor_aggregation'] = sensor_aggregation
-
-        # Serialize aggregated data
-        return Response(aggregated_data)
-    
     @action(detail=False, methods=['get'])
     def render_chart(self, request):
         return render(request, 'data-science.html')
