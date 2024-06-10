@@ -76,6 +76,28 @@ Creating Charts: Using Chart.js to create various types of charts (e.g., bar, li
 Updating Charts: Dynamically updating charts based on user interactions.
 By following this modular approach, the framework ensures a seamless flow from data collection to visualization, providing a comprehensive solution for environmental data analysis and presentation.
 
+Columns of interest:
+site: Name of the monitoring site. Helps in comparing data across different locations.
+code: Code associated with the monitoring site. Can be used for quick identification and filtering.
+date: Date and time of the recorded measurement. Essential for time-series analysis and trend identification.
+co: Carbon monoxide level. Indicates air quality and potential health risks related to CO exposure.
+nox: Nitrogen oxides level. Key for understanding pollution sources, particularly vehicle emissions.
+no2: Nitrogen dioxide level. Critical for assessing urban air quality and related health impacts.
+no: Nitric oxide level. Helps in understanding the contribution of traffic emissions.
+o3: Ozone level. Important for evaluating smog formation and its effects on respiratory health.
+so2: Sulfur dioxide level. Used to assess industrial pollution and potential acid rain.
+pm10: Particulate matter <10 micrometers. Indicates air quality and potential respiratory health risks.
+pm2.5: Particulate matter <2.5 micrometers. More critical than PM10 due to its ability to penetrate deep into the lungs.
+v10: Volatile organic compounds <10 micrometers. Relevant for understanding indoor and outdoor air pollution sources.
+v2.5: Volatile organic compounds <2.5 micrometers. Important for assessing finer particulate pollution.
+nv10: Non-volatile organic compounds <10 micrometers. Useful for detailed air quality studies.
+nv2.5: Non-volatile organic compounds <2.5 micrometers. Provides deeper insight into particulate matter composition.
+ws: Wind speed. Helps in understanding pollutant dispersion patterns.
+wd: Wind direction. Used alongside wind speed to assess pollution transport.
+air_temp: Air temperature. Important for studying the effects of temperature on air pollution.
+latitude: Geographic coordinate. Indicates the specific location of the monitoring site.
+longitude: Geographic coordinate. Complements latitude for precise site location.
+
 Summary of findings:
 Air Quality:
 

@@ -1,15 +1,19 @@
-const charts = {
-  airQualityChart: null,
-  pollutionSourceChart: null,
-  temporalTrendsCharts: [],
-  spatialAnalysisChart: null,
-  environmentalImpactChart: null,
-};
+let airQualityChartInstance = null;
+let pollutionSourceChartInstance = null;
+let temporalTrendsChartInstance = null;
+let environmentalImpactChartInstance = null;
 
+function destroyChart(chart) {
+  if (chart) {
+    chart.destroy();
+  }
+}
+
+// Air Quality Chart
 function createAirQualityChart(siteData) {
-  destroyChart(charts.airQualityChart);
+  destroyChart(airQualityChartInstance);
   const ctx = document.getElementById("air-quality-chart").getContext("2d");
-  charts.airQualityChart = new Chart(ctx, {
+  airQualityChartInstance = new Chart(ctx, {
     type: "bar",
     data: {
       labels: ["CO", "NOx", "NO2", "SO2", "PM10", "PM2.5"],
@@ -32,18 +36,29 @@ function createAirQualityChart(siteData) {
     },
     options: {
       scales: {
-        y: { beginAtZero: true },
+        y: {
+          beginAtZero: true,
+          grid: {
+            display: false,
+          },
+        },
+        x: {
+          grid: {
+            display: false,
+          },
+        },
       },
     },
   });
 }
 
+// Pollution Source Chart
 function createPollutionSourceChart(siteData) {
-  destroyChart(charts.pollutionSourceChart);
+  destroyChart(pollutionSourceChartInstance);
   const ctx = document
     .getElementById("pollution-source-chart")
     .getContext("2d");
-  charts.pollutionSourceChart = new Chart(ctx, {
+  pollutionSourceChartInstance = new Chart(ctx, {
     type: "pie",
     data: {
       labels: ["NO", "NO2"],
@@ -63,22 +78,19 @@ function createPollutionSourceChart(siteData) {
   });
 }
 
+// Temporal Trends Chart
 function createTemporalTrendsChart(aggregatedData, correlationData) {
+  destroyChart(temporalTrendsChartInstance);
   const ctx = document.getElementById("temporal-trends-chart").getContext("2d");
-  console.log("Aggregated Data:", aggregatedData);
-  console.log("Correlation Data:", correlationData);
 
-  // Check if aggregatedData is not null or undefined
   if (
     aggregatedData &&
     Array.isArray(aggregatedData) &&
     aggregatedData.length > 0
   ) {
-    // Create arrays to store site names and autocorrelation values
     const siteNames = [];
     const autocorrValues = [];
 
-    // Loop through each site's data
     aggregatedData.forEach((siteData) => {
       if (!siteData || siteData.co_agg === undefined) {
         console.warn(
@@ -86,22 +98,20 @@ function createTemporalTrendsChart(aggregatedData, correlationData) {
           siteData.site,
           "because CO aggregation data is missing."
         );
-        return; // Skip this site and move to the next one
+        return;
       }
 
-      // Add site name and autocorrelation value to the arrays
       siteNames.push(siteData.site);
       autocorrValues.push(correlationData[siteData.site]?.co_autocorr || null);
     });
 
-    // Create the chart using the aggregated data and correlation data
-    new Chart(ctx, {
+    temporalTrendsChartInstance = new Chart(ctx, {
       type: "bar",
       data: {
         labels: siteNames,
         datasets: [
           {
-            label: "CO Autocorrelation",
+            label: "Carbon Monoxide Autocorrelation",
             data: autocorrValues,
             backgroundColor: "rgba(75, 192, 192, 0.2)",
             borderColor: "rgba(75, 192, 192, 1)",
@@ -111,7 +121,17 @@ function createTemporalTrendsChart(aggregatedData, correlationData) {
       },
       options: {
         scales: {
-          y: { beginAtZero: true },
+          y: {
+            beginAtZero: true,
+            grid: {
+              display: false,
+            },
+          },
+          x: {
+            grid: {
+              display: false,
+            },
+          },
         },
       },
     });
@@ -120,6 +140,7 @@ function createTemporalTrendsChart(aggregatedData, correlationData) {
   }
 }
 
+// Spatial Analysis Map
 function createSpatialAnalysisMap(siteData) {
   const mapElement = document.getElementById("spatial-analysis-map");
 
@@ -134,13 +155,11 @@ function createSpatialAnalysisMap(siteData) {
     13
   );
 
-  // Add OpenStreetMap tile layer
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-  // Add a marker for the site location
   L.marker([siteData.lat_agg, siteData.lon_agg])
     .addTo(map)
     .bindPopup(
@@ -149,12 +168,13 @@ function createSpatialAnalysisMap(siteData) {
     .openPopup();
 }
 
+// Environmental Impact Chart
 function createEnvironmentalImpactChart(siteData) {
-  destroyChart(charts.environmentalImpactChart);
+  destroyChart(environmentalImpactChartInstance);
   const ctx = document
     .getElementById("environmental-impact-chart")
     .getContext("2d");
-  charts.environmentalImpactChart = new Chart(ctx, {
+  environmentalImpactChartInstance = new Chart(ctx, {
     type: "radar",
     data: {
       labels: ["Wind Speed", "Wind Direction", "Air Temperature"],
@@ -178,14 +198,6 @@ function createEnvironmentalImpactChart(siteData) {
       },
     },
   });
-}
-
-// Function to destroy a chart
-function destroyChart(chart) {
-  if (chart) {
-    chart.destroy();
-    chart = null;
-  }
 }
 
 async function loadSiteData(selectedSite) {
@@ -224,9 +236,6 @@ async function loadSiteData(selectedSite) {
 }
 
 async function processData(siteData, selectedSite) {
-  console.log("Site Data:", siteData);
-  console.log("Selected Site:", selectedSite);
-
   if (!siteData || !siteData.site_data || !siteData.data_for_plotting) {
     throw new Error("Invalid site data structure");
   }
@@ -245,9 +254,6 @@ async function processData(siteData, selectedSite) {
   if (!selectedCorrelationData) {
     throw new Error("Correlation data not found for the selected site");
   }
-
-  console.log("Aggregated Data:", selectedAggregatedData);
-  console.log("Correlation Data:", selectedCorrelationData);
 
   createAirQualityChart(selectedAggregatedData);
   createPollutionSourceChart(selectedAggregatedData);
