@@ -199,7 +199,7 @@ function createEnvironmentalImpactChart(siteData) {
     },
   });
 }
-/*
+
 async function loadSiteData(selectedSite) {
   try {
     // Check if data is already stored in local storage
@@ -234,7 +234,7 @@ async function loadSiteData(selectedSite) {
     console.error("Error fetching or displaying data:", error);
   }
 }
-*/
+/*
 async function loadSiteData(selectedSite) {
   try {
     // Fetch data from the server
@@ -261,7 +261,7 @@ async function loadSiteData(selectedSite) {
     console.error("Error fetching or displaying data:", error);
   }
 }
-
+*/
 async function processData(siteData, selectedSite) {
   if (!siteData || !siteData.site_data || !siteData.data_for_plotting) {
     throw new Error("Invalid site data structure");
