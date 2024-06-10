@@ -234,34 +234,7 @@ async function loadSiteData(selectedSite) {
     console.error("Error fetching or displaying data:", error);
   }
 }
-/*
-async function loadSiteData(selectedSite) {
-  try {
-    // Fetch data from the server
-    const response = await fetch(
-      `http://127.0.0.1:8000/api/sensors/filter_and_aggregate_data/`
-    );
-    const contentType = response.headers.get("content-type");
 
-    if (!contentType || !contentType.includes("application/json")) {
-      throw new Error("Received non-JSON response");
-    }
-
-    const data = await response.json();
-    
-    // Check if both site_data and data_for_plotting are present
-    if (data && data.site_data && data.data_for_plotting) {
-      // Store fetched data in local storage for future use
-      localStorage.setItem("siteData", JSON.stringify(data));
-      processData(data, selectedSite); // Pass entire data object
-    } else {
-      throw new Error("Invalid data structure");
-    }
-  } catch (error) {
-    console.error("Error fetching or displaying data:", error);
-  }
-}
-*/
 async function processData(siteData, selectedSite) {
   if (!siteData || !siteData.site_data || !siteData.data_for_plotting) {
     throw new Error("Invalid site data structure");
