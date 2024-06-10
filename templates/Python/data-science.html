@@ -17,6 +17,10 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
     integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous" />
+
+  <!-- Leaflets CSS Link -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
   <!-- Custom CSS link -->
   <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
@@ -817,7 +821,7 @@
         </h2>
         <hr />
         <!-- 1. Environmental Monitoring System <-->
-        <div class="row">
+        <div class="row mt-5">
           <div class="col-md-8">
             <div class="card">
               <div class="card-body">
@@ -965,181 +969,164 @@
             </div>
           </div>
           <!-- Site Filter -->
-          <div class="row my-4">
-            <div class="col-md-12">
-              <label for="site-filter">Select Site:</label>
-              <select id="site-filter" class="form-control">
-                <option value="all">All Sites</option>
-                <option value="Belfast Centre">Belfast Centre</option>
-                <option value="Cardiff Centre">Cardiff Centre</option>
-                <option value="Edinburgh St Leonards">Edinburgh St Leonards</option>
-                <option value="Leeds Centre">Leeds Centre</option>
-                <option value="London Marylebone Road">London Marylebone Road</option>
-                <option value="London N. Kensington">London N. Kensington</option>
-                <option value="Port Talbot Margam">Port Talbot Margam</option>
-              </select>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-12">
+                <label for="site-filter">Select Site:</label>
+                <select id="site-filter" class="form-control">
+                  <option value="Belfast Centre">Belfast Centre</option>
+                  <option value="Cardiff Centre">Cardiff Centre</option>
+                  <option value="Edinburgh St Leonards">Edinburgh St Leonards</option>
+                  <option value="Leeds Centre">Leeds Centre</option>
+                  <option value="London Marylebone Road">London Marylebone Road</option>
+                  <option value="London N. Kensington">London N. Kensington</option>
+                  <option value="Port Talbot Margam">Port Talbot Margam</option>
+                </select>
+              </div>
             </div>
-          </div>
-
-          <!-- Filter Dropdown -->
-          <div class="row">
-            <div class="col-md-12">
-              <label for="site-filter">Select Site:</label>
-              <select id="site-filter">
-                <option value="Belfast Centre">Belfast Centre</option>
-                <option value="Cardiff Centre">Cardiff Centre</option>
-                <option value="Edinburgh St Leonards">Edinburgh St Leonards</option>
-                <option value="Leeds Centre">Leeds Centre</option>
-                <option value="London Marylebone Road">London Marylebone Road</option>
-                <option value="London N. Kensington">London N. Kensington</option>
-                <option value="Port Talbot Margam">Port Talbot Margam</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Air Quality Chart -->
-          <div class="row">
-            <div class="col-md-12">
-              <canvas id="air-quality-chart"></canvas>
-            </div>
-          </div>
-
-          <!-- Pollution Source Chart -->
-          <div class="row">
+            <!-- Pollution Source Chart -->
             <div class="col-md-12">
               <canvas id="pollution-source-chart"></canvas>
             </div>
           </div>
 
+        </div>
+        <div class="row mt-5">
+          <!-- Air Quality Chart -->
+          <div class="col-md-6">
+            <canvas id="air-quality-chart"></canvas>
+          </div>
           <!-- Temporal Trends Chart -->
-          <div class="row">
+          <div class="col-md-6">
             <div class="col-md-12">
               <canvas id="temporal-trends-chart"></canvas>
             </div>
           </div>
-
-          <!-- Spatial Analysis Chart -->
-          <div class="row">
-            <div class="col-md-12">
-              <canvas id="spatial-analysis-chart"></canvas>
-            </div>
-          </div>
-
+        </div>
+        <div class="row mt-5">
           <!-- Environmental Impact Chart -->
-          <div class="row">
+          <div class="col-md-5">
             <div class="col-md-12">
               <canvas id="environmental-impact-chart"></canvas>
             </div>
           </div>
-          <hr />
-          <!-- 2. Filtering Array Elements with .filter() -->
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    Output (See
-                    <a href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                      target="_blank">script.js</a>
-                    for details)
-                  </h5>
-                  <div class="card-text"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    2. Filtering Array Elements with .filter()
-                  </h5>
-                  <p class="card-text"></p>
-                </div>
-              </div>
-            </div>
+          <!-- Spatial Analysis Chart -->
+          <div class="col-md-7">
+            <div id="spatial-analysis-map" style="height: 500px;"></div>
+            <!--<canvas id="spatial-analysis-chart"></canvas> -->
           </div>
-
-          <hr />
-          <!-- 3. Accumulating Array Elements with .reduce() -->
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    3. Accumulating Array Elements with .reduce()
-                  </h5>
-                  <p class="card-text"></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    Output (See
-                    <a href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                      target="_blank">script.js</a>
-                    for details)
-                  </h5>
-                  <div class="card-text"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <!-- 4. Iterating Over Array Elements with .forEach() -->
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    Output (See
-                    <a href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                      target="_blank">script.js</a>
-                    for details)
-                  </h5>
-                  <div class="card-text"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    4. Iterating Over Array Elements with .forEach()
-                  </h5>
-                  <p class="card-text"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <!-- 5. Custom Sorting with .sort() -->
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">5. Custom Sorting with .sort()</h5>
-                  <p class="card-text"></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    Output (See
-                    <a href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
-                      target="_blank">script.js</a>
-                    for details)
-                  </h5>
-                  <div class="card-text"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
         </div>
+
+        <hr />
+
+        <!-- 2. Filtering Array Elements with .filter() -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Output (See
+                  <a href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                    target="_blank">script.js</a>
+                  for details)
+                </h5>
+                <div class="card-text"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  2. Filtering Array Elements with .filter()
+                </h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+        <!-- 3. Accumulating Array Elements with .reduce() -->
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  3. Accumulating Array Elements with .reduce()
+                </h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Output (See
+                  <a href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                    target="_blank">script.js</a>
+                  for details)
+                </h5>
+                <div class="card-text"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <!-- 4. Iterating Over Array Elements with .forEach() -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Output (See
+                  <a href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                    target="_blank">script.js</a>
+                  for details)
+                </h5>
+                <div class="card-text"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  4. Iterating Over Array Elements with .forEach()
+                </h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <!-- 5. Custom Sorting with .sort() -->
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">5. Custom Sorting with .sort()</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Output (See
+                  <a href="https://github.com/scientistigwe/Full-Stack-Dev.-Challenge/blob/main/scripts/script.js"
+                    target="_blank">script.js</a>
+                  for details)
+                </h5>
+                <div class="card-text"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
     </section>
   </main>
   <footer></footer>
@@ -1148,6 +1135,9 @@
 
   <!-- Chart.js Link -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Leaflets .js Link -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
   <!-- Font Awesome JS Link -->
   <script src="https://kit.fontawesome.com/01058b62ac.js" crossorigin="anonymous"></script>

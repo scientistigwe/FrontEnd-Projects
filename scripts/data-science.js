@@ -120,32 +120,33 @@ function createTemporalTrendsChart(aggregatedData, correlationData) {
   }
 }
 
-function createSpatialAnalysisChart(siteData) {
-  destroyChart(charts.spatialAnalysisChart);
-  const ctx = document
-    .getElementById("spatial-analysis-chart")
-    .getContext("2d");
-  charts.spatialAnalysisChart = new Chart(ctx, {
-    type: "scatter",
-    data: {
-      labels: ["Latitude", "Longitude"],
-      datasets: [
-        {
-          label: "Geographical Coordinates",
-          data: [{ x: siteData.latitude, y: siteData.longitude }],
-          backgroundColor: "rgba(153, 102, 255, 0.2)",
-          borderColor: "rgba(153, 102, 255, 1)",
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        x: { type: "linear", position: "bottom" },
-        y: { beginAtZero: true },
-      },
-    },
-  });
+function createSpatialAnalysisMap(siteData) {
+  const mapElement = document.getElementById("spatial-analysis-map");
+
+  // Remove any existing map instance
+  if (mapElement._leaflet_id) {
+    mapElement._leaflet_id = null;
+    mapElement.innerHTML = "";
+  }
+
+  const map = L.map("spatial-analysis-map").setView(
+    [siteData.lat_agg, siteData.lon_agg],
+    13
+  );
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  // Add a marker for the site location
+  L.marker([siteData.lat_agg, siteData.lon_agg])
+    .addTo(map)
+    .bindPopup(
+      `<b>${siteData.site}</b><br>Latitude: ${siteData.lat_agg}<br>Longitude: ${siteData.lon_agg}`
+    )
+    .openPopup();
 }
 
 function createEnvironmentalImpactChart(siteData) {
@@ -250,8 +251,8 @@ async function processData(siteData, selectedSite) {
 
   createAirQualityChart(selectedAggregatedData);
   createPollutionSourceChart(selectedAggregatedData);
-  createTemporalTrendsChart(aggregatedData, correlationData); // Pass both aggregated and correlation data
-  createSpatialAnalysisChart(selectedAggregatedData);
+  createTemporalTrendsChart(aggregatedData, correlationData);
+  createSpatialAnalysisMap(selectedAggregatedData);
   createEnvironmentalImpactChart(selectedAggregatedData);
 }
 
